@@ -1,5 +1,18 @@
 # WonderPlane
 
+Changes WonderPlane.v1.0.3:
+- Change the target Android API to API 30
+- Change the Unity version from 2019.3.13 to 2021.1.3f1
+- Added Layer called Character for game characters collision
+- Project Settings:
+	- Configuration:
+		- Change Scripting Backend from mono to IL2CPP
+		- Target Architectures now use both ARMv7 and ARM64
+	- Physics:
+		- Layer Collision Matrix uncheck everything except to default and characters
+	- Physics 2D:
+		- Layer Collision Matrix uncheck everything except to default and characters
+
 Changes WonderPlane.v1.0.1 April 11 2021:
 - Added health bar system
 - Added energy bar system

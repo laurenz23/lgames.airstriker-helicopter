@@ -1,1 +1,18 @@
 # WonderPlane
+
+Changes WonderPlane.v1.0.1 April 11 2021:
+- Added health bar system
+- Added energy bar system
+- Added player points system
+- Added popup text UI for health deduction, health added, energy added, added points, added coins
+
+
+Changes WonderPlane.v1.0.0 April 11 2021:
+- Added 3d Assets and 2d Assets
+  - Added clouds, rocks, tress and grounds (3d assets)
+  - Added visual representatoin and buttons for attacks (2d assets)
+- Seperated the 1 level in to 4 levels
+- Change the character design to helicopter
+- Added enemies object such as planes, helicopters, mini-boss, artillery and ground enemy units
+  - Added scripts for enemy planes such as enemy movements
+- Added optimization system

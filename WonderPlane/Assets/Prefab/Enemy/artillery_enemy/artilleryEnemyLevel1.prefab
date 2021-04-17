@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7230089314184182304}
   - component: {fileID: -2635526132471892901}
   - component: {fileID: -4639178662626487394}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: artilleryEnemyLevel1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7125524077107093984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: attackOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 5602304824326072212}
   - component: {fileID: 3336720124535011302}
   - component: {fileID: 7029153550665471009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ArtilleryEnemyLevel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,6 +211,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5602304824326072212}
     m_Modifications:
+    - target: {fileID: -7429800894661587455, guid: b81e151b5a535d94ca76f8f9adae9f3c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -5091712626472545092, guid: b81e151b5a535d94ca76f8f9adae9f3c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: b81e151b5a535d94ca76f8f9adae9f3c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b81e151b5a535d94ca76f8f9adae9f3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -228,6 +243,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b81e151b5a535d94ca76f8f9adae9f3c,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: b81e151b5a535d94ca76f8f9adae9f3c,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071067
       objectReference: {fileID: 0}
@@ -240,16 +260,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000000030908623
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: b81e151b5a535d94ca76f8f9adae9f3c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: b81e151b5a535d94ca76f8f9adae9f3c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b81e151b5a535d94ca76f8f9adae9f3c,
         type: 3}
@@ -270,6 +280,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: artilleryEnemyLevel1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b81e151b5a535d94ca76f8f9adae9f3c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653379217557197973, guid: b81e151b5a535d94ca76f8f9adae9f3c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b81e151b5a535d94ca76f8f9adae9f3c, type: 3}

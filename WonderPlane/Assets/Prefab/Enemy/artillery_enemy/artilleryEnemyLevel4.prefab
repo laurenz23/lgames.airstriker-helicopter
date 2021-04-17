@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8475823071451267747}
   - component: {fileID: -4165277134390584794}
   - component: {fileID: -3934800442540102880}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: artilleryEnemyLevel4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -114,6 +114,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4358172111997895758}
     m_Modifications:
+    - target: {fileID: -8008674761691127336, guid: f9e881a673df3cc40962669461704334,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: f9e881a673df3cc40962669461704334,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f9e881a673df3cc40962669461704334,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -131,6 +141,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f9e881a673df3cc40962669461704334,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: f9e881a673df3cc40962669461704334,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
       objectReference: {fileID: 0}
@@ -143,16 +158,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: f9e881a673df3cc40962669461704334,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: f9e881a673df3cc40962669461704334,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f9e881a673df3cc40962669461704334,
         type: 3}
@@ -173,6 +178,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: artilleryEnemyLevel4
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f9e881a673df3cc40962669461704334,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106472919932630624, guid: f9e881a673df3cc40962669461704334,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2687733044465480107, guid: f9e881a673df3cc40962669461704334,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9e881a673df3cc40962669461704334, type: 3}

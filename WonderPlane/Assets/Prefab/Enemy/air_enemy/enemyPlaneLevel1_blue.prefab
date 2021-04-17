@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 5210807859104858184}
   - component: {fileID: 5765289800068097822}
   - component: {fileID: -9036684464059822623}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: enemyPlaneLevel1_blue
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -129,6 +129,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5210807859104858185}
     m_Modifications:
+    - target: {fileID: -4741302927964649772, guid: b7332dd1dd75185418cc725ffbe931b6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: b7332dd1dd75185418cc725ffbe931b6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b7332dd1dd75185418cc725ffbe931b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -146,6 +156,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b7332dd1dd75185418cc725ffbe931b6,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7072302
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: b7332dd1dd75185418cc725ffbe931b6,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7069834
       objectReference: {fileID: 0}
@@ -157,16 +172,6 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: b7332dd1dd75185418cc725ffbe931b6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: b7332dd1dd75185418cc725ffbe931b6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7072302
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: b7332dd1dd75185418cc725ffbe931b6,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b7332dd1dd75185418cc725ffbe931b6,
@@ -188,6 +193,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyPlane0_blue
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b7332dd1dd75185418cc725ffbe931b6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -372672897188966309, guid: b7332dd1dd75185418cc725ffbe931b6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3536354962721533723, guid: b7332dd1dd75185418cc725ffbe931b6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646301582520517898, guid: b7332dd1dd75185418cc725ffbe931b6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7332dd1dd75185418cc725ffbe931b6, type: 3}

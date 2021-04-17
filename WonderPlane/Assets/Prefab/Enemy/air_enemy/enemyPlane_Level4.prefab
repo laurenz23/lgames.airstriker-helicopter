@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7168665732639480956}
   - component: {fileID: 3132830042412345393}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: enemyPlane_Level4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -52,6 +52,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7168665732639480956}
     m_Modifications:
+    - target: {fileID: -8891916358627449999, guid: 9620e30ca91b3ee44bbc2605c796766b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8492994428196846830, guid: 9620e30ca91b3ee44bbc2605c796766b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8040960762133144470, guid: 9620e30ca91b3ee44bbc2605c796766b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6469642969830294222, guid: 9620e30ca91b3ee44bbc2605c796766b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9620e30ca91b3ee44bbc2605c796766b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9620e30ca91b3ee44bbc2605c796766b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,6 +91,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9620e30ca91b3ee44bbc2605c796766b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7072302
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9620e30ca91b3ee44bbc2605c796766b,
         type: 3}
@@ -84,16 +114,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9620e30ca91b3ee44bbc2605c796766b,
         type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7072302
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 9620e30ca91b3ee44bbc2605c796766b,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 9620e30ca91b3ee44bbc2605c796766b,
-        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -89.98
       objectReference: {fileID: 0}
@@ -107,10 +127,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3915166632133626689, guid: 9620e30ca91b3ee44bbc2605c796766b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 9620e30ca91b3ee44bbc2605c796766b,
         type: 3}
       propertyPath: m_Name
       value: EnemyPlane3
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 9620e30ca91b3ee44bbc2605c796766b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967943027680761789, guid: 9620e30ca91b3ee44bbc2605c796766b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819718059969694316, guid: 9620e30ca91b3ee44bbc2605c796766b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9620e30ca91b3ee44bbc2605c796766b, type: 3}

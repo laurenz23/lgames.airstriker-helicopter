@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2632038411013489241}
   - component: {fileID: -1725454251590757312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: enemyMiniBoss_Level2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -52,6 +52,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2632038411013489241}
     m_Modifications:
+    - target: {fileID: -5605152023890991279, guid: e1906a482ce1ac14a99a9ab340090a1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: e1906a482ce1ac14a99a9ab340090a1e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e1906a482ce1ac14a99a9ab340090a1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,6 +76,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: e1906a482ce1ac14a99a9ab340090a1e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7072302
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e1906a482ce1ac14a99a9ab340090a1e,
         type: 3}
@@ -84,16 +99,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e1906a482ce1ac14a99a9ab340090a1e,
         type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7072302
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: e1906a482ce1ac14a99a9ab340090a1e,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: e1906a482ce1ac14a99a9ab340090a1e,
-        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -89.98
       objectReference: {fileID: 0}
@@ -107,10 +112,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2313607087513221856, guid: e1906a482ce1ac14a99a9ab340090a1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2091562115472330522, guid: e1906a482ce1ac14a99a9ab340090a1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: e1906a482ce1ac14a99a9ab340090a1e,
         type: 3}
       propertyPath: m_Name
       value: EnemyBigPlane3
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e1906a482ce1ac14a99a9ab340090a1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 538232160273974746, guid: e1906a482ce1ac14a99a9ab340090a1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134947540447006556, guid: e1906a482ce1ac14a99a9ab340090a1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568822591149066125, guid: e1906a482ce1ac14a99a9ab340090a1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099110816358248571, guid: e1906a482ce1ac14a99a9ab340090a1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251973284775963516, guid: e1906a482ce1ac14a99a9ab340090a1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8421825721286327785, guid: e1906a482ce1ac14a99a9ab340090a1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1906a482ce1ac14a99a9ab340090a1e, type: 3}

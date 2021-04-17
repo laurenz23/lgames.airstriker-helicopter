@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8764552764312519228}
   - component: {fileID: 1448513226793229148}
   - component: {fileID: -1115179837750117941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tankLevel2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -116,6 +116,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4216859302048453862, guid: 84d38d4c6ee7c1240a6c07b94c734485,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 84d38d4c6ee7c1240a6c07b94c734485,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -128,6 +133,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 84d38d4c6ee7c1240a6c07b94c734485,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 84d38d4c6ee7c1240a6c07b94c734485,
         type: 3}
@@ -146,16 +156,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 84d38d4c6ee7c1240a6c07b94c734485,
         type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 84d38d4c6ee7c1240a6c07b94c734485,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 84d38d4c6ee7c1240a6c07b94c734485,
-        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -169,10 +169,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4067892961523930313, guid: 84d38d4c6ee7c1240a6c07b94c734485,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2659031078549766146, guid: 84d38d4c6ee7c1240a6c07b94c734485,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1241571234338965554, guid: 84d38d4c6ee7c1240a6c07b94c734485,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 84d38d4c6ee7c1240a6c07b94c734485,
         type: 3}
       propertyPath: m_Name
       value: groundVehicleLevel2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 84d38d4c6ee7c1240a6c07b94c734485,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010021266403457712, guid: 84d38d4c6ee7c1240a6c07b94c734485,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395427809348087526, guid: 84d38d4c6ee7c1240a6c07b94c734485,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84d38d4c6ee7c1240a6c07b94c734485, type: 3}

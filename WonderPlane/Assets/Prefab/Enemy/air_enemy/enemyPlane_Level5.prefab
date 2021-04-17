@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4360261096022013070}
   - component: {fileID: -5804420215333304774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: enemyPlane_Level5
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -52,6 +52,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4360261096022013070}
     m_Modifications:
+    - target: {fileID: -6296883280820365995, guid: 0299263dc2c525b4891406e4c00ae5a6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0299263dc2c525b4891406e4c00ae5a6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0299263dc2c525b4891406e4c00ae5a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -69,6 +79,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0299263dc2c525b4891406e4c00ae5a6,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7072302
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0299263dc2c525b4891406e4c00ae5a6,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7069834
       objectReference: {fileID: 0}
@@ -80,16 +95,6 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 0299263dc2c525b4891406e4c00ae5a6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 0299263dc2c525b4891406e4c00ae5a6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7072302
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 0299263dc2c525b4891406e4c00ae5a6,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0299263dc2c525b4891406e4c00ae5a6,
@@ -111,6 +116,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyPlane4
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0299263dc2c525b4891406e4c00ae5a6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610382844795041400, guid: 0299263dc2c525b4891406e4c00ae5a6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900024854960345401, guid: 0299263dc2c525b4891406e4c00ae5a6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0299263dc2c525b4891406e4c00ae5a6, type: 3}

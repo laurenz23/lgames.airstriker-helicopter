@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3582895975606823777}
   - component: {fileID: -2223517911206983885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: enemyHelicopter_Level3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -52,6 +52,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3582895975606823777}
     m_Modifications:
+    - target: {fileID: -8683560941278580221, guid: 245777b08a728204b91dd8bb6ea12574,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -5725702777548537323, guid: 245777b08a728204b91dd8bb6ea12574,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 245777b08a728204b91dd8bb6ea12574,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 245777b08a728204b91dd8bb6ea12574,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -69,6 +84,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 245777b08a728204b91dd8bb6ea12574,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7072302
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 245777b08a728204b91dd8bb6ea12574,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7069834
       objectReference: {fileID: 0}
@@ -80,16 +100,6 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 245777b08a728204b91dd8bb6ea12574,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 245777b08a728204b91dd8bb6ea12574,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7072302
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 245777b08a728204b91dd8bb6ea12574,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 245777b08a728204b91dd8bb6ea12574,
@@ -111,6 +121,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyHelicopter3
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 245777b08a728204b91dd8bb6ea12574,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -281317961025600211, guid: 245777b08a728204b91dd8bb6ea12574,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -170018222800538208, guid: 245777b08a728204b91dd8bb6ea12574,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991602482038035675, guid: 245777b08a728204b91dd8bb6ea12574,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948986900859691404, guid: 245777b08a728204b91dd8bb6ea12574,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6728604340011100556, guid: 245777b08a728204b91dd8bb6ea12574,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210025140948371128, guid: 245777b08a728204b91dd8bb6ea12574,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344209141525103065, guid: 245777b08a728204b91dd8bb6ea12574,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 245777b08a728204b91dd8bb6ea12574, type: 3}

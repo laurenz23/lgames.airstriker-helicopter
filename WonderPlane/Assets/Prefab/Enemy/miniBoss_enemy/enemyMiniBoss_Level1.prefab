@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5357502823720925817}
   - component: {fileID: -1137288617773575370}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: enemyMiniBoss_Level1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -54,6 +54,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4216859302048453862, guid: 6046bf80782002444b311536e8263462,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 6046bf80782002444b311536e8263462,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
@@ -69,6 +74,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6046bf80782002444b311536e8263462,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7072302
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 6046bf80782002444b311536e8263462,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7069834
       objectReference: {fileID: 0}
@@ -80,16 +90,6 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6046bf80782002444b311536e8263462,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 6046bf80782002444b311536e8263462,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7072302
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 6046bf80782002444b311536e8263462,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6046bf80782002444b311536e8263462,
@@ -111,6 +111,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyBigPlane2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6046bf80782002444b311536e8263462,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -387959603495832639, guid: 6046bf80782002444b311536e8263462,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 923906751439016764, guid: 6046bf80782002444b311536e8263462,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137979536637284030, guid: 6046bf80782002444b311536e8263462,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772809117304196028, guid: 6046bf80782002444b311536e8263462,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6046bf80782002444b311536e8263462, type: 3}

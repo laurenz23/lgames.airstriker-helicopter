@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8200712453456291636}
   - component: {fileID: -8061616821486971291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: enemyMiniBoss_Level3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -52,6 +52,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8200712453456291636}
     m_Modifications:
+    - target: {fileID: -6894237084795107369, guid: 3e4950eb58aadcc4e9b2a617c04920c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 3e4950eb58aadcc4e9b2a617c04920c4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3e4950eb58aadcc4e9b2a617c04920c4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,6 +76,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 3e4950eb58aadcc4e9b2a617c04920c4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7072302
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3e4950eb58aadcc4e9b2a617c04920c4,
         type: 3}
@@ -84,16 +99,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3e4950eb58aadcc4e9b2a617c04920c4,
         type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7072302
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 3e4950eb58aadcc4e9b2a617c04920c4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 3e4950eb58aadcc4e9b2a617c04920c4,
-        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -89.98
       objectReference: {fileID: 0}
@@ -107,10 +112,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3280407951554219754, guid: 3e4950eb58aadcc4e9b2a617c04920c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3e4950eb58aadcc4e9b2a617c04920c4,
         type: 3}
       propertyPath: m_Name
       value: EnemyBigPlane4
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3e4950eb58aadcc4e9b2a617c04920c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -53423801589337158, guid: 3e4950eb58aadcc4e9b2a617c04920c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 512855008356308835, guid: 3e4950eb58aadcc4e9b2a617c04920c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654606156117450199, guid: 3e4950eb58aadcc4e9b2a617c04920c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e4950eb58aadcc4e9b2a617c04920c4, type: 3}

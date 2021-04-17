@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7252971422004262663}
   - component: {fileID: 4087649872464594958}
   - component: {fileID: -7799216092025941504}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: artilleryEnemyLevel3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -114,6 +114,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6203239392027775769}
     m_Modifications:
+    - target: {fileID: -8452277157949328534, guid: 61234e1f8d815694882792edb2e99267,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -7488736902199028402, guid: 61234e1f8d815694882792edb2e99267,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 61234e1f8d815694882792edb2e99267,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 61234e1f8d815694882792edb2e99267,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -131,6 +146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 61234e1f8d815694882792edb2e99267,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 61234e1f8d815694882792edb2e99267,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
       objectReference: {fileID: 0}
@@ -143,16 +163,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 61234e1f8d815694882792edb2e99267,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 61234e1f8d815694882792edb2e99267,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 61234e1f8d815694882792edb2e99267,
         type: 3}
@@ -173,6 +183,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: artilleryEnemyLevel3
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 61234e1f8d815694882792edb2e99267,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 221193476454996522, guid: 61234e1f8d815694882792edb2e99267,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318575941768790374, guid: 61234e1f8d815694882792edb2e99267,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61234e1f8d815694882792edb2e99267, type: 3}

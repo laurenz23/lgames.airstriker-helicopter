@@ -44,6 +44,11 @@ namespace game_ideas
         Coins
     }
 
+    public enum GameLayers
+    {
+        Character
+    }
+
     public class GameManager : MonoBehaviour
     {
         private static GameManager instance;

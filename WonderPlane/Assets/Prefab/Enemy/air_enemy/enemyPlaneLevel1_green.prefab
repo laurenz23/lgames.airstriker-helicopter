@@ -33,7 +33,7 @@ GameObject:
   - component: {fileID: 8079555426088885894}
   - component: {fileID: 3886207073539762612}
   - component: {fileID: -7526781237318050218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: enemyPlaneLevel1_green
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -133,6 +133,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8079555426088885895}
     m_Modifications:
+    - target: {fileID: -4741302927964649772, guid: 4182334b97ff1e74e91d3082c4fe8f42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4182334b97ff1e74e91d3082c4fe8f42,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4182334b97ff1e74e91d3082c4fe8f42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -150,6 +160,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4182334b97ff1e74e91d3082c4fe8f42,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7072302
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 4182334b97ff1e74e91d3082c4fe8f42,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.7069834
       objectReference: {fileID: 0}
@@ -162,16 +177,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000001059081
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 4182334b97ff1e74e91d3082c4fe8f42,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.7072302
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 4182334b97ff1e74e91d3082c4fe8f42,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4182334b97ff1e74e91d3082c4fe8f42,
         type: 3}
@@ -192,6 +197,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyPlane0_green
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4182334b97ff1e74e91d3082c4fe8f42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -372672897188966309, guid: 4182334b97ff1e74e91d3082c4fe8f42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3536354962721533723, guid: 4182334b97ff1e74e91d3082c4fe8f42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646301582520517898, guid: 4182334b97ff1e74e91d3082c4fe8f42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4182334b97ff1e74e91d3082c4fe8f42, type: 3}

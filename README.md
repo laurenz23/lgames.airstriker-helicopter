@@ -12,6 +12,9 @@ Changes WonderPlane.v1.0.3 April 17 2021:
 		- Layer Collision Matrix uncheck everything except to default and characters
 	- Physics 2D:
 		- Layer Collision Matrix uncheck everything except to default and characters
+- Artillery (enemy) AI:
+	- Find target (Player) Detect when target is entered the attack range
+	- Add Attack Artillery when the target is at range
 
 Changes WonderPlane.v1.0.1 April 11 2021:
 - Added health bar system

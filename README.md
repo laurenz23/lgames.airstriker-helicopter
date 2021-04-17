@@ -1,6 +1,6 @@
 # WonderPlane
 
-Changes WonderPlane.v1.0.3:
+Changes WonderPlane.v1.0.3 April 17 2021:
 - Change the target Android API to API 30
 - Change the Unity version from 2019.3.13 to 2021.1.3f1
 - Added Layer called Character for game characters collision

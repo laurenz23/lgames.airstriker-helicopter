@@ -1,6 +1,6 @@
 # WonderPlane
 
-Changes WonderPlane.v1.1.0:
+Changes WonderPlane.v1.1.0 March 1 2021:
 
 - IN GAME UI:
 	- Hide Armaments Number

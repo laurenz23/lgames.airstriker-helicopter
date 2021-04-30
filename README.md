@@ -2,17 +2,17 @@
 
 Changes WonderPlane.v1.1.0:
 
-IN GAME UI:
+- IN GAME UI:
 - Hide Armaments Number
 - Added Target UI "When Guided Attack is selected"
-Characters:
+- CHARACTERS:
 - Enemy will explode when collided to player, other enemy, ground or terrain
-Folder
+- FOLDERS:
 - Added Enemy Armament
-Materials
+- MATERIALS:
 - Added Destroy material
 - Added Hit material
-3D Models
+- 3D MODELS:
 - Updated 3d models to optimized vertices of the game
 	- Tank: TankEnemyLevel1, TankEnemyLevel2, TankEnemyLevel3
 	- Artillery: ArtilleryEnemyLevel1, ArtilleryEnemyLevel2, ArtilleryEnemyLevel3, ArtilleryEnemyLevel4,
@@ -23,7 +23,7 @@ Materials
 	- Tank: TankEnemyLevel1, TankEnemyLevel2, TankEnemyLevel3
 	- Artillery: ArtilleryEnemyLevel1, ArtilleryEnemyLevel2, ArtilleryEnemyLevel3, ArtilleryEnemyLevel4,
 		ArtilleryEnemyLevel5
-Scripts
+- SCRIPTS:
 - Added #define directives in UNITY_EDITOR only. The following scripts are affected:
 	- Camera Manager
 	- Game Boundary Handler

@@ -15,6 +15,16 @@ namespace game_ideas
 
         public Transform playerTransform;
 
+        private void Start()
+        {
+#if UNITY_EDITOR
+            if (playerTransform.Equals(null))
+            {
+                Debug.LogError("Game Boundary Handler is missing a reference, please attached Player Manager object");
+            }
+#endif
+        }
+
         private void FixedUpdate()
         {
 

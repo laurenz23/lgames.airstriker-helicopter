@@ -36,6 +36,9 @@ namespace game_ideas
         [HideInInspector]
         public int coins; // coins of the player, can be used to upgrade and purchase
 
+
+        [Header("Player Properties")]
+
         public int health;
 
         public int energy;
@@ -43,6 +46,9 @@ namespace game_ideas
         public float moveSpeed;
 
         public Transform player;
+
+
+        [Header("Script Reference")]
 
         public GameManager gameManager;
 
@@ -65,8 +71,6 @@ namespace game_ideas
         private void Awake()
         {
 
-            gameManager = GameManager.GetInstance();
-
             playerMovement = GetComponent<PlayerMovement>();
 
             playerColliderHandler = GetComponent<PlayerColliderHandler>();
@@ -88,6 +92,27 @@ namespace game_ideas
 
         private void Start()
         {
+
+#if UNITY_EDITOR
+            // game manager is not attached
+            if (gameManager.Equals(null))
+            {
+                Debug.LogError("Player Manager is missing a reference of Game Manager, please attached Game Manager");
+            }
+
+            // in game ui manager is not attached
+            if (inGameUIManager.Equals(null))
+            {
+                Debug.LogError("Player Manager is missing a reference of In Game UI Manager, please attached In Game UI Manager, can be found at Game Manager as children");
+            }
+
+            // player ui manager is not attached
+            if (playerUIManager.Equals(null))
+            {
+                Debug.LogError("Player Manager is missing a reference of Player UI Manager, please attach Player UI Manager, can be found at In Game UI Manager object");
+            }
+#endif
+
             // set the points of the player when the game is started
             points = 0;
 

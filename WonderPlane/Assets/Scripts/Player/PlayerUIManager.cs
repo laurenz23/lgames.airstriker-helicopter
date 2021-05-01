@@ -47,6 +47,13 @@ namespace game_ideas
         private void Start()
         {
 
+#if UNITY_EDITOR
+            if (playerAttackHandler.Equals(null))
+            {
+                Debug.LogError("Player UI Manager is missing a reference, please attached Player Manager object");
+            }
+#endif
+
             straightMissile_fill = straightMissile_icon.GetChild(0).GetComponent<Image>();
             dropBomb_fill = dropBomb_icon.GetChild(0).GetComponent<Image>();
             guidedMissile_fill = guidedMissile_icon.GetChild(0).GetComponent<Image>();

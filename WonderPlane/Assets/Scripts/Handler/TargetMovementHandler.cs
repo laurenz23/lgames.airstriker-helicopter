@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// this script is attached to target movement object
-// reference for background and camera movement forward only while going up and down is reference from player
+/// <summary>
+/// this script is attached to target movement object
+/// reference for background and camera movement from y and z axis
+/// </summary>
+
 namespace game_ideas
 {
     public class TargetMovementHandler : MonoBehaviour

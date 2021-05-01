@@ -21,6 +21,14 @@ namespace game_ideas
 
         private void Start()
         {
+
+#if UNITY_EDITOR
+            if (hitEffectAnimator.Equals(null))
+            {
+                Debug.LogError("Please Attached the Hit Effect, can be found at Game UI children");
+            }
+#endif
+
             hitEffectAnimator.SetInteger(PlayerAnimatorParameters.player_health.ToString(), playerManager.health);
         }
 

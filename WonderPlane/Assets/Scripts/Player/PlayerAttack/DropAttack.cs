@@ -45,6 +45,7 @@ namespace game_ideas
             }
             else
             {
+                // when player is descending increase the down velocity of the armament
                 if (playerDescending)
                 {
                     RIGIDBODY.velocity += Vector3.down * 30f * Time.deltaTime;
@@ -69,41 +70,47 @@ namespace game_ideas
                  * if attack collide to enemy character, will take enemy health base on attack damage
                  * once enemy character health is equal or below to zero it will destroy and explode the enemy character
                  */
-                if (cameraManager != null)
+                if (!cameraManager.Equals(null))
                 {
                     Vector3 screenBounds = cameraManager.screenBounds;
 
                     if (!(transform.position.z >= screenBounds.z))
                     {
+                        // assign array inside area affect
+                        Collider[] colliderArray = Physics.OverlapSphere(transform.position, playerAttackInfo.playerAttackData.aoe);
 
-                        // check if the collider is an enemy object
-                        if (other.GetComponent<EnemyManager>())
+                        foreach (Collider ca in colliderArray)
                         {
-                            EnemyManager enemyManager = other.GetComponent<EnemyManager>();
-
-                            // take enemy health base on attack damage
-                            enemyManager.enemyData.health -= playerAttackInfo.playerAttackData.damage;
-
-                            // check if enough health to explode the enemy character
-                            if (enemyManager.enemyData.health <= 0f)
+                            // check the object inside area affect if an enemy
+                            if (ca.GetComponent<EnemyHandler>())
                             {
+                                EnemyHandler enemyHandler = ca.GetComponent<EnemyHandler>();
 
-                                // explode and display points when enemy character health is equal to zero or below
-                                enemyManager.DestroyCharacter(explosionEffect);
+                                // take enemy health base on attack damage
+                                enemyHandler.enemyData.health -= playerAttackInfo.playerAttackData.damage;
 
-                                // set player points and update the ui points
-                                playerManager.SetPlayerPoints(enemyManager.enemyData.points);
+                                // check if enough health to explode the enemy character
+                                if (enemyHandler.enemyData.health <= 0f)
+                                {
 
-                                // destroy the attack since we are going to return 
-                                DestroyArmament();
+                                    // explode and display points when enemy character health is equal to zero or below
+                                    enemyHandler.DestroyCharacter();
 
-                                // return to avoid duplicate explosion effect
-                                return;
+                                    // set player points and update the ui points
+                                    playerManager.SetPlayerPoints(enemyHandler.enemyData.points);
+                                }
+                            }
+                            else if (ca.GetComponent<EnemyAttackStraight>())
+                            {
+                                Destroy(ca.GetComponent<EnemyAttackStraight>().gameObject);
+                            }
+                            else if (ca.GetComponent<EnemyAttackGuided>())
+                            {
+                                Destroy(ca.GetComponent<EnemyAttackGuided>().gameObject);
                             }
                         }
 
-
-                        // create explosion effect
+                        // create explosion effect for the armament
                         if (effectHandler != null)
                         {
                             effectHandler.CreatePrefabEffectAndDestroy(explosionEffect, effectHandler.transform, new Vector3(1f, 1f, 1f), Quaternion.identity,
@@ -136,7 +143,7 @@ namespace game_ideas
             armament.SetActive(false);
 
             // wait to finish the trail effect before destroying the object
-            // added a certain delay before destroying the bullet object for the trail effect
+            // added a certain delay before destroying the bullet object for the trail effect transition
             Destroy(this.gameObject, 2f);
 
         }

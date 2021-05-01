@@ -47,8 +47,9 @@ namespace game_ideas
                     {
                         Transform enemyGroup = other.GetComponentInParent<EnemyGroupHandler>().transform;
 
-                        // don't change position when enemy group handler is already enabled
-                        if (!enemyGroup.GetComponent<EnemyGroupHandler>().alreadyEnabled)
+                        // don't change position when enemy group handler is already enabled to fix the issue of group object change position when the player change position
+                        // if the group is fixed position then it will not change it's default position once the group is enabled
+                        if (!enemyGroup.GetComponent<EnemyGroupHandler>().alreadyEnabled && !enemyGroup.GetComponent<EnemyGroupHandler>().fixedPosition)
                         {
                             enemyGroup.position = new Vector3(0f, transform.position.y, enemyGroup.position.z);
                         }

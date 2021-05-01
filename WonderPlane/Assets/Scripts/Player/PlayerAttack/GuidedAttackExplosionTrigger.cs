@@ -41,29 +41,29 @@ namespace game_ideas
                  * if attack collide to enemy character, will take enemy health base on attack damage
                  * once enemy character health is equal or below to zero it will destroy and explode the enemy character
                  */
-                if (cameraManager != null)
+                if (!cameraManager.Equals(null))
                 {
                     Vector3 screenBounds = cameraManager.screenBounds;
 
                     if (!(transform.position.z >= screenBounds.z))
                     {
                         // check if the collide is an enemy object
-                        if (other.GetComponent<EnemyManager>())
+                        if (other.GetComponent<EnemyHandler>())
                         {
-                            EnemyManager enemyManager = other.GetComponent<EnemyManager>();
+                            EnemyHandler enemyHandler = other.GetComponent<EnemyHandler>();
 
                             // take enemy health base on attack damage
-                            enemyManager.enemyData.health -= playerAttackInfo.playerAttackData.damage;
+                            enemyHandler.enemyData.health -= playerAttackInfo.playerAttackData.damage;
 
                             // check if enough health to explode the enemy character
-                            if (enemyManager.enemyData.health <= 0f)
+                            if (enemyHandler.enemyData.health <= 0f)
                             {
 
                                 // explode and display points when enemy character health is equal to zero or below
-                                enemyManager.DestroyCharacter();
+                                enemyHandler.DestroyCharacter();
 
                                 // set player points and update the ui points
-                                playerManager.SetPlayerPoints(enemyManager.enemyData.points);
+                                playerManager.SetPlayerPoints(enemyHandler.enemyData.points);
 
                                 // disable the collide and destroy the attack since we are going to return 
                                 GetComponent<Collider>().enabled = false;
@@ -75,7 +75,7 @@ namespace game_ideas
                         }
 
                         // create explosion effect
-                        if (effectHandler != null)
+                        if (!effectHandler.Equals(null))
                         {
                             effectHandler.CreatePrefabEffectAndDestroy(effectHandler.explosionEffect, effectHandler.transform, new Vector3(1f, 1f, 1f), Quaternion.identity,
                                 new Vector3(0f, transform.position.y, transform.position.z), 3f);

@@ -25,7 +25,9 @@ namespace game_ideas
                 other.CompareTag(GameTag.Enemy.ToString()) ||
                 other.CompareTag(GameTag.Ground.ToString()) ||
                 other.CompareTag(GameTag.Coins.ToString()) ||
-                other.CompareTag(GameTag.Tree.ToString())
+                other.CompareTag(GameTag.Energy.ToString()) ||
+                other.CompareTag(GameTag.Tree.ToString()) ||
+                other.CompareTag(GameTag.Props.ToString())
                 )
             {
                 if (other.GetComponent<ObjectOptimizeHandler>())

@@ -19,27 +19,38 @@ namespace game_ideas
 
         private void Awake()
         {
-            cameraManager = FindObjectOfType<CameraManager>();
             playerManager = GetComponent<PlayerManager>();
+        }
+
+        private void Start()
+        {
+#if UNITY_EDITOR
+            if (cameraManager.Equals(null))
+            {
+                Debug.LogError("Please attached Camera Manager, can be found at Game Manager Child");
+            }
+#endif
         }
 
         public void PlayerMove(bool moveForward, bool moveBackward, bool moveAscending, bool moveDescending)
         {
 
             screenBounds = cameraManager.screenBounds;
-
+            
+            // move player forward
             if (moveForward && !moveBackward)
             {
-
+                // move player forward if player z axis is inside of screen bounds right
                 if (!(transform.position.z >= screenBounds.z))
                 {
                     transform.Translate(Vector3.forward * (playerManager.moveSpeed + 10f) * Time.deltaTime);
                 }
 
             }
+            // move player backward
             else if (!moveForward && moveBackward)
             {
-
+                // move player backward if player z axis is inside of screen bounds left
                 if (!(transform.position.z <= ((cameraManager.transform.position.z * 2f) - screenBounds.z)))
                 {
                     transform.Translate(Vector3.back * (playerManager.moveSpeed + 10f) * Time.deltaTime);
@@ -47,23 +58,39 @@ namespace game_ideas
 
             }
 
+            // move player upward
             if (moveAscending && !moveDescending)
             {
-
+                // move player upward if player y axis is inside of screen bounds top
                 if (!(transform.position.y >= screenBounds.y))
                 {
-                    transform.Translate(Vector3.up * (playerManager.moveSpeed + 5f) * Time.deltaTime);
+                    if (moveBackward || moveForward)
+                    {
+                        transform.Translate(Vector3.up * (playerManager.moveSpeed) * Time.deltaTime);
+                    }
+                    else
+                    {
+                        transform.Translate(Vector3.up * (playerManager.moveSpeed + 5f) * Time.deltaTime);
+                    }
                 }
 
             }
+            // move player downward 
             else if (!moveAscending && moveDescending)
             {
-
+                // move player downward if player y axis is inside of screen bounds bottom
                 if (!(transform.position.y <= ((cameraManager.transform.position.y - 12f) - screenBounds.y)))
                 {
                     if (!playerManager.PlayerOnGround())
                     {
-                        transform.Translate(Vector3.down * (playerManager.moveSpeed + 5f) * Time.deltaTime);
+                        if (moveBackward || moveForward)
+                        {
+                            transform.Translate(Vector3.down * (playerManager.moveSpeed) * Time.deltaTime);
+                        }
+                        else
+                        {
+                            transform.Translate(Vector3.down * (playerManager.moveSpeed + 5f) * Time.deltaTime);
+                        }
                     }
                 }
 
@@ -123,7 +150,7 @@ namespace game_ideas
                 {
 
                     playerPitch = 0f;
-                    playerManager.player.rotation = Quaternion.identity;
+                    playerManager.GetPlayerTransform().rotation = Quaternion.identity;
 
                     return;  // do nothing
 
@@ -131,7 +158,7 @@ namespace game_ideas
                 else
                 {
 
-                    if (playerPitch >= playerMaxPitch) // if increase rotation overlap the maximum value 
+                    if (playerPitch >= playerMaxPitch) // if increase rotation or overlap the maximum value 
                     {
 
                         playerPitch = playerMaxPitch; // set the player rotation value to default
@@ -161,7 +188,7 @@ namespace game_ideas
 
                         playerPitch = 0f;
                         playerLastFrameActionOfPitch = 0;
-                        playerManager.player.rotation = Quaternion.identity;
+                        playerManager.GetPlayerTransform().rotation = Quaternion.identity;
                         return; // do nothing
 
                     }
@@ -181,7 +208,7 @@ namespace game_ideas
 
                         playerPitch = 0f;
                         playerLastFrameActionOfPitch = 0;
-                        playerManager.player.rotation = Quaternion.identity;
+                        playerManager.GetPlayerTransform().rotation = Quaternion.identity;
                         return; // do nothing
 
                     }
@@ -197,12 +224,11 @@ namespace game_ideas
             }
 
 
-            if (moveAscending && !moveDescending && !moveForward && !moveBackward)
+            if (moveAscending && !moveDescending && !moveForward && !moveBackward && !playerManager.PlayerOnGround())
             {
-
                 playerRoll = 60f;
             }
-            else if (moveDescending && !moveAscending && !moveForward && !moveBackward)
+            else if (moveDescending && !moveAscending && !moveForward && !moveBackward && !playerManager.PlayerOnGround())
             {
 
                 playerRoll = -40f;
@@ -214,7 +240,7 @@ namespace game_ideas
 
 
             // set the player rotation 
-            playerManager.player.rotation = Quaternion.Euler(new Vector3(playerPitch, 0f, playerRoll));
+            playerManager.GetPlayerTransform().rotation = Quaternion.Euler(new Vector3(playerPitch, 0f, playerRoll));
 
         }
 

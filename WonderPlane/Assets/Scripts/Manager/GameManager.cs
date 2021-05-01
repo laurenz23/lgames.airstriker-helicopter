@@ -9,6 +9,12 @@ using UnityEngine;
  */
 namespace game_ideas
 {
+    public enum GameSettings
+    {
+        LOW_GRAPHICS,
+        HIGH_GRAPHICS
+    }
+
     public enum GameState
     {
         WAITING_TO_START,
@@ -66,12 +72,16 @@ namespace game_ideas
             }
         }
 
+        public GameSettings gameSettings;
+
         [HideInInspector]
         public GameState gameState;
 
         private void Start()
         {
+
             gameState = GameState.WAITING_TO_START;
+
         }
 
         private void Update()

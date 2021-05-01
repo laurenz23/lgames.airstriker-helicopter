@@ -46,10 +46,14 @@ namespace game_ideas
             }
             else
             {
-                // once the selected target has already exploded or destroy, will try to find another character enemy as new target
+                // once the selected target has already exploded or destroy, will try to find another character enemy as new target and set the target to null
                 if (!guidedMissile.target.gameObject.activeSelf)
                 {
                     guidedMissile.target = null;
+                    
+                    // reset the rotation of the rigidbody to avoid weird rotation movement of armament when while waiting to destroy
+                    guidedMissile.RIGIDBODY.angularVelocity = new Vector3(0f, 0f, 0f); 
+
                     StartCoroutine(SelfExplode());
                 }
             }

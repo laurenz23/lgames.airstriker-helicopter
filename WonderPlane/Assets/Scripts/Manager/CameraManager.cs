@@ -35,6 +35,16 @@ namespace game_ideas
 
         }
 
+        private void Start()
+        {
+#if UNITY_EDITOR
+            if (targetPlayer.Equals(null))
+            {
+                Debug.LogError("Camera Manager is missing a reference of target player position, please attached Player Manager object");
+            }
+#endif
+        }
+
         private void Update()
         {
 

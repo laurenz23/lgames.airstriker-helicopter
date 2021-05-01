@@ -11,6 +11,6 @@ namespace game_ideas
 {
     public class PlayerAttackInfo : MonoBehaviour
     {
-        public PlayerAttackData playerAttackData;
+        public ArmamentData playerAttackData;
     }
 }

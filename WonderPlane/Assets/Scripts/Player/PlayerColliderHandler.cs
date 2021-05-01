@@ -59,18 +59,20 @@ namespace game_ideas
                 return; // we need to return since it does not affect the health of the player
 
             }
-            else if (collider.transform.CompareTag(GameTag.Ground.ToString()) ||
+            else if (
+                collider.transform.CompareTag(GameTag.Ground.ToString()) ||
                 collider.transform.CompareTag(GameTag.Terrain.ToString()) ||
-                collider.transform.CompareTag(GameTag.Enemy.ToString()))
+                collider.transform.CompareTag(GameTag.Enemy.ToString())
+                )
             {
 
                 int damage;
 
-                if (collider.transform.GetComponent<EnemyManager>())
+                if (collider.transform.GetComponent<EnemyHandler>())
                 {
                     // if the player collided to enemy character
                     // deduct the player health base on enemy health since it is a game character
-                    damage = collider.transform.GetComponent<EnemyManager>().enemyData.health; 
+                    damage = collider.transform.GetComponent<EnemyHandler>().enemyData.health; 
                 }
                 else
                 {
@@ -86,7 +88,7 @@ namespace game_ideas
             else if (collider.transform.CompareTag(GameTag.EnemyAttack.ToString()))
             {
 
-                int damage = collider.GetComponent<EnemyAttackData>().damage;
+                int damage = collider.GetComponent<EnemyAttackData>().armamentAttackData.damage;
 
                 playerManager.health -= damage; // deduct the player health base on enemies attack that is collided
                 playerEffect.PlayerDisplayPopupText(collider.transform, playerEffect.popupText_damage, "-" + damage.ToString());

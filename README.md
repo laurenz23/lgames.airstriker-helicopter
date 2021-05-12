@@ -1,4 +1,79 @@
-# WonderPlane
+# AirStriker:Helicopter
+
+Changes AirStriker:Helicopter.v1.1.1:
+
+- PROJECT NAME:
+	- Modified project name from WonderPlane to AirStriker:Helicopter
+- BUGS:
+	- Fixed armament cooldown animation bug
+	- Fixed player health bug
+	- Fixed controls bug
+	- Fixed player and enemy collision bug (some instances player and won't explode when collided)
+
+- FOLDERS:
+	- Added AttackDataScriptableObjects
+	- Added Functions
+	- Added GeneralCharacterFunctions under Functions
+	- Remove(including all contents) PlayerAnimator_prefab under Player_prefab
+	- Added MainMenu from Scenes
+	- Added Testing from Scenes
+
+- SCENES:
+	- Added LoadingToMainMenu
+	- Added MainMenu
+
+- CHARACTERS:
+	- Modified MiniBossLevel1 to EnemyPlaneLevel6
+	- Modified MiniBossLevel2 to BossStage1
+	- Modified MiniBossLevel3 to BossStage2
+	- Added Attacks:
+		- EnemyPlaneLevel2_GatlingGun
+		- EnemyPlaneLevel2_StraightMissile
+		- EnemyPlaneLevel2_DropBomb
+		- EnemyPlaneLevel3_SelfDestruct
+		- EnemyPlaneLevel3_DropBomb
+		- EnemyHelicopterLevel1
+		- EnemyHelicopterLevel2
+		- EnemyHelicopterLevel3
+	- Added Movements:
+		- EnemyPlaneLevel2_GatlingGun
+		- EnemyPlaneLevel3_SelfDestruct
+		- EnemyPlaneLevel3_DropBomb
+
+- 3D MODELS:
+	- Modified Enemy Character
+		- EnemyPlaneLevel1_blue
+		- EnemyPlaneLevel2_green
+		- EnemyPlaneLevel3_red
+		- EnemyPlaneLevel2_gatlingGun
+		- EnemyPlaneLevel3_straightMissile
+		- EnemyPlaneLevel4_dropBomb
+		- EnemyHelicopterLevel1
+		- EnemyHelicopterLevel2
+		- EnemyHelicopterLevel3
+
+- SCRIPTS:
+	- Modified Player UI Manager
+	- Modified Player Attacks:
+		- Player Automic
+		- Player Drop Missile
+		- Player Guided Missile
+		- Player Missile
+	- Added Game Manager
+		- Modified Game Settings to Game Graphics
+		- Added Game Controls
+	- Modified DisplayFPS to DebuggerManager
+		- Added Movement control selection
+	- Modified AmamentData to AttackData as ScriptableObject
+	- Modified OnTargetVerticalMovement
+	- Modified EnemyCollider "Object will be destroy once exit's on ObjectEnabler Trigger"
+	- Cleanup EnemyHandler
+	- Cleanup PlayerManager
+	- Added MovementCharacterRoll
+	- Added MovementCharacterRotor
+	- Added OnHitCharacter
+	- Modified PathMovement
+	- Remove PathMovementDistributor
 
 Changes WonderPlane.v1.1.0 March 1 2021:
 

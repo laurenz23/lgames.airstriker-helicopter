@@ -1,6 +1,6 @@
 # AirStriker:Helicopter
 
-Changes AirStriker:Helicopter.v1.1.1:
+Changes AirStriker:Helicopter.v1.1.1 May 12 2021:
 
 - PROJECT NAME:
 	- Modified project name from WonderPlane to AirStriker:Helicopter
@@ -75,7 +75,7 @@ Changes AirStriker:Helicopter.v1.1.1:
 	- Modified PathMovement
 	- Remove PathMovementDistributor
 
-Changes WonderPlane.v1.1.0 March 1 2021:
+Changes WonderPlane.v1.1.0 May 1 2021:
 
 - IN GAME UI:
 	- Hide Armaments Number

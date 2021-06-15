@@ -1,6 +1,6 @@
 # AirStriker:Helicopter
 
-Changes AirStriker:Helicopter.v1.1.2:
+Changes AirStriker:Helicopter.v1.1.2 June 16 2021:
 
 SUMMARY: 
 	- In version 1.1.2 we added a main menu scene where player can navigate to other scene and panels

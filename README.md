@@ -1,5 +1,350 @@
 # AirStriker:Helicopter
 
+Changes AirStriker:Helicopter.v1.1.2:
+
+SUMMARY: 
+	- In version 1.1.2 we added a main menu scene where player can navigate to other scene and panels
+	- Added Player Name and Level in MainMenu at top center of the screen
+	- Added Player diamonds and coins in MainMenu at top right and top left of the screen
+	- Added Player current helicopter at the center of MainMenu
+	- Added Helicopter description and stats at the left and right center of MainMenu
+	- Added Buttons for Settings, Mission and Armory
+	- Added Settings panel where player can change the game graphics, game helicopter movement controls, and game music and sound fx
+	- Added Armory panel where player can upgrade and research the helicopter
+	- Added Mission panel where player can see the world map and enter to selected or current stage level and start the game mission
+	- Added Updated InGame UI
+	- Added Pause panel, GameOver panel and Level Complete panel
+	- Added Control And UI representation options
+	- Added SoundManager for Music and SoundFX
+	- Added Game Icons
+
+PROJECT SETTINGS:
+	- Modified Version Control -> Mode from Visible Meta Files to Hidden Meta Files
+
+FOLDERS:
+	- Modified Scripts -> Data -> AttackDataScriptableObjects To Scripts -> Data -> AttackData_ScriptableObjects
+	- Modified Settings_prefab -> Manager_prefab
+	- Modified Sounds -> Music
+	- Added SoundFX 
+	- Added MainMenuUI
+	- Added InGameUI
+	- Added Animations
+	- Added Animations -> MainMenu
+	- Added Animations -> MainMenu -> MainMenu_panel_transition
+	- Added Animations -> MainMenu -> MainMenu_play_pointer
+	- Added Animations -> MainMenu -> MainMenu_scene_objects
+	- Added Scenes -> MainMenu
+	- Added Scenes -> Stage1
+	- Added Scenes -> Testing
+	- Added Scripts -> UIscripts -> InGameUI
+	- Added Scripts -> UIscripts -> MainMenuUI
+	- Added 2d_Arts -> maps
+	- Added Scripts -> Data -> GameSettingsData_ScriptableObjects
+	- Added Scripts -> Enemy -> EnemyBoss
+	- Added Animations -> Boss1
+	- Added Music
+	- Added SoundFX
+
+IMPORTS:
+	- Library TextMeshPro
+
+2D ARTS:
+	- Added mapBackground
+	- Added map_stage1_lock
+	- Added map_stage1
+	- Added map_stage2_lock
+	- Added map_stage2
+	- Added map_stage3_lock
+	- Added map_stage4_lock
+	- Added map_stage4
+	- Added map_stage5_lock
+	- Added map_stage5
+	- Added map_stage6_lock
+	- Added map_stage6
+	- Added map_stage7&8_lock
+	- Added map_stage7&8
+	- Added map_stage9_lock
+	- Added map_stage9
+	- Added map_stage10_lock
+	- Added map_stage10
+	- Added PlayerHQ
+	- Added GameIcons
+
+3D ARTS:
+	- Modified BigPlane3
+	- Added PlayerHelicopter_MainMenu
+
+ANIMATOR:
+	- Added Boss1_animator
+
+ANIMATIONS:
+	- Added boss1_entry
+	- Added boss1_zRotation
+
+MUSIC:
+	- Added Boss_Insane_Gameplay_Looping
+	- Added InGame_Endless_Cyber_Runner_2
+	- Added InGame_Quirky_Action
+	- Added InGame_Quirky_Action2
+	- Added InGame_Techno_Caper_Looping
+	- Added MainMenu_Digital_Reality
+	- Added MainMenu_Techno_Gameplay_Looping
+
+SOUNDFX:
+	- Added Alert_Warning1
+	- Added Alert_Warning2
+	- Added Armory1
+	- Added Armory2
+	- Added Bomb_Drop1
+	- Added Collect_Coin1
+	- Added Collect_Coin2
+	- Added Collect_Coin3
+	- Added Collect_Coin4
+	- Added Explode1
+	- Added Explode2
+	- Added Explode3
+	- Added Explode4
+	- Added Explode5
+	- Added Explode6
+	- Added Explode7
+	- Added Explode8
+	- Added Explode_Big1
+	- Added Explode_SciFi1
+	- Added Explode_SciFi2
+	- Added Hit_Metal1
+	- Added Hit_Metal2
+	- Added Hit_Metal3
+	- Added Hit_Metal4
+	- Added Other_Mission_Start1
+	- Added Other_Recieve_Coins1
+	- Added Other_Rotor_Lossing_Rotation1
+	- Added Other_Use_Energy_Capsule
+	- Added Shoot1
+	- Added Shoot2
+	- Added Shoot3
+	- Added Shoot_Laser1
+	- Added Shoot_Laser2
+	- Added Shoot_Laser3
+	- Added Shoot_Laser4
+	- Added Shoot_Missile1
+	- Added Shoot_Missile2
+	- Added Shoot_Missile3
+	- Added Shoot_Missile4
+	- Added Shoot_Missile5
+	- Added Shoot_Missile6
+	- Added Shoot_Missile7
+	- Added Shoot_Missile8
+	- Added UI_Click1
+	- Added UI_Click2
+	- Added UI_Click3
+	- Added UI_Transition1
+	- Added UI_Transition2
+
+UI:
+	- Added 2D_others -> tech_grid
+	- Added 2D_others -> pause_header
+	- Added 2D_others -> gameover_header
+	- Added 2D_others -> levelComplete_header
+	- Added 2D_others -> health_1bar
+	- Added 2D_others -> health_10bar
+	- Added 2D_others -> transparent_passive_straightMissile
+	- Added 2D_others -> transparent_passive_dropBomb
+	- Added 2D_others -> transparent_passive_guidedMissile
+	- Added 2D_others -> round_passive_straightMissile
+	- Added 2D_others -> round_passive_dropBomb
+	- Added 2D_others -> round_passive_guidedMissile
+	- Added 2D_others -> square_green_bar
+	- Added 2D_others -> square_health_bar
+	- Added 2D_others -> square_passive_straightMissile
+	- Added 2D_others -> square_passive_dropBomb
+	- Added 2D_others -> square_passive_guidedMissile
+	- Added Buttons -> armory_btn
+	- Added Buttons -> armory_btn_click
+	- Added Buttons -> back_btn
+	- Added Buttons -> back_btn_click
+	- Added Buttons -> main_menu_btn
+	- Added Buttons -> main_menu_btn_click
+	- Added Buttons -> map_btn
+	- Added Buttons -> map_btn_click
+	- Added Buttons -> map50_btn
+	- Added Buttons -> map50_btn_click
+	- Added Buttons -> mission_btn
+	- Added Buttons -> mission_btn_click
+	- Added Buttons -> objective_btn
+	- Added Buttons -> objective_btn_click
+	- Added Buttons -> play_btn_click_main_menu
+	- Added Buttons -> play_btn_main_menu
+	- Added Buttons -> research_btn
+	- Added Buttons -> research_btn_click
+	- Added Buttons -> settings_btn
+	- Added Buttons -> settings_btn_click
+	- Added Buttons -> start_btn
+	- Added Buttons -> start_btn_click
+	- Added Buttons -> toggle_background
+	- Added Buttons -> toggle_foreground
+	- Added Buttons -> top_right_btn_add
+	- Added Buttons -> top_right_btn_add_click
+	- Added Buttons -> upgrade_btn
+	- Added Buttons -> upgrade_btn_click
+	- Added Buttons -> watch_ads_btn
+	- Added Buttons -> watch_ads_btn_click
+	- Added Buttons -> x_btn
+	- Added Buttons -> x_btn_click
+	- Added Buttons -> pause_worldMap_btn
+	- Added Buttons -> pause_worldMap_btn_click
+	- Added Buttons -> pause_continue_btn
+	- Added Buttons -> pause_continue_btn_click
+	- Added Buttons -> nextLevel_btn
+	- Added Buttons -> nextLevel_btn_click
+	- Added Buttons -> x2Reward_btn
+	- Added Buttons -> x2Reward_btn_click
+	- Added Buttons -> gameOver_worldMap_btn
+	- Added Buttons -> gameOver_worldMap_btn_click
+	- Added Buttons -> gameOver_retry_btn
+	- Added Buttons -> gameOver_retry_btn_click
+	- Added Buttons -> pause_settings_btn
+	- Added Buttons -> pause_settings_btn_click
+	- Added Buttons -> transparent_joystick_area
+	- Added Buttons -> transparent_rightMovement_btn
+	- Added Buttons -> transparent_upMovement_btn
+	- Added Buttons -> transparent_leftMovement_btn
+	- Added Buttons -> transparent_downMovement_btn
+	- Added Buttons -> transparent_attack_btn
+	- Added Buttons -> transparent_atomicBomb_btn
+	- Added Buttons -> round_joystick_area
+	- Added Buttons -> round_rightMovement_btn
+	- Added Buttons -> round_upMovement_btn
+	- Added Buttons -> round_leftMovement_btn
+	- Added Buttons -> round_downMovement_btn
+	- Added Buttons -> round_attack_btn
+	- Added Buttons -> round_atomicBomb_btn
+	- Added Buttons -> square_joystick_area
+	- Added Buttons -> square_rightMovement_btn
+	- Added Buttons -> square_upMovement_btn
+	- Added Buttons -> square_leftMovement_btn
+	- Added Buttons -> square_downMovement_btn
+	- Added Buttons -> square_attack_btn
+	- Added Buttons -> square_atomicBomb_btn
+	- Added Buttons -> square_pause_btn
+	- Added Buttons -> square_pause_btn_click
+	- Added Effect_UI -> play_btn_effects
+	- Added Fonts -> Squarely
+	- Added Icons -> blast_icon
+	- Added Icons -> boss_icon
+	- Added Icons -> coin_icon
+	- Added Icons -> damage_icon
+	- Added Icons -> diamonds_icon
+	- Added Icons -> energy_capsule_icon
+	- Added Icons -> firerate_icon
+	- Added Icons -> health_icon
+	- Added Icons -> lockMap_icon
+	- Added Icons -> more_coins_icon
+	- Added Icons -> more_diamonds_icon
+	- Added Icons -> passive_icon
+	- Added Icons -> speed_icon
+	- Added Icons -> adaptive_background_icon_81x81
+	- Added Icons -> adaptive_background_Icon_108x108
+	- Added Icons -> adaptive_background_Icon_162x162
+	- Added Icons -> adaptive_background_Icon_216x216
+	- Added Icons -> adaptive_background_Icon_324x324
+	- Added Icons -> adaptive_background_Icon_432x432
+	- Added Icons -> adaptive_foreground_Icon_81x81
+	- Added Icons -> adaptive_foreground_Icon_108x108
+	- Added Icons -> adaptive_foreground_Icon_162x162
+	- Added Icons -> adaptive_foreground_Icon_216x216
+	- Added Icons -> adaptive_foreground_Icon_324x324
+	- Added Icons -> adaptive_foreground_Icon_432x432
+	- Added Icons -> adaptive_Icon_81x81
+	- Added Icons -> adaptive_Icon_108x108
+	- Added Icons -> adaptive_Icon_162x162
+	- Added Icons -> adaptive_Icon_216x216
+	- Added Icons -> adaptive_Icon_324x324
+	- Added Icons -> adaptive_Icon_432x432
+	- Added Icons -> legacy_Icon_36x36
+	- Added Icons -> legacy_Icon_48x48
+	- Added Icons -> legacy_Icon_72x72
+	- Added Icons -> legacy_Icon_96x96
+	- Added Icons -> legacy_Icon_144x144
+	- Added Icons -> legacy_Icon_192x192
+	- Added Icons -> round_Icon_36x36
+	- Added Icons -> round_Icon_48x48
+	- Added Icons -> round_Icon_72x72
+	- Added Icons -> round_Icon_96x96
+	- Added Icons -> round_Icon_144x144
+	- Added Icons -> round_Icon_192x192
+	- Added Items -> weapon_research_item
+	- Added Items -> weapon_research_item_click
+	- Added Items -> weapon_upgrade_item
+	- Added Items -> weapon_upgrade_item_click
+	- Added Panel -> ads_panel
+	- Added Panel -> armory_header
+	- Added Panel -> blue_panel_info
+	- Added Panel -> main_menu_top_panel
+	- Added Panel -> objective_panel
+	- Added Panel -> settings_panel
+	- Added Panel -> top_header_main_menu
+	- Added Panel -> top_right_panel_main_menu
+	- Added Panel -> transparent_title_panel
+	- Added Panel -> weapon_info_panel
+	- Added Panel -> weapon_panel
+
+ANIMATORS:
+	- MainMenuUI_animator
+	- MainMenu_play_pointer_animator
+	- StageRotator_animator
+
+ANIMATIONS:
+	- ArmoryToMainMenu
+	- MainMenu_entry
+	- MainMenuToArmory
+	- MainMenuToMap
+	- MapToMainMenu
+	- MainMenu_play_pointer_animation
+	- StageRotator_ArmoryToMainMenu
+	- StageRotator_entry
+	- StageRotator_MainMenuToArmory
+
+PREFABS:
+	- Modified Name to Character_Player (InGame)
+	- Added Character_Player (MainMenu)
+
+SCRIPTS:
+	- Modified GameManager
+	- Modified Location PlayerUIManager from Scripts -> Player to Scripts -> UIScripts -> InGameUI
+	- Modified AttackData -> ArmamentAttackData as GlobalFunction
+	- Modified PlayerAutomic -> PlayerAttackActive1
+	- Modified PlayerDropMissile -> PlayerAttackPassive2
+	- Modified PlayerGatlingGun -> PlayerAttackBasic
+	- Modified PlayerGuidedMissile -> PlayerAttackPassive3
+	- Modified PlayerMissile -> PlayerAttackPassive1
+	- Added StageRotator
+	- Added ChangeScene
+	- Added SwipeRotator
+	- Added GraphicsManager
+	- Added StyleInGameUIManager
+	- Added ControlsManager
+	- Added SoundManager
+	- Added TokensManager
+	- Added AdsPanel
+	- Added RewardsPanel
+	- Added ArmoryPanel
+	- Added SettingsPanel
+	- Added InGameLevelComplete
+	- Added InGameOver
+	- Added InGamePause
+	- Added InGameUIDesign
+	- Added ArmoryUIManager
+	- Added SettingsUIManaager
+	- Added TurretRotation
+	- Added ArmamentAttackData
+	- Added GameSettingsData
+	- Added SoundData
+	- Added Boss1Handler
+	- Added Boss2Handler
+	- Added AttackHandler
+	- Remove EnemyArmamentAttackTarget
+	- Remvoe EnemyArmamentAutoAttack
+
 Changes AirStriker:Helicopter.v1.1.1 May 12 2021:
 
 - PROJECT NAME:

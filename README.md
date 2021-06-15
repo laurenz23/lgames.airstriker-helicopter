@@ -343,7 +343,7 @@ SCRIPTS:
 	- Added Boss2Handler
 	- Added AttackHandler
 	- Remove EnemyArmamentAttackTarget
-	- Remvoe EnemyArmamentAutoAttack
+	- Remove EnemyArmamentAutoAttack
 
 Changes AirStriker:Helicopter.v1.1.1 May 12 2021:
 

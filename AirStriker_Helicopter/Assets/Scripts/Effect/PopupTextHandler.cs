@@ -4,8 +4,8 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// this script is attached to popup text object not to text itself but it's parent
-/// handles the color of the output text
+/// usage: attached to popup text object not to text itself but it's parent
+/// goal: handles the text output of popup text
 /// </summary>
 
 namespace game_ideas

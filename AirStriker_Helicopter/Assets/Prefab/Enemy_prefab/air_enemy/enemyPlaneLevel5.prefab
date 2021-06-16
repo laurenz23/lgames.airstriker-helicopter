@@ -152,16 +152,14 @@ MonoBehaviour:
     health: 100
     points: 25
     movementSpeed: 3
-    firerate: 0
-    attackPrefab: {fileID: 0}
     deathExplosion: {fileID: 4321912320596136573, guid: 093aed5e7105e1945b3321c616200e7d,
       type: 3}
+    deathSFXName: explode3
   character: {fileID: 1012042094432282671}
-  attackData: {fileID: 0}
-  attackOut: []
   cameraManager: {fileID: 0}
   gameAssetManager: {fileID: 0}
   onHitCharacter: {fileID: 0}
+  soundFXHandler: {fileID: 0}
 --- !u!114 &-8098769684564681661
 MonoBehaviour:
   m_ObjectHideFlags: 0

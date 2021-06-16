@@ -11,7 +11,7 @@ namespace game_ideas
     public class MovementCharacterRotor : MonoBehaviour
     {
 
-        private float speed = 1250f;
+        public float speed = 1250f;
 
         private void Update()
         {

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1774362437636070952}
   - component: {fileID: 8031638122989653021}
-  - component: {fileID: 6463516807249690205}
+  - component: {fileID: 1529681070191436664}
   m_Layer: 0
   m_Name: ArtilleryEnemyLevel4
   m_TagString: Untagged
@@ -49,7 +49,8 @@ MonoBehaviour:
   range: 70
   turretRotationSpeed: 5
   artilleryMain: {fileID: 4358172111997895758}
---- !u!114 &6463516807249690205
+  attackHandler: {fileID: 1529681070191436664}
+--- !u!114 &1529681070191436664
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,12 +59,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3547607082471106578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68e6a07827ac1b24e8b4298a81826d50, type: 3}
+  m_Script: {fileID: 11500000, guid: 934d7744942e0994787d93bb9bd653e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHandler: {fileID: 8475823071451267747}
-  implementEachAttackDelay: 0
+  attackData: {fileID: 11400000, guid: 05cc26849968da04bb682a88b7abebe1, type: 2}
+  attackFirerate: 1.5
   eachAttackDelayRate: 0
+  attackPointing:
+  - {fileID: 384435259372314782}
+  soundFXName: 
 --- !u!1 &3886073531503975872
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 384435259372314782}
   m_Layer: 0
-  m_Name: attackOut
+  m_Name: attackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,16 +184,13 @@ MonoBehaviour:
     health: 20
     points: 17
     movementSpeed: 0
-    firerate: 2
-    attackPrefab: {fileID: 7249562620791542480, guid: 529f9cfbb64a6864f8f4c46aef34dd4e,
-      type: 3}
     deathExplosion: {fileID: 0}
-  attackData: {fileID: 11400000, guid: 05cc26849968da04bb682a88b7abebe1, type: 2}
-  attackOut:
-  - {fileID: 384435259372314782}
+    deathSFXName: explode3
+  character: {fileID: 0}
   cameraManager: {fileID: 0}
   gameAssetManager: {fileID: 0}
   onHitCharacter: {fileID: 0}
+  soundFXHandler: {fileID: 0}
 --- !u!114 &-4165277134390584794
 MonoBehaviour:
   m_ObjectHideFlags: 0

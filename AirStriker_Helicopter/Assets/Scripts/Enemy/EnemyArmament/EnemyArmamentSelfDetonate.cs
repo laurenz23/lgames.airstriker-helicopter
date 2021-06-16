@@ -4,7 +4,10 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// 
+/// usage: attached this script to character as a child.
+/// attached only to enemy that have self detonation ability
+/// goal: find player as a target and move to targeted player at set distance the character
+/// where this script is attached to going to explode
 /// </summary>
 
 namespace game_ideas

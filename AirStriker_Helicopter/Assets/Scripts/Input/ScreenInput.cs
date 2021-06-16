@@ -15,7 +15,7 @@ namespace game_ideas
         MOVEDESCENDING,
         JOYSTICK,
         ATTACK,
-        AUTOMIC
+        ACTIVESKILL1
     }
 
     public class ScreenInput : MonoBehaviour

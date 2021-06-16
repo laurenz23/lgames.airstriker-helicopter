@@ -21,6 +21,7 @@ namespace game_ideas
             // helicopter is collided to coins objects
             if (collider.transform.CompareTag(GameTag.Coins.ToString()))
             {
+                playerManager.soundFXHandler.SFX_COLLECT_COIN("coin1");
 
                 int value = collider.GetComponent<ObjectiveHandler>().value;
                 playerManager.SetPlayerCoins(value, collider.transform);
@@ -41,6 +42,7 @@ namespace game_ideas
                 collider.transform.CompareTag(GameTag.Enemy.ToString())
                 )
             {
+                playerManager.soundFXHandler.SFX_ALERT_WARNING("warning2");
 
                 // health reference
                 int damage;
@@ -89,8 +91,9 @@ namespace game_ideas
             }
             else if (collider.transform.CompareTag(GameTag.EnemyAttack.ToString()))
             {
+                playerManager.soundFXHandler.SFX_HIT_METAL("metal2");
 
-                int damage = collider.GetComponent<EnemyAttackData>().attackData.damage;
+                int damage = collider.GetComponent<ArmamentAttackData>().damage;
 
                 // set player health, set to ui and display the damage
                 playerManager.SetPlayerHealth(damage, true);
@@ -109,6 +112,7 @@ namespace game_ideas
             // if don't have health to continue the game, we need to set as game over and explode the player
             if (playerManager.health <= 0)
             {
+                playerManager.soundFXHandler.SFX_EXPLODE_BIG("big1");
 
                 playerManager.gameManager.gameState = GameState.GAMEOVER; // set game over 
                 playerManager.playerEffect.PlayerEffectExplosion(playerManager.transform); // create the explosion effect

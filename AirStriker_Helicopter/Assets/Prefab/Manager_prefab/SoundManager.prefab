@@ -1,0 +1,537 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3579364994916919162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3579364994916919164}
+  - component: {fileID: 3579364994916919167}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &3579364994916919164
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3579364994916919162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3192691506257768853}
+  - {fileID: 6553845254577573832}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3579364994916919167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3579364994916919162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee14e4b52b52db4c859d41c41533886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicHandler: {fileID: 3261529178198486175}
+  soundFXHandler: {fileID: 5125768441068810438}
+--- !u!1 &5202198792893787572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6553845254577573832}
+  - component: {fileID: 5125768441068810438}
+  m_Layer: 0
+  m_Name: SoundFXHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &6553845254577573832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5202198792893787572}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3579364994916919164}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5125768441068810438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5202198792893787572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ba89ad3098cf849950f019dbef8fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx_alert_warning:
+  - soundName: warning1
+    audioClip: {fileID: 8300000, guid: e9082f2473a75ac4586c8d1e1b1e8314, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: warning2
+    audioClip: {fileID: 8300000, guid: aa44236ef918ca2469b97b243685dcc5, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  sfx_armory:
+  - soundName: armory1
+    audioClip: {fileID: 8300000, guid: 938be838cb64be549b2bc199006099e9, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: armory2
+    audioClip: {fileID: 8300000, guid: 4dbaa68c9bae21c49aa533ee0df0aac8, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  sfx_bomb_drop:
+  - soundName: drop1
+    audioClip: {fileID: 8300000, guid: 5e40193eea617e1409c4da95210c1956, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  sfx_collect_coin:
+  - soundName: coin1
+    audioClip: {fileID: 8300000, guid: 46318901b666b5841a1155e656f9d023, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: coin2
+    audioClip: {fileID: 8300000, guid: 9af9aac2e82f5ef429b59594aaa5515b, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: coin3
+    audioClip: {fileID: 8300000, guid: 67231610e03ae074193dcf858cbf5cf4, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: coin4
+    audioClip: {fileID: 8300000, guid: 6b40f5313a41f894bbe196c5d07f3947, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  sfx_explode_big:
+  - soundName: big1
+    audioClip: {fileID: 8300000, guid: 856bf085c720e2b408371891c44844f3, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  sfx_explode_sciFi:
+  - soundName: sciFi1
+    audioClip: {fileID: 8300000, guid: 0d8f3765c838f2341bd0256cb149cc76, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: sciFi2
+    audioClip: {fileID: 8300000, guid: e351f2e37e88a2942813b55875bcfab2, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  sfx_explode:
+  - soundName: explode1
+    audioClip: {fileID: 8300000, guid: 03d4990eb15d4fc4ea77e7c6bf44ff59, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: explode2
+    audioClip: {fileID: 8300000, guid: 70f9da9adf83f96409175353ac1cf918, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: explode3
+    audioClip: {fileID: 8300000, guid: 18bb0c41cca1fc945b7234391163c914, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: explode4
+    audioClip: {fileID: 8300000, guid: 711c4907c9e9158419cfbd8f3371a9ca, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: explode5
+    audioClip: {fileID: 8300000, guid: 5b6350adfe7758f43a175b69eef905f3, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: explode6
+    audioClip: {fileID: 8300000, guid: 4bbff1c7d2d14ba41b3628aa43673434, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: explode7
+    audioClip: {fileID: 8300000, guid: 8eb5b32834ff4044c83121729293a260, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: explode8
+    audioClip: {fileID: 8300000, guid: 8aa98a4ae6d092d4ca79f9805437ccc6, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  sfx_hit_metal:
+  - soundName: metal1
+    audioClip: {fileID: 8300000, guid: 11048306d31205b468e83018b03086cd, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: metal2
+    audioClip: {fileID: 8300000, guid: 3a225680a32b9224a98fa53a68390e6d, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: metal3
+    audioClip: {fileID: 8300000, guid: a85e05218ce6588449177cbbc3fe5fb2, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: metal4
+    audioClip: {fileID: 8300000, guid: 2dbcb5bbbd206c24eaa91a2048d3e03c, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  sfx_shoot_laser:
+  - soundName: laser1
+    audioClip: {fileID: 8300000, guid: 99d090c2c6dab5b44a2e59dfa9416135, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: laser2
+    audioClip: {fileID: 8300000, guid: 19abbcd606c259c4dad14a3a8ca22b2f, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: laser3
+    audioClip: {fileID: 8300000, guid: 74509e02d3130144ebb951e1ec5491da, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: laser4
+    audioClip: {fileID: 8300000, guid: 53e0d0eb3c5679c4ca128436373ffd16, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  sfx_shoot_missile:
+  - soundName: missile1
+    audioClip: {fileID: 8300000, guid: 0479a7803e267494d847319538964e40, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: missile2
+    audioClip: {fileID: 8300000, guid: b90e6e65ae310e04f9ad761b39830fcb, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: missile3
+    audioClip: {fileID: 8300000, guid: 9a6014f936e0cc149af871d9c3bae088, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: missile4
+    audioClip: {fileID: 8300000, guid: 4a40e146672d4974ea1276d5ba439451, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: missile5
+    audioClip: {fileID: 8300000, guid: cfd79713e830dee459b25bc3679782f6, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: missile6
+    audioClip: {fileID: 8300000, guid: 67209ee6299db8a40a6ca51c2ddf43c5, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: missile7
+    audioClip: {fileID: 8300000, guid: 110e9a96c317250469368a0c38b0b8a3, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: missile8
+    audioClip: {fileID: 8300000, guid: 29b85c34f840f8f4483c07445e8af056, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  sfx_shoot:
+  - soundName: shoot1
+    audioClip: {fileID: 8300000, guid: 627080af13722fb4eaddd497d197b936, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: shoot2
+    audioClip: {fileID: 8300000, guid: 3afec15d6d5530d42a16527cf410b840, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: shoot3
+    audioClip: {fileID: 8300000, guid: 9179290c9da85734c8c47c72746de447, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  sfx_ui_click:
+  - soundName: click1
+    audioClip: {fileID: 8300000, guid: 335124aeb62ffc748ba7e3a9e107e662, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: click2
+    audioClip: {fileID: 8300000, guid: a39e65e2fa3410f4e92655814d9672a6, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: click3
+    audioClip: {fileID: 8300000, guid: ceef8d9f2a8ddba4bb56e6e0b567d461, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  sfx_ui_transition:
+  - soundName: transition1
+    audioClip: {fileID: 8300000, guid: ade78d281aaea7741a85ccf10433c155, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: transition2
+    audioClip: {fileID: 8300000, guid: d9ddd19b462e7304ba362e183464d2fd, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  sfx_other:
+  - soundName: mission_start1
+    audioClip: {fileID: 8300000, guid: 3f627a29f0f0976458607c246837f61e, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: recieve_coins1
+    audioClip: {fileID: 8300000, guid: d3e27a1c6c5422a47abc06623835e437, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: rotor_lossing_rotation1
+    audioClip: {fileID: 8300000, guid: 7a7c3d29eaba98f42b810c8ecb2e1a45, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: use_energy_capsule1
+    audioClip: {fileID: 8300000, guid: fab7a7406a830c544bd266c2f721eeb5, type: 3}
+    mute: 0
+    loop: 0
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+--- !u!1 &8908340859442432269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3192691506257768853}
+  - component: {fileID: 3261529178198486175}
+  m_Layer: 0
+  m_Name: MusicHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &3192691506257768853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8908340859442432269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3579364994916919164}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3261529178198486175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8908340859442432269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb29a4b47eb10f4d826e1d80c88da99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music_mainMenu:
+  - soundName: mainMenu1
+    audioClip: {fileID: 8300000, guid: 96933f36fc67fa548b247ae6695112e3, type: 3}
+    mute: 0
+    loop: 1
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: mainMenu2
+    audioClip: {fileID: 8300000, guid: 01bed5eeff3952c4d996931f090a3776, type: 3}
+    mute: 0
+    loop: 1
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  music_inGame:
+  - soundName: inGame1
+    audioClip: {fileID: 8300000, guid: 603fcd79e9729e74c8b29b35da0ed858, type: 3}
+    mute: 0
+    loop: 1
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: inGame2
+    audioClip: {fileID: 8300000, guid: 8d3f15a18e27b604da910d11aaa30897, type: 3}
+    mute: 0
+    loop: 1
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: inGame3
+    audioClip: {fileID: 8300000, guid: 114a15e7bae10ad41acc8c9449a8aca4, type: 3}
+    mute: 0
+    loop: 1
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundName: inGame4
+    audioClip: {fileID: 8300000, guid: 609c6ecc35657084b8c95b71b08d0532, type: 3}
+    mute: 0
+    loop: 1
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+  music_boss:
+  - soundName: boss1
+    audioClip: {fileID: 8300000, guid: cb7dfad52d5135a4ab5e1427fe0daeeb, type: 3}
+    mute: 0
+    loop: 1
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}

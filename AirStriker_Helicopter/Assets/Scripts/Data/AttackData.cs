@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// handles the data of attacks or armaments as scriptable objects
+/// usage: create a scriptable objects and fill up attack data
+/// goal: handles the data of attacks or armaments as scriptable objects and later pass through armament attack data script
 /// </summary>
 
 namespace game_ideas
@@ -15,7 +16,8 @@ namespace game_ideas
         BULLET,
         MISSILE,
         BOMB,
-        AUTOMIC
+        ATOMIC,
+        LASER
     }
     
     [CreateAssetMenu(fileName = "New Attack Data", menuName = "Project/Attack Data")]
@@ -27,6 +29,7 @@ namespace game_ideas
         public int damage;
         public float speed;
         public float aoe;
+        public GameObject attackPrefab;
 
     }
 

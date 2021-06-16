@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3694174989759902915}
   m_Layer: 6
-  m_Name: attackOut4
+  m_Name: attackPoint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,23 +116,13 @@ MonoBehaviour:
     health: 50
     points: 35
     movementSpeed: 6
-    firerate: 2
-    attackPrefab: {fileID: 484436157555161877, guid: 7eb9183ee9d042743b83f9cb6641fb97,
-      type: 3}
     deathExplosion: {fileID: 0}
-  attackData: {fileID: 11400000, guid: d71ed12451df28a47945ad82d2824ad6, type: 2}
-  attackOut:
-  - {fileID: 1490403411623750999}
-  - {fileID: 6147749279031554133}
-  - {fileID: 6636908424367936322}
-  - {fileID: 3694174989759902915}
-  - {fileID: 4535472105564890176}
-  - {fileID: 6372900726047872942}
-  - {fileID: 1629869540169941243}
-  - {fileID: 4929275515337421424}
+    deathSFXName: explode3
+  character: {fileID: 0}
   cameraManager: {fileID: 0}
   gameAssetManager: {fileID: 0}
   onHitCharacter: {fileID: 0}
+  soundFXHandler: {fileID: 0}
 --- !u!114 &-5089820208540827617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6636908424367936322}
   m_Layer: 6
-  m_Name: attackOut3
+  m_Name: attackPoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6147749279031554133}
   m_Layer: 6
-  m_Name: attackOut2
+  m_Name: attackPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,7 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4535472105564890176}
   m_Layer: 6
-  m_Name: attackOut5
+  m_Name: attackPoint5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 60480438942201542}
   m_Layer: 6
-  m_Name: AttackOut
+  m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1490403411623750999}
   m_Layer: 6
-  m_Name: attackOut1
+  m_Name: attackPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -445,7 +435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6372900726047872942}
   m_Layer: 6
-  m_Name: attackOut6
+  m_Name: attackPoint6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -475,7 +465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1629869540169941243}
   m_Layer: 6
-  m_Name: attackOut7
+  m_Name: attackPoint7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,7 +495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4929275515337421424}
   m_Layer: 6
-  m_Name: attackOut8
+  m_Name: attackPoint8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -535,8 +525,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5173958475462526285}
   - component: {fileID: 7216975240578971909}
-  - component: {fileID: 1722565446742247468}
   - component: {fileID: 4155672541419633015}
+  - component: {fileID: 1911310703808635152}
   m_Layer: 6
   m_Name: tank
   m_TagString: Untagged
@@ -577,21 +567,7 @@ MonoBehaviour:
   range: 30
   turretRotationSpeed: 10
   artilleryMain: {fileID: 128260271749131032}
---- !u!114 &1722565446742247468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7401068027354320929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68e6a07827ac1b24e8b4298a81826d50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHandler: {fileID: 128260271749131031}
-  implementEachAttackDelay: 1
-  eachAttackDelayRate: 0.1
+  attackHandler: {fileID: 1911310703808635152}
 --- !u!114 &4155672541419633015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,6 +584,31 @@ MonoBehaviour:
   keepDistance: 10
   zDetector: {fileID: 6452179386796221157}
   yDetector: {fileID: 384653073732033094}
+--- !u!114 &1911310703808635152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7401068027354320929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934d7744942e0994787d93bb9bd653e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackData: {fileID: 11400000, guid: d71ed12451df28a47945ad82d2824ad6, type: 2}
+  attackFirerate: 2
+  eachAttackDelayRate: 0.1
+  attackPointing:
+  - {fileID: 1490403411623750999}
+  - {fileID: 6147749279031554133}
+  - {fileID: 6636908424367936322}
+  - {fileID: 3694174989759902915}
+  - {fileID: 4535472105564890176}
+  - {fileID: 6372900726047872942}
+  - {fileID: 1629869540169941243}
+  - {fileID: 4929275515337421424}
+  soundFXName: 
 --- !u!1001 &128260272658307452
 PrefabInstance:
   m_ObjectHideFlags: 0

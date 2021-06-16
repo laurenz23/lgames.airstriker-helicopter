@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This script is attached to object that have an artillery as a child
-/// find a target of artillery and lock on to the target 
+/// usage: attached to object that have an artillery as a child
+/// goal: find a target of artillery and lock on to the target 
 /// it includes the rotation of the turret
 /// assign a min and max rotation of the turret
+/// if turret will rotate at 360 degress use TurretRotation instead
 /// </summary>
 
 namespace game_ideas
@@ -18,6 +19,7 @@ namespace game_ideas
         public float turretRotationSpeed;
 
         [SerializeField] private Transform artilleryMain;
+        [SerializeField] private AttackHandler attackHandler;
 
         private PlayerManager playerManager;
         private Transform target;
@@ -31,8 +33,6 @@ namespace game_ideas
         private float maxRotation = 0f;
         private float minRotation = 0f;
 
-        private bool readyToFire = false;
-
         private void Awake()
         {
             playerManager = FindObjectOfType<PlayerManager>();
@@ -41,6 +41,8 @@ namespace game_ideas
         private void Start()
         {
             target = playerManager.playerTransform;
+
+            attackHandler.enabled = false; // don't attack
 
             // assign artillery turret rotation to avoid abnormal rotation transition
             if (artilleryMain.transform.eulerAngles.y == 0f && artilleryMain.transform.eulerAngles.z == 0f) // if artillery is facing forward from game world
@@ -94,11 +96,11 @@ namespace game_ideas
                 if (angleRotation >= maxRotation && angleRotation <= minRotation)
                 {
                     artilleryTurret.rotation = Quaternion.Lerp(artilleryTurret.rotation, targetRotation, rotationTime);
-                    readyToFire = true;
+                    attackHandler.enabled = true; // start attacking
                 }
                 else
                 {
-                    readyToFire = false;
+                    attackHandler.enabled = false; // don't attack
                 }
                 
             }
@@ -109,10 +111,5 @@ namespace game_ideas
             }
         }
 
-        // check if artillery is ready to fire
-        public bool ArtilleryReadyToFire()
-        {
-            return readyToFire;
-        }
     }
 }

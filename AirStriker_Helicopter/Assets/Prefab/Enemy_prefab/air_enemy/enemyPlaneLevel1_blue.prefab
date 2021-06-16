@@ -131,14 +131,13 @@ MonoBehaviour:
     health: 10
     points: 10
     movementSpeed: 7
-    firerate: 0
-    attackPrefab: {fileID: 0}
     deathExplosion: {fileID: 0}
-  attackData: {fileID: 0}
-  attackOut: []
+    deathSFXName: explode3
+  character: {fileID: 0}
   cameraManager: {fileID: 0}
   gameAssetManager: {fileID: 0}
   onHitCharacter: {fileID: 0}
+  soundFXHandler: {fileID: 0}
 --- !u!114 &5765289800068097822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fa1ba5d361f1142a75796a3804b4d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1250
 --- !u!1001 &5210807859355070187
 PrefabInstance:
   m_ObjectHideFlags: 0

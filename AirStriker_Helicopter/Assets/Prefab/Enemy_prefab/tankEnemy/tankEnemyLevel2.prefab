@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 19533831084523777}
   m_Layer: 6
-  m_Name: attackOut
+  m_Name: attackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,8 +132,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6535346629145788796}
   - component: {fileID: 3676495650431097770}
-  - component: {fileID: 1944382553551170080}
   - component: {fileID: 7393393365042413135}
+  - component: {fileID: 6034862237079134592}
   m_Layer: 6
   m_Name: tank
   m_TagString: Untagged
@@ -174,21 +174,7 @@ MonoBehaviour:
   range: 30
   turretRotationSpeed: 10
   artilleryMain: {fileID: 8764552764312519227}
---- !u!114 &1944382553551170080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7887398583996740003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68e6a07827ac1b24e8b4298a81826d50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHandler: {fileID: 8764552764312519228}
-  implementEachAttackDelay: 0
-  eachAttackDelayRate: 0
+  attackHandler: {fileID: 6034862237079134592}
 --- !u!114 &7393393365042413135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +191,24 @@ MonoBehaviour:
   keepDistance: 15
   zDetector: {fileID: 3178725222587221555}
   yDetector: {fileID: 1377888071391877467}
+--- !u!114 &6034862237079134592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7887398583996740003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934d7744942e0994787d93bb9bd653e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackData: {fileID: 11400000, guid: 05cc26849968da04bb682a88b7abebe1, type: 2}
+  attackFirerate: 1
+  eachAttackDelayRate: 0
+  attackPointing:
+  - {fileID: 19533831084523777}
+  soundFXName: 
 --- !u!1 &8764552764312519231
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,16 +295,13 @@ MonoBehaviour:
     health: 30
     points: 25
     movementSpeed: 10
-    firerate: 1
-    attackPrefab: {fileID: 7249562620791542480, guid: 529f9cfbb64a6864f8f4c46aef34dd4e,
-      type: 3}
     deathExplosion: {fileID: 0}
-  attackData: {fileID: 11400000, guid: 05cc26849968da04bb682a88b7abebe1, type: 2}
-  attackOut:
-  - {fileID: 19533831084523777}
+    deathSFXName: explode3
+  character: {fileID: 0}
   cameraManager: {fileID: 0}
   gameAssetManager: {fileID: 0}
   onHitCharacter: {fileID: 0}
+  soundFXHandler: {fileID: 0}
 --- !u!114 &1448513226793229148
 MonoBehaviour:
   m_ObjectHideFlags: 0

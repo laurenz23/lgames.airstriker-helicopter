@@ -33,7 +33,6 @@ namespace game_ideas
 
             if (gameManager.gameState == GameState.GAME_START || gameManager.gameState == GameState.GAME_CONTINUE)
             {
-
                 // if the character ascending
                 if (newPosY > prevPosY)
                 {

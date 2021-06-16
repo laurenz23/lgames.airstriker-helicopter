@@ -85,17 +85,13 @@ MonoBehaviour:
     health: 20
     points: 15
     movementSpeed: 8
-    firerate: 1
-    attackPrefab: {fileID: 7249562620791542480, guid: 529f9cfbb64a6864f8f4c46aef34dd4e,
-      type: 3}
     deathExplosion: {fileID: 0}
-  attackData: {fileID: 11400000, guid: 05cc26849968da04bb682a88b7abebe1, type: 2}
-  attackOut:
-  - {fileID: 2860842593777576625}
-  - {fileID: 7040022244481775357}
+    deathSFXName: explode3
+  character: {fileID: 0}
   cameraManager: {fileID: 0}
   gameAssetManager: {fileID: 0}
   onHitCharacter: {fileID: 0}
+  soundFXHandler: {fileID: 0}
 --- !u!114 &1660314472375148120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2860842593777576625}
   m_Layer: 6
-  m_Name: attackOut1
+  m_Name: attackPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,9 +169,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8465466019149196841}
-  - component: {fileID: 4055470585826076186}
   - component: {fileID: 5489149608052018438}
   - component: {fileID: 4387238190566566844}
+  - component: {fileID: 3360059394245662403}
   m_Layer: 0
   m_Name: character
   m_TagString: Untagged
@@ -198,21 +194,6 @@ Transform:
   m_Father: {fileID: 1215302128854872193}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4055470585826076186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2725240498295621341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bdb67730aa6f1d4c8b7547db0cd618f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHandler: {fileID: 3630501670296358053}
-  implementEachAttackDelay: 1
-  eachAttackDelayRate: 0.25
 --- !u!114 &5489149608052018438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +209,8 @@ MonoBehaviour:
   enemyHandler: {fileID: 3630501670296358053}
   keepDistance_upWard: 2.5
   keepDistance_forward: 25
+  applyDelay: 0
+  delayTime: 0
 --- !u!114 &4387238190566566844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +225,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 1215302128854872193}
   speed: 200
+--- !u!114 &3360059394245662403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2725240498295621341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934d7744942e0994787d93bb9bd653e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackData: {fileID: 11400000, guid: 05cc26849968da04bb682a88b7abebe1, type: 2}
+  attackFirerate: 1
+  eachAttackDelayRate: 0.5
+  attackPointing:
+  - {fileID: 2860842593777576625}
+  - {fileID: 7040022244481775357}
+  soundFXName: 
 --- !u!1 &3734806703244433408
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7040022244481775357}
   m_Layer: 6
-  m_Name: attackOut2
+  m_Name: attackPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fa1ba5d361f1142a75796a3804b4d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1250
 --- !u!114 &2480936124549366274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fa1ba5d361f1142a75796a3804b4d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1250
 --- !u!1001 &1215302127889372484
 PrefabInstance:
   m_ObjectHideFlags: 0

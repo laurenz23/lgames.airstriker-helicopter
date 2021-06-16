@@ -22,8 +22,20 @@ namespace game_ideas
             instance = this;
         }
 
+        [Header("Material Assets")]
         public Material defaultMaterial;
 
         public Material hitMaterial;
+
+        [Header("Sprite Assets")]
+        public Sprite coin_icon;
+
+        public Sprite supply_icon;
+
+        public Sprite energy_capsule_icon;
+
+        public Sprite more_coin_icon;
+
+        public Sprite more_supply_icon;
     }
 }

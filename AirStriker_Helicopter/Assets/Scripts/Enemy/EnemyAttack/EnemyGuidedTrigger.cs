@@ -17,12 +17,12 @@ namespace game_ideas
         [SerializeField] private EnemyAttackGuided guidedAttack = null;
 
         private EffectHandler effectHandler;
-        private EnemyAttackData enemyAttackData;
+        private ArmamentAttackData armamentAttackData;
 
         private void Start()
         {
             effectHandler = FindObjectOfType<EffectHandler>();
-            enemyAttackData = guidedAttack.transform.GetComponent<EnemyAttackData>();
+            armamentAttackData = guidedAttack.transform.GetComponent<ArmamentAttackData>();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -40,8 +40,8 @@ namespace game_ideas
             if (other.CompareTag(GameTag.BasicAttack.ToString()))
             {
                 if (
-                    enemyAttackData.attackData.attackType.Equals(AttackType.MISSILE) ||
-                    enemyAttackData.attackData.attackType.Equals(AttackType.BOMB)
+                    armamentAttackData.attackType.Equals(AttackType.MISSILE) ||
+                    armamentAttackData.attackType.Equals(AttackType.BOMB)
                     )
                 {
                     DestroyArmament();

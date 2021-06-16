@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4723106255587762759}
   m_Layer: 6
-  m_Name: attackOut1
+  m_Name: attackPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,17 +116,13 @@ MonoBehaviour:
     health: 30
     points: 12
     movementSpeed: 0
-    firerate: 1
-    attackPrefab: {fileID: 484436157555161877, guid: 7eb9183ee9d042743b83f9cb6641fb97,
-      type: 3}
     deathExplosion: {fileID: 0}
-  attackData: {fileID: 11400000, guid: d71ed12451df28a47945ad82d2824ad6, type: 2}
-  attackOut:
-  - {fileID: 4723106255587762759}
-  - {fileID: 1252894422184441443}
+    deathSFXName: explode3
+  character: {fileID: 0}
   cameraManager: {fileID: 0}
   gameAssetManager: {fileID: 0}
   onHitCharacter: {fileID: 0}
+  soundFXHandler: {fileID: 0}
 --- !u!114 &4922079503381480106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 580091701499640511}
   - component: {fileID: 6847481817720216904}
-  - component: {fileID: 5622692154293369607}
+  - component: {fileID: 3161115900171835289}
   m_Layer: 6
   m_Name: artilleryEnemyLevel2
   m_TagString: Untagged
@@ -228,7 +224,8 @@ MonoBehaviour:
   range: 30
   turretRotationSpeed: 5
   artilleryMain: {fileID: 958238336905978511}
---- !u!114 &5622692154293369607
+  attackHandler: {fileID: 3161115900171835289}
+--- !u!114 &3161115900171835289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,12 +234,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2280696663474768666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68e6a07827ac1b24e8b4298a81826d50, type: 3}
+  m_Script: {fileID: 11500000, guid: 934d7744942e0994787d93bb9bd653e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHandler: {fileID: 461654568042018710}
-  implementEachAttackDelay: 0
+  attackData: {fileID: 11400000, guid: d71ed12451df28a47945ad82d2824ad6, type: 2}
+  attackFirerate: 1
   eachAttackDelayRate: 0
+  attackPointing:
+  - {fileID: 4723106255587762759}
+  - {fileID: 1252894422184441443}
+  soundFXName: laser2
 --- !u!1 &2434699916531896300
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1252894422184441443}
   m_Layer: 6
-  m_Name: attackOut2
+  m_Name: attackPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

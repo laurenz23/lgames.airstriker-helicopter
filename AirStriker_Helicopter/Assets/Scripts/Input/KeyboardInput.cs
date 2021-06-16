@@ -65,11 +65,11 @@ namespace game_ideas
 
                 if (Input.GetKey(KeyCode.F))
                 {
-                    VirtualInput.Instance.automic = true;
+                    VirtualInput.Instance.activeSkill1 = true;
                 }
                 else
                 {
-                    VirtualInput.Instance.automic = false;
+                    VirtualInput.Instance.activeSkill1 = false;
                 }
             }
         }

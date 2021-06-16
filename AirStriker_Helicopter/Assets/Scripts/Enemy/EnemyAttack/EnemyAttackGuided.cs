@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// this script is attached to attack guided armament as a parent 
-/// handling the movement of the armament
+/// usage: attached to attack guided armament as a parent 
+/// goal: handling the movement of EnemyAttackGuided
 /// </summary>
 
 namespace game_ideas

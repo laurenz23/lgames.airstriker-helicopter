@@ -4,7 +4,7 @@ using UnityEngine;
 
 /// <summary>
 /// this script is attached to guided attack target finder object, child of main guided attack object
-/// find a target character(enemy)
+/// find a target character(player)
 /// </summary>
 
 namespace game_ideas

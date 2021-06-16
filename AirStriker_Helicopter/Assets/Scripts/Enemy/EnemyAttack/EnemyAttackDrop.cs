@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 
+/// usage: attached this script to armament itself as a parent
+/// goal: a script that handles a attack to drop for enemies
 /// </summary>
 
 namespace game_ideas
@@ -14,14 +15,14 @@ namespace game_ideas
         [SerializeField] private GameObject explosionEffect = null;
 
         private Rigidbody RIGIDBODY;
-        private EnemyAttackData enemyAttackData;
+        private ArmamentAttackData armamentAttackData;
         private EffectHandler effectHandler;
         private bool facingForward = false;
 
         private void Start()
         {
             effectHandler = FindObjectOfType<EffectHandler>();
-            enemyAttackData = GetComponent<EnemyAttackData>();
+            armamentAttackData = GetComponent<ArmamentAttackData>();
             RIGIDBODY = GetComponent<Rigidbody>();
 
             if (transform.eulerAngles.y.Equals(0f))
@@ -56,8 +57,8 @@ namespace game_ideas
             if (other.CompareTag(GameTag.BasicAttack.ToString()))
             {
                 if (
-                    enemyAttackData.attackData.attackType.Equals(AttackType.MISSILE) ||
-                    enemyAttackData.attackData.attackType.Equals(AttackType.BOMB)
+                    armamentAttackData.attackType.Equals(AttackType.MISSILE) ||
+                    armamentAttackData.attackType.Equals(AttackType.BOMB)
                     )
                 {
                     DestroyArmament();

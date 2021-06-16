@@ -11,6 +11,6 @@ namespace game_ideas
         public bool moveAscending;
         public bool moveDescending;
         public bool attack;
-        public bool automic;
+        public bool activeSkill1;
     }
 }

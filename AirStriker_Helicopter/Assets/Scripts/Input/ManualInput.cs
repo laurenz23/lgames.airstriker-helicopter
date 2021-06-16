@@ -60,13 +60,13 @@ namespace game_ideas
                 playerManager.attack = false;
             }
 
-            if (VirtualInput.Instance.automic)
+            if (VirtualInput.Instance.activeSkill1)
             {
-                playerManager.automic = true;
+                playerManager.activeSkill1 = true;
             }
             else
             {
-                playerManager.automic = false;
+                playerManager.activeSkill1 = false;
             }
         }
     }

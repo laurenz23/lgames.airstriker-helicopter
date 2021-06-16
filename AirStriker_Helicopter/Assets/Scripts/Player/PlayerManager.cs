@@ -28,7 +28,7 @@ namespace game_ideas
         public bool attack;
 
         [HideInInspector]
-        public bool automic; // special attack
+        public bool activeSkill1; // special attack
 
         [HideInInspector]
         public int points; // score of the player that is showned as points in the game
@@ -39,7 +39,10 @@ namespace game_ideas
 
         [Header("Player Properties")]
 
-        public int health;
+        public int characterHealth; // the health of character, this is an static health can be change base on character upgrades
+
+        [HideInInspector]
+        public int health; // the current health of character, this is a dynamic health can be change in game if hit by enemy
 
         public int energy;
 
@@ -79,6 +82,9 @@ namespace game_ideas
         [HideInInspector]
         public OnHitCharacter onHitCharacter;
 
+        [HideInInspector]
+        public SoundFXHandler soundFXHandler;
+
 
         public static PlayerManager instance;
 
@@ -93,6 +99,8 @@ namespace game_ideas
             {
                 instance = this;
             }
+
+            soundFXHandler = FindObjectOfType<SoundFXHandler>();
 
             gameManager = FindObjectOfType<GameManager>();
 
@@ -133,6 +141,9 @@ namespace game_ideas
 
             // set the coins of the player when the game is started
             coins = 0;
+
+            // set the player health base on max health
+            health = characterHealth;
 
             // set the health value for ui so the player will know how much health have
             playerUIManager.SetPlayerHealth_ui(health);
@@ -187,10 +198,9 @@ namespace game_ideas
 
             }
             
-            if (automic)
+            if (activeSkill1)
             {
-
-                playerAttack.AutomicAttack(playerTransform);
+                playerAttack.AtomicAttack(playerTransform);
 
             }
         }

@@ -2,27 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- * This script is attached to Game Manager object
- * This class Handles the status of Game
- * Game is Start?, Game is Pause?, Game is Over?, Game is Pause?, Game is Continue?, Game is Finish?
- */
+/// <summary>
+/// This script is attached to Game Manager object
+/// This class Handles the status of Game
+/// Game is Start?, Game is Pause?, Game is Over?, Game is Pause?, Game is Continue?, Game is Finish?
+/// </summary>
+
 namespace game_ideas
 {
-    public enum GameGraphics
-    {
-        LOW_GRAPHICS,
-        HIGH_GRAPHICS
-    }
-
-    public enum GameControls
-    {
-        JOYSTICK_CONTROLS,
-        BUTTON_CONTROLS
-    }
-
     public enum GameState
     {
+        MAINMENU,
         WAITING_TO_START,
         GAME_START,
         GAME_PAUSE,
@@ -76,21 +66,27 @@ namespace game_ideas
             {
                 instance = this;
             }
+
+            Application.targetFrameRate = 60;
         }
-
-        public GameGraphics gameGraphics;
-
-        [HideInInspector]
-        public GameControls gameControls;
-
-        [HideInInspector]
+        
         public GameState gameState;
 
+        public string musicTheme;
+
+        [Header("Script Reference")]
+        [SerializeField] private SoundManager soundManager;
+        
         private void Start()
         {
-
-            gameState = GameState.WAITING_TO_START;
-
+            if (gameState == GameState.MAINMENU)
+            {
+                soundManager.musicHandler.MUSIC_MAINMENU(musicTheme);
+            }
+            else if (gameState == GameState.WAITING_TO_START)
+            {
+                soundManager.musicHandler.MUSIC_INGAME(musicTheme);
+            }
         }
 
         private void Update()
@@ -107,7 +103,7 @@ namespace game_ideas
                     break;
 
             }
-
+            
         }
-    }
+    } 
 }

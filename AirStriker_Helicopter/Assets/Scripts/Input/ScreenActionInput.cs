@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// this script is attached to action input ui itself
+/// handles the function of events for movements and attacks of player
+/// </summary>
+
 namespace game_ideas
 {
     public class ScreenActionInput : MonoBehaviour
@@ -75,7 +80,7 @@ namespace game_ideas
                 }
             }
         }
-        
+
         // player movement functions if game controls is buttons
 
         // player move forward
@@ -141,12 +146,23 @@ namespace game_ideas
         // player automic attack
         public void AutomicDown()
         {
-            VirtualInput.Instance.automic = true;
+            VirtualInput.Instance.activeSkill1 = true;
         }
 
         public void AutomicUp()
         {
-            VirtualInput.Instance.automic = false;
+            VirtualInput.Instance.activeSkill1 = false;
+        }
+
+        public void OnPause()
+        {
+            VirtualInput.Instance.moveForward = false;
+            VirtualInput.Instance.moveBackward = false;
+            VirtualInput.Instance.moveAscending = false;
+            VirtualInput.Instance.moveDescending = false;
+
+            VirtualInput.Instance.attack = false;
+            VirtualInput.Instance.activeSkill1 = false;
         }
 
     }

@@ -15,7 +15,6 @@ namespace game_ideas
     {
 
         public GameManager gameManager;
-        public PlayerUIManager playerUIManager;
         public GameObject fpsPanel;
         public GameObject controlsPanel;
         public Text fpsText;
@@ -30,7 +29,6 @@ namespace game_ideas
         private void Start()
         {
             fpsPanel.SetActive(true);
-            controlsPanel.SetActive(false);
             StartCoroutine(RecalculateFPS());
         }
         
@@ -79,20 +77,6 @@ namespace game_ideas
             fpsUncapped.isOn = true;
             fpsPanel.SetActive(false);
             controlsPanel.SetActive(true);
-        }
-
-        public void JoystickControls()
-        {
-            gameManager.gameControls = GameControls.JOYSTICK_CONTROLS;
-            playerUIManager.SelectGameControls(gameManager.gameControls);
-            controlsPanel.SetActive(false);
-        }
-
-        public void ButtonControls()
-        {
-            gameManager.gameControls = GameControls.BUTTON_CONTROLS;
-            playerUIManager.SelectGameControls(gameManager.gameControls);
-            controlsPanel.SetActive(false);
         }
 
         // displaying to player and calculating fps

@@ -17,6 +17,11 @@ namespace game_ideas
 
         public float keepDistance_forward; // this will make the object keeping it's distance from the target
 
+        [Header("Apply Delay when following Target")]
+        public bool applyDelay;
+
+        public float delayTime;
+
         private float posY; 
 
         private float posZ;
@@ -52,10 +57,18 @@ namespace game_ideas
                 // if character is facing positive z axis
                 if (enemyHandler.transform.eulerAngles.y.Equals(0f))
                 {
-                    // calculate the distance of player and character in z axis 
-                    // we subtract the player position and character position in z axis
-                    // since the character is facing forward
-                    posZ = playerTransform.position.z - keepDistance_forward;
+                    if (keepDistance_forward == 0f)
+                    {
+                        enemyHandler.transform.Translate(Vector3.forward * 5f * Time.deltaTime);
+                        posZ = enemyHandler.transform.position.z;
+                    }
+                    else
+                    {
+                        // calculate the distance of player and character in z axis 
+                        // we subtract the player position and character position in z axis
+                        // since the character is facing forward
+                        posZ = playerTransform.position.z - keepDistance_forward;
+                    }
 
                     // check if the character reach the left corner of camera field view
                     if (enemyHandler.transform.position.z <= ((cameraManager.transform.position.z * 2f) - screenBounds.z))
@@ -83,8 +96,16 @@ namespace game_ideas
                 // if characer is facing negative z axis
                 else
                 {
-                    // calculate the player position
-                    posZ = playerTransform.position.z + keepDistance_forward;
+                    if (keepDistance_forward == 0f)
+                    {
+                        enemyHandler.transform.Translate(Vector3.forward * 5f * Time.deltaTime);
+                        posZ = enemyHandler.transform.position.z;
+                    }
+                    else
+                    {
+                        // calculate the player position
+                        posZ = playerTransform.position.z + keepDistance_forward;
+                    }
 
                     // if the character reach the right corner of camera field view
                     // stop the movement of character in z axis

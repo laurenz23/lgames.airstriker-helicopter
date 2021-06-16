@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7319841249416251004}
   - component: {fileID: 2310255820723124407}
   - component: {fileID: 1439172064}
-  - component: {fileID: -3193231584902848725}
+  - component: {fileID: 4916934386507650998}
   - component: {fileID: 7336994497767540806}
   m_Layer: 0
   m_Name: EnemyAttackBullet
@@ -65,7 +65,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &-3193231584902848725
+--- !u!114 &4916934386507650998
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 484436157555161877}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c30e08a9844f224699a9ef8ed5f9713, type: 3}
+  m_Script: {fileID: 11500000, guid: fd7776918fdc5c24d86a3402a380efa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackData: {fileID: 0}
@@ -93,7 +93,8 @@ MonoBehaviour:
   armamentSpeed: 50
   enemyHitEffectPrefab: {fileID: 7778986138541501390, guid: 46d5ba6a6ee7ba94a9d90ee77b5961a0,
     type: 3}
-  enemyAttackMesh: {fileID: 3242232493441542733}
+  enemyAttackMesh:
+  - {fileID: 3242232493441542733}
 --- !u!1 &5529362097624641135
 GameObject:
   m_ObjectHideFlags: 0

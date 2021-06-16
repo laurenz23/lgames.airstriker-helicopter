@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEditor;
 
 /// <summary>
-/// 
+/// usage: attached this script to enemy character as a child
+/// goal: a character movement where can be designated the character next action or movement
 /// </summary>
 
 namespace game_ideas

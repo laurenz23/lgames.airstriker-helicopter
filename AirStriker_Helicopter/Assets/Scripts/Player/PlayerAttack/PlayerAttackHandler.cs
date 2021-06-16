@@ -12,110 +12,98 @@ namespace game_ideas
 
     public class PlayerAttackHandler : MonoBehaviour
     {
-
         // player attack abilities
         [Header("Player can use armaments:")]
-        public bool gatling_armament;
-        public bool missile_armament;
-        public bool dropMissile_armament;
-        public bool guidedMissile_armament;
-        public bool laser_armament;
-        public bool automic_armament;
+        public bool attackBasic;
+        public bool attackPassive1;
+        public bool attackPassive2;
+        public bool attackPassive3;
+        public bool attackActive1;
 
         // game object references
         [Header("Player Armament Objects")]
-        public GameObject gatlingArmament;
-        public GameObject missileArmament;
-        public GameObject dropMissileArmament;
-        public GameObject guidedMissileArmament;
-        public GameObject laserArmament;
-        public GameObject automicArmament;
+        public GameObject armament1;
+        public GameObject armament2;
+        public GameObject armament3;
+        public GameObject armament4;
+        public GameObject armament5;
         public GameObject mainWing;
         
-        private PlayerGatlingGun playerGatlingGun;
-        private PlayerMissile playerMissile;
-        private PlayerDropMissile playerDropMissile;
-        private PlayerGuidedMissile playerGuidedMissile;
-        private PlayerAutomic playerAutomic;
+        private PlayerAttackBasic playerAttackBasic;
+        private PlayerAttackPassive1 playerAttackPassive1;
+        private PlayerAttackPassive2 playerAttackPassive2;
+        private PlayerAttackPassive3 playerAttackPassive3;
+        private PlayerAttackActive1 playerAttackActive1;
 
         private void Awake()
         {
-            playerGatlingGun = GetComponentInChildren<PlayerGatlingGun>();
-            playerMissile = GetComponentInChildren<PlayerMissile>();
-            playerDropMissile = GetComponentInChildren<PlayerDropMissile>();
-            playerGuidedMissile = GetComponentInChildren<PlayerGuidedMissile>();
-            playerAutomic = GetComponentInChildren<PlayerAutomic>();
+            playerAttackBasic = GetComponentInChildren<PlayerAttackBasic>();
+            playerAttackPassive1 = GetComponentInChildren<PlayerAttackPassive1>();
+            playerAttackPassive2 = GetComponentInChildren<PlayerAttackPassive2>();
+            playerAttackPassive3 = GetComponentInChildren<PlayerAttackPassive3>();
+            playerAttackActive1 = GetComponentInChildren<PlayerAttackActive1>();
         }
 
         private void Start()
         {
 
             // show the object armaments if attack is enabled and hide is enabled
-            if (gatling_armament)
+            if (attackBasic)
             {
-                gatlingArmament.SetActive(true);
-                playerGatlingGun.enabled = true;
+                armament1.SetActive(true);
+                playerAttackBasic.enabled = true;
             }
             else
             {
-                gatlingArmament.SetActive(false);
-                playerGatlingGun.enabled = false;
+                armament1.SetActive(false);
+                playerAttackBasic.enabled = false;
             }
 
-            if (missile_armament)
+            if (attackPassive1)
             {
-                missileArmament.SetActive(true);
-                playerMissile.enabled = true;
+                armament2.SetActive(true);
+                playerAttackPassive1.enabled = true;
             }
             else
             {
-                missileArmament.SetActive(false);
-                playerMissile.enabled = false;
+                armament2.SetActive(false);
+                playerAttackPassive1.enabled = false;
             }
 
-            if (dropMissile_armament)
+            if (attackPassive2)
             {
-                dropMissileArmament.SetActive(true);
-                playerDropMissile.enabled = true;
+                armament3.SetActive(true);
+                playerAttackPassive2.enabled = true;
             }
             else
             {
-                dropMissileArmament.SetActive(false);
-                playerDropMissile.enabled = false;
+                armament3.SetActive(false);
+                playerAttackPassive2.enabled = false;
             }
 
-            if (guidedMissile_armament)
+            if (attackPassive3)
             {
-                guidedMissileArmament.SetActive(true);
-                playerGuidedMissile.enabled = true;
+                armament4.SetActive(true);
+                playerAttackPassive3.enabled = true;
             }
             else
             {
-                guidedMissileArmament.SetActive(false);
-                playerGuidedMissile.enabled = false;
+                armament4.SetActive(false);
+                playerAttackPassive3.enabled = false;
             }
 
-            if (laser_armament)
+            if (attackActive1)
             {
-                laserArmament.SetActive(true);
+                armament5.SetActive(true);
+                playerAttackActive1.enabled = true;
             }
             else
             {
-                laserArmament.SetActive(false);
+                armament5.SetActive(false);
+                playerAttackActive1.enabled = false;
             }
 
-            if (automic_armament)
-            {
-                automicArmament.SetActive(true);
-                playerAutomic.enabled = true;
-            }
-            else
-            {
-                automicArmament.SetActive(false);
-                playerAutomic.enabled = false;
-            }
-
-            if (missile_armament || guidedMissile_armament)
+            if (attackPassive1 || attackPassive3)
             {
                 mainWing.SetActive(true);
             }
@@ -129,25 +117,25 @@ namespace game_ideas
         public void Attack(Transform playerTransform)
         {
             //check if player can do the attacks
-            if (gatling_armament)
-                playerGatlingGun.GatlingAttack(playerTransform);
+            if (attackBasic)
+                playerAttackBasic.AttackAction(playerTransform);
 
-            if (missile_armament)
-                playerMissile.MissileAttack(playerTransform);
+            if (attackPassive1)
+                playerAttackPassive1.AttackAction(playerTransform);
 
-            if (dropMissile_armament)
-                playerDropMissile.DropMissileAttack(playerTransform);
+            if (attackPassive2)
+                playerAttackPassive2.AttackAction(playerTransform);
 
-            if (guidedMissile_armament)
-                playerGuidedMissile.GuidedMissileAttack(playerTransform);
+            if (attackPassive3)
+                playerAttackPassive3.AttackAction(playerTransform);
 
         }
 
-        public void AutomicAttack(Transform playerTransform)
+        public void AtomicAttack(Transform playerTransform)
         {
             //check if player can do the attacks
-            if (automic_armament)
-                playerAutomic.AutomicAttack(playerTransform);
+            if (attackActive1)
+                playerAttackActive1.AttackAction(playerTransform);
         }
         
 

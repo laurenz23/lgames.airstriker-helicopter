@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// this script is attached to enemy attack bullets
-/// handles the movement forward attack direction
+/// usage: attached to enemy attack straight projectiles
+/// goal: handles the movement attack, attack direction is always at positive z axis
 /// </summary>
 namespace game_ideas
 {
@@ -14,17 +14,17 @@ namespace game_ideas
         public float armamentSpeed;
 
         [SerializeField] private GameObject enemyHitEffectPrefab = null;
-        [SerializeField] private GameObject enemyAttackMesh = null;
+        [SerializeField] private GameObject[] enemyAttackMesh = null;
 
         private EffectHandler effectHandler;
-        private EnemyAttackData enemyAttackData;
+        private ArmamentAttackData armamentAttackData;
 
         private bool stop = false;
 
         private void Start()
         {
             effectHandler = FindObjectOfType<EffectHandler>();
-            enemyAttackData = GetComponent<EnemyAttackData>();
+            armamentAttackData = GetComponent<ArmamentAttackData>();
         }
 
         // Update is called once per frame
@@ -50,8 +50,8 @@ namespace game_ideas
             if (other.CompareTag(GameTag.BasicAttack.ToString()))
             {
                 if (
-                    enemyAttackData.attackData.attackType.Equals(AttackType.MISSILE) ||
-                    enemyAttackData.attackData.attackType.Equals(AttackType.BOMB)
+                    armamentAttackData.attackType.Equals(AttackType.MISSILE) ||
+                    armamentAttackData.attackType.Equals(AttackType.BOMB)
                     )
                 {
                     DestroyArmament();
@@ -74,7 +74,11 @@ namespace game_ideas
             stop = true;
             GetComponent<BoxCollider>().enabled = false;
 
-            enemyAttackMesh.SetActive(false);
+            foreach (GameObject etm in enemyAttackMesh)
+            {
+                etm.SetActive(false);
+            }
+
             effectHandler.CreatePrefabEffectAndDestroy(enemyHitEffectPrefab, effectHandler.transform, new Vector3(1f, 1f, 1f), Quaternion.identity,
                 new Vector3(0f, transform.position.y, transform.position.z), 3f);
 

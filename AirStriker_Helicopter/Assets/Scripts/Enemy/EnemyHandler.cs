@@ -15,14 +15,8 @@ namespace game_ideas
         
         public EnemyData enemyData;
 
-        [Space]
         [Header("Get the child character (can be null)")]
         public Transform character; // get the child character, can be null
-
-        [Header("If character can attack")]
-        public AttackData attackData;
-
-        public Transform[] attackOut; 
 
         [HideInInspector] public CameraManager cameraManager;
 
@@ -30,10 +24,14 @@ namespace game_ideas
 
         [HideInInspector] public OnHitCharacter onHitCharacter;
 
+        [HideInInspector] public SoundFXHandler soundFXHandler;
+
         private EffectHandler effectHandler;
 
         private void Awake()
         {
+            soundFXHandler = FindObjectOfType<SoundFXHandler>();
+
             cameraManager = FindObjectOfType<CameraManager>();
 
             gameAssetManager = GameAssetsManager.GetInstance();
@@ -45,22 +43,33 @@ namespace game_ideas
 
             onHitCharacter = GetComponent<OnHitCharacter>();
 
-            // preparation for on hit material
-            if (character == null)
+            if (onHitCharacter != null)
             {
-                onHitCharacter.SetMaterial();
+                // preparation for on hit material
+                if (character == null)
+                {
+                    onHitCharacter.SetMaterial();
+                }
+                else
+                {
+                    onHitCharacter.SetMaterial(character);
+                }
             }
             else
             {
-                onHitCharacter.SetMaterial(character);
+#if UNITY_EDITOR
+                Debug.LogError("Please attached OnHitCharacter class to this object.");
+#endif
             }
         }
 
         // explode these character
         public void DestroyCharacter()
         {
-            GameObject newEffect; 
+            soundFXHandler.SFX_EXPLODE("explode3");
 
+            GameObject newEffect;
+            
             this.gameObject.SetActive(false); // reference for guided attack to avoid ab normal behavior of the guided attack
 
             // since we have different kind of explosion effect if the enemy collided

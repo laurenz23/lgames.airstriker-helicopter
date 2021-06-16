@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5698865534503849325}
   m_Layer: 6
-  m_Name: attackOut1
+  m_Name: attackPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,6 +42,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fa1ba5d361f1142a75796a3804b4d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1250
 --- !u!1 &4528626857428771612
 GameObject:
   m_ObjectHideFlags: 0
@@ -51,9 +52,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9124712684822669799}
-  - component: {fileID: 4488207869814931955}
   - component: {fileID: 5043935635926204964}
   - component: {fileID: 852541547215238274}
+  - component: {fileID: 5691370619205415399}
   m_Layer: 6
   m_Name: character
   m_TagString: Untagged
@@ -76,21 +77,6 @@ Transform:
   m_Father: {fileID: 5861308774190397500}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4488207869814931955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4528626857428771612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bdb67730aa6f1d4c8b7547db0cd618f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHandler: {fileID: 2775451825612686151}
-  implementEachAttackDelay: 1
-  eachAttackDelayRate: 0.1
 --- !u!114 &5043935635926204964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +92,8 @@ MonoBehaviour:
   enemyHandler: {fileID: 2775451825612686151}
   keepDistance_upWard: 1
   keepDistance_forward: 15
+  applyDelay: 0
+  delayTime: 0
 --- !u!114 &852541547215238274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +108,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 5861308774190397500}
   speed: 200
+--- !u!114 &5691370619205415399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4528626857428771612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934d7744942e0994787d93bb9bd653e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackData: {fileID: 11400000, guid: d71ed12451df28a47945ad82d2824ad6, type: 2}
+  attackFirerate: 0.5
+  eachAttackDelayRate: 0.1
+  attackPointing:
+  - {fileID: 5698865534503849325}
+  - {fileID: 3553763937002547242}
+  soundFXName: 
 --- !u!114 &4133616547212627696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fa1ba5d361f1142a75796a3804b4d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1250
 --- !u!1 &5861308774190397501
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,17 +225,13 @@ MonoBehaviour:
     health: 50
     points: 20
     movementSpeed: 8
-    firerate: 0.5
-    attackPrefab: {fileID: 484436157555161877, guid: 7eb9183ee9d042743b83f9cb6641fb97,
-      type: 3}
     deathExplosion: {fileID: 0}
-  attackData: {fileID: 11400000, guid: d71ed12451df28a47945ad82d2824ad6, type: 2}
-  attackOut:
-  - {fileID: 5698865534503849325}
-  - {fileID: 3553763937002547242}
+    deathSFXName: explode3
+  character: {fileID: 0}
   cameraManager: {fileID: 0}
   gameAssetManager: {fileID: 0}
   onHitCharacter: {fileID: 0}
+  soundFXHandler: {fileID: 0}
 --- !u!114 &4532489178525388907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3553763937002547242}
   m_Layer: 6
-  m_Name: attackOut2
+  m_Name: attackPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

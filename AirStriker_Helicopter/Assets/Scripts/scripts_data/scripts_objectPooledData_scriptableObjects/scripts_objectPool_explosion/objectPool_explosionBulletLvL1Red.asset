@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06dd570429518d45b203205bfef714c, type: 3}
+  m_Name: objectPool_explosionBulletLvL1Red
+  m_EditorClassIdentifier: 
+  objectPooledName: explosionBulletLvL1Red
+  objectPrefab: {fileID: 7778986138541501390, guid: 46d5ba6a6ee7ba94a9d90ee77b5961a0,
+    type: 3}
+  objectStartingSize: 25
+  objectOnEnabled: 0

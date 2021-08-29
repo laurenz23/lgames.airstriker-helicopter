@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ceb08075c7c22947b59a9d269c31ee4, type: 3}
+  m_Name: unit2
+  m_EditorClassIdentifier: 
+  id: unit2
+  level: 1
+  _name: Carabao
+  description: Please add Carabao description here...
+  health: 400
+  speed: 3
+  dmgS: 75
+  listPassiveData: []
+  diamondCosts: 0
+  coinCosts: 0
+  listGameWeaponData:
+  - {fileID: 11400000, guid: 44b5ed2860cffe8468eb9fb3e895e0a8, type: 2}
+  - {fileID: 11400000, guid: 8ab2026ddb84dbc46a01c3672d5774b1, type: 2}
+  - {fileID: 11400000, guid: 78fbb3f2d2ffb964b95ea0d3c691df77, type: 2}
+  - {fileID: 11400000, guid: 5e3ec26e3a62cfc4ba38cfb895b10ac9, type: 2}
+  - {fileID: 11400000, guid: fe28009a6686fbd49bc8b55de43eb3a0, type: 2}

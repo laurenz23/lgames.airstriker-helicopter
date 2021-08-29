@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2574731470932236854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2574731470932236841}
+  - component: {fileID: 2574731470932236840}
+  m_Layer: 0
+  m_Name: EffectPrefabsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &2574731470932236841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2574731470932236854}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2574731470932236840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2574731470932236854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 673005a5e296bde4cbd9ff5ab4451be3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popupText_health: {fileID: 8376005655045130232, guid: 4921c01e39e2ebc469d27d846689c3ab,
+    type: 3}
+  popupText_damage: {fileID: 8376005655045130232, guid: 8861db2fbdae21746b966c4f86429d56,
+    type: 3}
+  popupText_points: {fileID: 8376005655045130232, guid: 40f13ca27fabb0743b06156f89dedeb7,
+    type: 3}
+  popupText_coins: {fileID: 8376005655045130232, guid: b540ab5fb659a9040bf8338154049364,
+    type: 3}
+  popupText_energy: {fileID: 8376005655045130232, guid: 5d66cb3a0dc9b0f418e5c5fdce37f3d2,
+    type: 3}
+  playerTrailEffect: {fileID: 3175667185137707587, guid: a085c88eb18531149a9f68521faa6060,
+    type: 3}
+  coinParticleEffect: {fileID: 3871689060433742133, guid: b08c363c0bf259e43b271e8b4fce33b8,
+    type: 3}
+  energyParticleEffect: {fileID: 2889879794924261711, guid: f8c3021385673e546ba6b7b74ce0db1b,
+    type: 3}
+  basicBulletHitEffect: {fileID: 7778986138541501390, guid: 46d5ba6a6ee7ba94a9d90ee77b5961a0,
+    type: 3}
+  explosionEffect: {fileID: 4321912320596136573, guid: 71457059a0e5fcd4bbf3c589d4084860,
+    type: 3}
+  largeExplosionEffect: {fileID: 4321912320596136573, guid: 093aed5e7105e1945b3321c616200e7d,
+    type: 3}
+  mushroomExplosionEffect: {fileID: 5341386477150152617, guid: c26fbdcc15bb178499c04ffc0faf05e1,
+    type: 3}

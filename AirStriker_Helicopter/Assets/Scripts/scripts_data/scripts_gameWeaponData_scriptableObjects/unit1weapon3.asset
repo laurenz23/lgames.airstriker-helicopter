@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a608048c65d46f048ad4093625e4a747, type: 3}
+  m_Name: unit1weapon3
+  m_EditorClassIdentifier: 
+  id: unit1weapon3
+  type: 3
+  _name: Drop Bomb
+  description: Drop Bomb Description
+  weaponData:
+  - level: 0
+    icon: {fileID: 21300000, guid: 44f31c41ad9522147b549c55f0d09c9c, type: 3}
+    damage: 50
+    firerate: 80
+    speed: 30
+    aoe: 2
+    cost: 90
+  - level: 1
+    icon: {fileID: 21300000, guid: 44f31c41ad9522147b549c55f0d09c9c, type: 3}
+    damage: 50
+    firerate: 80
+    speed: 30
+    aoe: 2
+    cost: 150
+  - level: 2
+    icon: {fileID: 21300000, guid: 44f31c41ad9522147b549c55f0d09c9c, type: 3}
+    damage: 55
+    firerate: 78
+    speed: 30
+    aoe: 3
+    cost: 300
+  - level: 3
+    icon: {fileID: 21300000, guid: 44f31c41ad9522147b549c55f0d09c9c, type: 3}
+    damage: 60
+    firerate: 78
+    speed: 30
+    aoe: 4
+    cost: 450
+  - level: 4
+    icon: {fileID: 21300000, guid: 44f31c41ad9522147b549c55f0d09c9c, type: 3}
+    damage: 65
+    firerate: 74
+    speed: 30
+    aoe: 5
+    cost: 600
+  - level: 5
+    icon: {fileID: 21300000, guid: 44f31c41ad9522147b549c55f0d09c9c, type: 3}
+    damage: 70
+    firerate: 72
+    speed: 30
+    aoe: 6
+    cost: 750
+  - level: 6
+    icon: {fileID: 21300000, guid: 44f31c41ad9522147b549c55f0d09c9c, type: 3}
+    damage: 75
+    firerate: 70
+    speed: 30
+    aoe: 7
+    cost: 900
+  - level: 7
+    icon: {fileID: 21300000, guid: 44f31c41ad9522147b549c55f0d09c9c, type: 3}
+    damage: 80
+    firerate: 68
+    speed: 30
+    aoe: 8
+    cost: 1050
+  - level: 8
+    icon: {fileID: 21300000, guid: 44f31c41ad9522147b549c55f0d09c9c, type: 3}
+    damage: 85
+    firerate: 66
+    speed: 30
+    aoe: 9
+    cost: 1200
+  - level: 9
+    icon: {fileID: 21300000, guid: 44f31c41ad9522147b549c55f0d09c9c, type: 3}
+    damage: 90
+    firerate: 64
+    speed: 30
+    aoe: 10
+    cost: 1350
+  - level: 10
+    icon: {fileID: 21300000, guid: 50294aeb0efb09144b29f1d53e7dba53, type: 3}
+    damage: 100
+    firerate: 60
+    speed: 30
+    aoe: 12
+    cost: 1650

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ceb08075c7c22947b59a9d269c31ee4, type: 3}
+  m_Name: unit1
+  m_EditorClassIdentifier: 
+  id: unit1
+  level: 1
+  _name: Scorpion
+  description: Please add scorpion description here...
+  health: 100
+  speed: 5
+  dmgS: 100
+  listPassiveData: []
+  diamondCosts: 0
+  coinCosts: 0
+  listGameWeaponData:
+  - {fileID: 11400000, guid: 9044bc784c0aadd4dba27ee77e180070, type: 2}
+  - {fileID: 11400000, guid: 93a747f1c655ec44d91a753f3de433ec, type: 2}
+  - {fileID: 11400000, guid: 552aa3379a7744c4cb9458178a7584a6, type: 2}
+  - {fileID: 11400000, guid: 73f8382ef6f6d4545b1f5b76b9c3402d, type: 2}
+  - {fileID: 11400000, guid: 2cd149ec7be220d4b9bba8afd0f2d0c5, type: 2}

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06dd570429518d45b203205bfef714c, type: 3}
+  m_Name: objectPool_popupTextCoins
+  m_EditorClassIdentifier: 
+  objectPooledName: popupTextCoins
+  objectPrefab: {fileID: 8376005655045130232, guid: b540ab5fb659a9040bf8338154049364,
+    type: 3}
+  objectStartingSize: 10
+  objectOnEnabled: 0

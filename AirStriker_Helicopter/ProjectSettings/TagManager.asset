@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Terrain
   - Ground
-  - Energy
   - BasicAttack
   - Enemy
   - GameBoundary
@@ -51,6 +50,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Effect
+    uniqueID: 2241713729
     locked: 0
   - name: UI
     uniqueID: 1045807495

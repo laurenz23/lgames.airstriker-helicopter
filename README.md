@@ -1,5 +1,215 @@
 # AirStriker:Helicopter
 
+Changes AirStriker:Helicopter.v1.1.3 Aug 29 2021:
+
+SUMMARY
+	- In this update we change our old input system and integrate new unity input system
+	- We organize each scene hierarchy and project structure or project tree
+	- Updated Project Settings: Script Execute Order to fix some bugs and errors
+	- Added DataManager to save and load data using JSON data: 
+		GameUnit 
+		GameWeapons 
+		PlayerProfileData 
+		PlayerProfileUnit 
+		PlayerProfileScore 
+		PlayerProfileTokens
+		And we remove also the scriptable objects that transfer data from one scene to another
+	- Update Main Menu Panel:
+		- Improve main menu background 
+		- Added some tilt effect in main menu background
+		- Hide unresearch weapons and display the researched only
+	- Updated Armory Panel:
+		- When selecting the unresearch weapon it will display the weapons but with unresearch effect in object
+		- Can Research and Upgrade the weapon and save the data
+	- Updated Mission Map Panel (Player cannot play the game when insuficient deployment capsule)
+	- Updated Gameplay UI by loading the style of ui from game settings data
+	- Gameplay:
+		- Added Pooling System to improve game performance
+		- Added Muzzle Flashes effects
+		- Improved and updated Hit Effect, Explosion Effects, Attack Projectiles
+		- Deleted the old low poly sky to 2d sky, and added a parallax effect
+	- Updated Tokens:
+		- We added a function for tokens where player now can add diamonds, coins, and deployment capsule by pressing the add icon.
+
+PACKAGE:
+	- Added New Input System
+	- Added 2D Sprite Editor
+	- Added Epic_Toon_FX [Imported_Assets]
+
+2D ARTS:
+	- Modified Texture 2D settings: Max Size: 512, Compression: None
+	- Added bulletCircleProjectileBlueLvl1
+	- Added bulletCircleProjectileGreenLvl1
+	- Added bulletCircleProjectileRedLvl1
+	- Added bulletCircleProjectileVioletLvl1
+	- Added bulletCircleProjectileYellowLvl1
+	- Added bulletProjectileBlueLvl1
+	- Added bulletProjectileBlueLvl2
+	- Added bulletProjectileDarkBlueLvl1
+	- Added bulletProjectileGoldLvl1
+	- Added bulletProjectileGreenLvl1
+	- Added bulletProjectilePinkLvl1
+	- Added bulletProjectileRedLvl1
+	- Added bulletProjectileRedLvl2
+	- Added bulletProjectileVioletLvl1
+	- Added bulletProjectileVioletLvl2
+	- Added dropBomb
+	- Added guidedMissile1
+	- Added missileProjectile1
+	- Added atomic
+	- Added sparkle
+	- Added sparkleRed
+	- Added redMuzzleEffect1
+	- Added forestBackground
+	- Added parallax_mountain1
+	- Added parallax_mountain2
+	- Added parallax_mountain3
+	- Added parallax_mountain4
+	- Added parallax_mountain5
+	- Added parallax_mountain6
+	- Added flashBlue
+	- Added flashDeepBlue
+	- Added flashGreen
+	- Added flashRed
+	- Added flashViolet
+	- Added flashWhite
+	- Added flashYellow
+	- Added squareTech
+	- Added 2d_cloud_1
+	- Added 2d_cloud_2
+	- Added 2d_cloud_3
+	- Added 2d_cloud_4
+	- Added 2d_cloud_5
+	- Added 2d_cloud_6
+	- Added 2d_cloud_7
+	- Added 2d_cloud_8
+	- Added 2d_cloud_9
+	- Added 2d_cloud_10
+	- Added sprite_muzzleFlash_blue
+	- Added sprite_muzzleFlash_deepBlue
+	- Added sprite_muzzleFlash_green
+	- Added sprite_muzzleFlash_red
+	- Added sprite_muzzleFlash_violet
+	- Added sprite_muzzleFlashBig_blue
+	- Added sprite_muzzleFlashBig_deepBlue
+	- Added sprite_muzzleFlashBig_green
+	- Added sprite_muzzleFlashBig_red
+	- Added sprite_muzzleFlashBig_violet
+	- Remove explosionEffect
+
+3D ARTS:
+	- Added cp1_defaultMaterial_transparent
+	- Remove basicBullet
+	- Remove Player_BiPlane
+	- Remove EnergyParticle
+	- Remove 3d_arts_energy folder including contents
+
+ANIMATIONS:
+	- Added animations_boss1 folder
+	- Added Boss1_animator
+	- Added boss1_entry
+	- Added boss1_zRotation
+	- Added animations_muzzleFlash folder
+	- Added muzzleFlash_blue animation
+	- Added muzzleFlash_blue animator controller
+	- Added muzzleFlash_deepBlue animation
+	- Added muzzleFlash_deepBlue animator controller
+	- Added muzzleFlash_green animation
+	- Added muzzleFlash_green animator controller
+	- Added muzzleFlash_red animation
+	- Added muzzleFlash_red animator controller
+	- Added muzzleFlash_violet animation
+	- Added muzzleFlash_violet animator controller
+	- Added muzzleFlashBig_blue animation
+	- Added muzzleFlashBig_blue animator controller
+	- Added muzzleFlashBig_deepBlue animation
+	- Added muzzleFlashBig_deepBlue animator controller
+	- Added muzzleFlashBig_green animation
+	- Added muzzleFlashBig_green animator controller
+	- Added muzzleFlashBig_red animation
+	- Added muzzleFlashBig_red animator controller
+	- Added muzzleFlashBig_violet animation
+	- Added muzzleFlashBig_violet animator controller
+	- Added animations_mainMenu_popup_text folder
+	- Added Popup_text_animator
+	- Added Popup_text_entry_anim
+
+PREFABS:
+	- Modified Boss1DoubleBullet_cannon1
+	- Modified GatlingProjectiles 
+	- Modified EnemyAttackBullet to EnemyBullet
+	- Modified hg_explosionEffect
+	- Modified hg_explosionOrbEffect
+	- Modified hg_largeExplosionEffect
+	- Modified hg_mushroomExplosion
+	- Modified hg_squaredExplosionEffect
+	- Added hg_bulletHitEffect_blue
+	- Added hg_bulletHitEffect_deepBlue
+	- Added hg_bulletHitEffect_green
+	- Added hg_bulletHitEffect_red
+	- Added hg_bulletHitEffect_violet
+	- Added hg_bulletHitEffect_yellow
+	- Added CharacterSelectedInGame
+	- Added DataManager
+	- Added ProfilePlayerDataManager
+	- Modified Unit1 (InGame)
+	- Added Unit1 (MainMenu)
+	- Added Unit2 (InGame)
+	- Added ArmoryItem
+	- Remove EnergyPrefab
+	- Remove EnergyParticleEffect
+
+SCRIPTS:
+	- Modified InputManager
+	- Modified PlatformRotator
+	- Modified MainMenuSwitchesHandler
+	- Modified EffectHandler to EffectPrefabManager
+	- Modified EnemyArmamentFindTarget
+		- From: Armament wait to find the target before attacking
+		- To: Armament will automatically attack 
+	- Added scripts_gameUnitData_scriptableObjects folder
+	- Added scripts_gameWeaponData_scriptableObjects folder
+	- Added scripts_objectPooledData_scriptableObjects folder
+	- Added GameUnitData
+	- Added GameWeaponData
+	- Added ObjectPooledData
+	- Added ProfilePlayerData
+	- Added ProfileScoreData
+	- Added ProfileSelectedData
+	- Added ProfileTokensData
+	- Added ProfileUnitWrapper
+	- Added UnitPassiveData
+	- Added WeaponData
+	- Added Utils
+	- Added AccelerometerPosEffect
+		- For Android Device that have accelerometer in it.
+		- Added effect for main menu grid and square tech background
+	- Added Clouds
+	- Added MuzzleFlash
+	- Added BossHealth
+	- Added CharacterSelectedManager
+	- Added DataManager
+	- Added PoolingManager
+	- Added ProfilePlayerDataManager
+	- Added UnitArmoryManager
+	- Added ArmoryItem
+	- Remove KeyboardInput
+	- Remove ScreenInput
+	- Remove ScreenActionInput
+	- Remove SwipeRotate
+	- Remove BackgroundManager
+	- Remove ResearchItem
+	- Remove UpgradeItem
+
+UI:
+	- Added tech_grid
+	- Added invalid_start_btn
+	- Added invalid_start_btn_click
+	- Added maxLvL_btn_click
+	- Added play_btn_invalid_effect
+	- Added weapon_maxLvL_item
+	- Added weapon_maxLvL_item_click
+
 Changes AirStriker:Helicopter.v1.1.2 June 16 2021:
 
 SUMMARY: 

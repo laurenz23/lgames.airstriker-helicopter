@@ -14,13 +14,16 @@ namespace game_ideas
 
         [Header("Script Reference")]
         public InGameUIManager inGameUIManager;
+
         private GameManager gameManager;
         private SoundManager soundManager;
+        private LoadSceneManager loadSceneManager;
 
         private void Awake()
         {
             gameManager = inGameUIManager.gameManager;
             soundManager = inGameUIManager.soundManager;
+            loadSceneManager = LoadSceneManager.GetInstance();
         }
 
         // call this function if game want to continue after game is pause
@@ -40,8 +43,8 @@ namespace game_ideas
             soundManager.soundFXHandler.SFX_UI_CLICK("click3");
 
             gameManager.gameState = GameState.GAME_CONTINUE;
-            SceneManager.LoadScene("MainMenu");
 
+            loadSceneManager.LoadScene("MainMenu");
         }
 
     }

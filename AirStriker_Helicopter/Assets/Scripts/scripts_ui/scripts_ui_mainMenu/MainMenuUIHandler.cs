@@ -17,7 +17,7 @@ namespace game_ideas
         [Header("Player UI References")]
         [SerializeField] private TextMeshProUGUI playerName_text;
         [SerializeField] private TextMeshProUGUI level_text;
-        [SerializeField] private Image level_image;
+        [SerializeField] private Slider level_slider;
         [SerializeField] private Text diamonds_text;
         [SerializeField] private Text coins_text;
         [SerializeField] private TextMeshProUGUI score_text;
@@ -25,10 +25,20 @@ namespace game_ideas
         [Header("Unit UI Reference")]
         [SerializeField] private TextMeshProUGUI characterName_text;
         [SerializeField] private TextMeshProUGUI characterDescription_text;
-        [SerializeField] private Image characterHealth_image;
-        [SerializeField] private Image characterSpeed_image;
-        [SerializeField] private Image characterDamage_image;
-        [SerializeField] private Image characterPassive_image;
+        [SerializeField] private Slider characterHealth_slider;
+        [SerializeField] private Slider characterSpeed_slider;
+        [SerializeField] private Slider characterDamage_slider;
+        [SerializeField] private Slider characterPassive_slider;
+        [SerializeField] private Button characterPrev_button;
+        [SerializeField] private Button characterNext_button;
+
+        [Header("Mission Group Reference")]
+        [SerializeField] private Image mission_panel;
+        [SerializeField] private GameObject missionPointer_obj;
+        [SerializeField] private GameObject invalidMission_btn;
+        [SerializeField] private GameObject mission_btn;
+        [SerializeField] private Sprite blue_btn_effect;
+        [SerializeField] private Sprite red_btn_effect;
 
         [Header("Map UI Reference")]
         [SerializeField] private Button start_btn;
@@ -47,6 +57,7 @@ namespace game_ideas
 
         [Header ("Script Reference")]
         public DataManager dataManager;
+        public ProfilePlayerDataManager profilePlayerDataManager;
         [SerializeField] private UnitArmoryManager unitArmoryManager;
         
         private ProfilePlayerData profilePlayerData = new ProfilePlayerData();
@@ -64,11 +75,16 @@ namespace game_ideas
         }
 
         // call this function to update the value of ui player profile: name and level
-        private void SetPlayerProfile()
+        public void SetPlayerProfile()
         {
             profilePlayerData = dataManager.profilePlayerData; // load profile player data from data manager profile player data
+            int level = profilePlayerData.playerLevel;
+            int score = dataManager.profileScoreData.score;
             playerName_text.text = profilePlayerData.playerName.ToUpper(); // set player name text. upper text is the supported type of font style
-            level_text.text = "LEVEL " + profilePlayerData.playerLevel.ToString(); // set player level
+            level_slider.minValue = profilePlayerDataManager.GetPlayerLevelValue(level - 1);
+            level_slider.maxValue = profilePlayerDataManager.GetPlayerLevelValue(level);
+            level_slider.value = score;
+            level_text.text = "LEVEL " + level.ToString(); // set player level
         } 
 
         // call this function to update the value of ui player score
@@ -106,6 +122,25 @@ namespace game_ideas
             }
         }
 
+        // set or update mission button group ui
+        public void SetMissionButton(bool value)
+        {
+            missionPointer_obj.SetActive(value);
+
+            if (value) // player can start a mission
+            {
+                mission_panel.sprite = blue_btn_effect;
+                mission_btn.SetActive(true);
+                invalidMission_btn.SetActive(false);
+            }
+            else 
+            {
+                mission_panel.sprite = red_btn_effect;
+                mission_btn.SetActive(false);
+                invalidMission_btn.SetActive(true);
+            }
+        }
+
         // call this function to update the ui of play button
         public void SetPlayButton()
         {
@@ -129,21 +164,45 @@ namespace game_ideas
             }
         }
 
+        // hide and show of previous and next buttons
+        // this method is called at UnityArmoryManager class
+        // whenever the main menu scene is open it will display the button
+        public void DisplayCharacterNavigationButton(bool isDisplayPrev, bool isDisplayNext)
+        {
+            characterPrev_button.gameObject.SetActive(isDisplayPrev);
+            characterNext_button.gameObject.SetActive(isDisplayNext);
+        }
+
         // NOTE: COMPUTATION IS CURRENTLY TEMPORARY
         // call this function to update the value of ui of unit data
+        int playerLevel = 0;
+
         public void SetUnitData(int index)
         {
+            playerLevel = profilePlayerData.playerLevel;
+
             characterName_text.text = dataManager.listGameUnitData[index]._name.ToUpper(); // set unit name 
             characterDescription_text.text = dataManager.listGameUnitData[index].description.ToUpper(); // set unit description
-            characterHealth_image.fillAmount = dataManager.listGameUnitData[index].health * 0.001f; // set unit health amount
-            characterSpeed_image.fillAmount = dataManager.listGameUnitData[index].speed * 0.1f; // set unit speed amount 
-            characterDamage_image.fillAmount = dataManager.listGameUnitData[index].dmgS * 0.001f; // set unit damage amount
-            characterPassive_image.fillAmount = 0.9f; // set unit passive amount
+
+            characterHealth_slider.value = dataManager.listGameUnitData[index].health + AddStat(50); // set unit health amount
+            characterSpeed_slider.value = dataManager.listGameUnitData[index].speed; // set unit speed amount 
+            characterDamage_slider.value = dataManager.listGameUnitData[index].dmgS; // set unit damage amount
+            characterPassive_slider.value = dataManager.listGameUnitData[index].passive + AddStat(1); // set unit passive amount
+        }
+
+        private int AddStat(int value)
+        {
+            if (playerLevel > 1)
+            {
+                return value * playerLevel;
+            }
+
+            return 0;
         }
 
         public void ShowPopupMessage(string message)
         {
-            // we add if statement to avoid bug of reactivation even the message is still activated
+            // we add "if statement" to avoid bug of reactivation even the message is still activated
             if (!popup_text_gObject.activeSelf) // if popup text object is deactivated, display the message
             {
                 popup_text_gObject.SetActive(true); // display the message panel

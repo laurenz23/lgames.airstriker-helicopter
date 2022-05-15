@@ -94,7 +94,22 @@ namespace game_ideas
         {
             return gameUnitData[unitIndex];
         }
-        
+
+        // check if current selected unit have atleast one weapon non special weapons
+        public bool HaveWeapon()
+        {
+            if (profileUnitData.unitData[unitIndex].weaponData[0].weaponLevel > unresearch)
+                return true;
+            if (profileUnitData.unitData[unitIndex].weaponData[1].weaponLevel > unresearch)
+                return true;
+            if (profileUnitData.unitData[unitIndex].weaponData[2].weaponLevel > unresearch)
+                return true;
+            if (profileUnitData.unitData[unitIndex].weaponData[3].weaponLevel > unresearch)
+                return true;
+
+            return false;
+        }
+
         // show researched unit and hide the unresearch
         private void WeaponUse(int weaponLevel, GameObject armament)
         {
@@ -139,6 +154,18 @@ namespace game_ideas
                 }
             }
 
+            if (index <= 0) // if current selected is the first unit(helicopter) it will hide previous button object
+                mainMenuUIHandler.DisplayCharacterNavigationButton(false, true);
+
+            if (index >= (gameUnits.Count - 1)) // if current selected is the last unit(helicopter) it will hide next button object
+                mainMenuUIHandler.DisplayCharacterNavigationButton(true, false);
+
+            // check if unit have atlease one non-special weapon and update mission ui group buttons
+            if (HaveWeapon()) 
+                mainMenuUIHandler.SetMissionButton(true);
+            else
+                mainMenuUIHandler.SetMissionButton(false);
+
             DisplayUnitWeapons(index); // display the current weapons of unit
             mainMenuUIHandler.SetUnitData(index); // update the main menu ui when selecting units
         }
@@ -154,10 +181,6 @@ namespace game_ideas
                 DisplayUnits(unitIndex); // display units and weapons
                 profilePlayerDataManager.UpdateSelectedUnitData(unitIndex); // update and save selected unit data json
             }
-            else // player already viewing the newest unit, since the unitIndex is equal to gameUnits referenced
-            {
-                mainMenuUIHandler.ShowPopupMessage("These is the last character in the list");
-            }
         }
 
         public void PreviousUnit()
@@ -169,10 +192,6 @@ namespace game_ideas
                 unitIndex--; // decrement unitIndex, if equal to zero, then the current displayed unit is the oldest unit
                 DisplayUnits(unitIndex); // display units and weapons
                 profilePlayerDataManager.UpdateSelectedUnitData(unitIndex); // update and save selected unit data json
-            }
-            else // player already viewing the oldest unit, since the unitIndex is equal to zero
-            {
-                mainMenuUIHandler.ShowPopupMessage("These is the first character in the list");
             }
         }
         

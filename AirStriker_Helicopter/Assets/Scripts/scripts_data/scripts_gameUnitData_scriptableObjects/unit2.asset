@@ -16,10 +16,10 @@ MonoBehaviour:
   level: 1
   _name: Carabao
   description: Please add Carabao description here...
-  health: 400
-  speed: 3
-  dmgS: 75
-  listPassiveData: []
+  health: 200
+  speed: 5
+  dmgS: 25
+  passive: 1
   diamondCosts: 0
   coinCosts: 0
   listGameWeaponData:

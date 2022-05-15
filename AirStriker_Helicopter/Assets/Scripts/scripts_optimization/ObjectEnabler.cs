@@ -27,14 +27,13 @@ namespace game_ideas
              * and start rendering its mesh and start executing the scripts
              * And it will also mark the object as enabled for disabling it again when exits the trigger
              */
-
             if (
                 other.CompareTag(GameTag.Cloud.ToString()) ||
                 other.CompareTag(GameTag.Enemy.ToString()) ||
                 other.CompareTag(GameTag.Ground.ToString()) ||
-                other.CompareTag(GameTag.Coins.ToString()) ||
                 other.CompareTag(GameTag.Tree.ToString()) ||
-                other.CompareTag(GameTag.Props.ToString())
+                other.CompareTag(GameTag.Props.ToString()) ||
+                other.CompareTag(GameTag.Tokens.ToString())
                 )
             {
                 if (other.GetComponent<ObjectOptimizeHandler>())

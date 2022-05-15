@@ -36,7 +36,7 @@ namespace game_ideas
 
         private void Start()
         {
-            effectPrefabManager = FindObjectOfType<EffectPrefabManager>();
+            effectPrefabManager = EffectPrefabManager.GetInstance();
             armamentAttackData = GetComponent<ArmamentAttackData>();
         }
 

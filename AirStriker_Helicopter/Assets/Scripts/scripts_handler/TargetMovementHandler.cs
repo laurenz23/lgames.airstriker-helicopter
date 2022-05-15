@@ -27,7 +27,6 @@ namespace game_ideas
 
             if (gameManager.gameState == GameState.GAME_START || gameManager.gameState == GameState.GAME_CONTINUE)
             {
-
                 transform.Translate(Vector3.forward * horizontalForwardSpeed * Time.deltaTime);
             }
 

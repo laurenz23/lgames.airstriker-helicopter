@@ -12,7 +12,6 @@ namespace game_ideas
 {
     public class OnHitCharacter : MonoBehaviour
     {
-
         private Renderer[] renderers = null;
         private Material default_material = null; // reference for default material
         private Material hit_material = null; // reference for hit material
@@ -21,13 +20,10 @@ namespace game_ideas
 
         private bool isHit; // delay for changing material to hit from default
 
-        private void Awake()
-        {
-            gameAssetManager = GameAssetsManager.GetInstance();
-        }
-
         public void SetMaterial(Transform parentMaterials = null)
         {
+            gameAssetManager = GameAssetsManager.GetInstance();
+
             // if the parentMateri
             if (parentMaterials == null)
             {

@@ -62,5 +62,41 @@ namespace game_ideas
 
         }
 
+        // call this function if level is completed to display LevelCompleteUI
+        public void DisplayLevelCompleteUI()
+        {
+            pause_btn.gameObject.SetActive(false);
+            player_ui.SetActive(false);
+            StartCoroutine(DelayLevelComplete());
+        }
+
+        IEnumerator DelayLevelComplete()
+        {
+            yield return new WaitForSeconds(2f);
+
+            inGameLevelComplete.gameObject.SetActive(true); // display level complete panel
+            inGameLevelComplete.LevelComplete(); // set value of level complete ui
+            StopCoroutine(DelayLevelComplete()); 
+        }
+
+        // call this function if game is over to display GameOverUI
+        public void DisplayGameoverUI()
+        {
+            pause_btn.gameObject.SetActive(false); // hide pause button if gameover, so player can't pause the game even game is over
+            player_ui.SetActive(false); // hide player ui if gameover
+
+            StartCoroutine(DelayGameoverUI()); // apply delay after player gameover before display gameover panel
+        }
+
+
+        IEnumerator DelayGameoverUI()
+        {
+            yield return new WaitForSeconds(2f);
+
+            inGameOver.gameObject.SetActive(true); // display gameover panel
+            inGameOver.GameOver(); // set the value of ui's
+            StopCoroutine(DelayGameoverUI());
+        }
+
     }
 }

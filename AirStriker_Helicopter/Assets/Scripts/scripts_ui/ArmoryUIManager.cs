@@ -33,14 +33,34 @@ namespace game_ideas
         [SerializeField] private Text weaponName_text;
         [SerializeField] private Image weaponIcon_image;
         [SerializeField] private Text weaponDescription_text;
-        [SerializeField] private Image weaponDamage_image;
-        [SerializeField] private Image weaponSpeed_image;
-        [SerializeField] private Image weaponFirerate_image;
-        [SerializeField] private Image weaponBlastArea_image;
         [SerializeField] private Button research_button;
         [SerializeField] private Button upgrade_button;
         [SerializeField] private Image maxLvL_img;
         [SerializeField] private Text cost_text;
+
+        [Header("Damage Sliders")]
+        [SerializeField] private Slider damage_slider;
+        [SerializeField] private Slider nextDamage_slider;
+        [SerializeField] private Slider subDamage_slider;
+        [SerializeField] private Slider nextSubDamage_slider;
+
+        [Header("Speed Sliders")]
+        [SerializeField] private Slider speed_slider;
+        [SerializeField] private Slider nextSpeed_slider;
+        [SerializeField] private Slider subSpeed_slider;
+        [SerializeField] private Slider nextSubSpeed_slider;
+
+        [Header("Firerate Sliders")]
+        [SerializeField] private Slider firerate_slider;
+        [SerializeField] private Slider nextFirerate_slider;
+        [SerializeField] private Slider subFirerate_slider;
+        [SerializeField] private Slider nextSubFirerate_slider;
+
+        [Header("AoE Sliders")]
+        [SerializeField] private Slider aoe_slider;
+        [SerializeField] private Slider nextAoe_slider;
+        [SerializeField] private Slider subAoe_slider;
+        [SerializeField] private Slider nextSubAoe_slider;
 
         [Header("Item Reference")]
         [SerializeField] private Transform itemParent;
@@ -59,13 +79,14 @@ namespace game_ideas
         [HideInInspector] public GameWeaponData selectedGameWeaponData;
         [HideInInspector] public WeaponData selectedWeaponData;
         [HideInInspector] public int selectedCurrentWeaponLevel;
-        
-        private float averageDamage;
-        private float averageFirerate;
-        private float averageSpeed;
-        private float averageBlastArea;
 
         private int unresearch = 0;
+
+        private AttackType attackType;
+        private int damage;
+        private int firerate;
+        private int speed;
+        private int aoe;
 
         private void Start()
         {
@@ -127,48 +148,168 @@ namespace game_ideas
             }
         }
 
-        // call this function to set weapon details to ui in armory panel
-        public void SetWeaponInfo(ArmoryItem armoryItem, GameWeaponData gameWeaponData, WeaponData weaponData, int weaponLevel)
+        private void SetSlider(Slider slider, Slider subSlider, int value)
         {
-            ResetData(); // reset the data first before setting the details to avoid unwanted data's
+            int sliderLevel = 0;
 
-            // check weapon type, to assign a computation formula
-            // each weapon type have different computation for damage, firerate and speed
-            if (gameWeaponData.type == AttackType.BULLET)
+            if (value > 0 && value <= 20)
             {
-                averageDamage = 0.1f;
-                averageFirerate = 0.01f;
-                averageSpeed = 0.1f;
+                slider.minValue = 0;
+                slider.maxValue = 20;
+                sliderLevel = 1;
             }
-            else if (gameWeaponData.type == AttackType.MISSILE)
+            else if (value > 20 && value <= 100)
             {
-                averageDamage = 0.01f;
-                averageFirerate = 0.01f;
-                averageSpeed = 0.1f;
+                slider.minValue = 0;
+                slider.maxValue = 100;
+                sliderLevel = 2;
+            }
+            else if (value > 100 && value <= 300)
+            {
+                slider.minValue = 100;
+                slider.maxValue = 300;
+                sliderLevel = 3;
+            }
+            else if (value > 300 && value <= 1300)
+            {
+                slider.minValue = 300;
+                slider.maxValue = 1300;
+                sliderLevel = 4;
             }
             else
             {
-                averageDamage = 0f;
-                averageFirerate = 0f;
-                averageSpeed = 0f;
+                slider.minValue = 0;
+                slider.maxValue = 0;
             }
+
+            slider.value = value;
+            subSlider.value = sliderLevel;
+        }
+
+        private void SetFirerateSlider(Slider slider, Slider subSlider, int value, AttackType type)
+        {
+            switch (type)
+            {
+                case AttackType.BULLET:
+
+                    if (value > 0 && value <= 30)
+                    {
+                        value = 30 - value;
+                        slider.minValue = 10;
+                        slider.maxValue = 30;
+                        subSlider.value = 4;
+                    }
+                    else
+                    {
+                        slider.minValue = 0;
+                        slider.maxValue = 0;
+                    }
+
+                    break;
+                case AttackType.MISSILE:
+                case AttackType.BOMB:
+                case AttackType.ATOMIC:
+
+                    if (value > 0 && value <= 100)
+                    {
+                        value = 100 - value;
+                        slider.minValue = 0;
+                        slider.maxValue = 100;
+                        subSlider.value = 3;
+                    }
+                    else if (value > 100 && value <= 600)
+                    {
+                        value = 600 - value;
+                        slider.minValue = 100;
+                        slider.maxValue = 600;
+                        subSlider.value = 2;
+                    }
+                    else
+                    {
+                        slider.minValue = 0;
+                        slider.maxValue = 0;
+                    }
+
+                    break;
+            }
+
+            if (value <= slider.minValue && subSlider.value > 1)
+            {
+                slider.value = slider.maxValue;
+                subSlider.value -= 1;
+            }
+            else
+            {
+                slider.value = value;
+            }
+        }
+
+        // call this function to set weapon details to ui in armory panel
+        public void SetWeaponInfo(ArmoryItem armoryItem, GameWeaponData gameWeaponData, int weaponLevel)
+        {
+            ResetData(); // reset the data first before setting the details to avoid unwanted data's
+
+            attackType = gameWeaponData.type;
+            damage = gameWeaponData.weaponData[weaponLevel].damage;
+            speed = gameWeaponData.weaponData[weaponLevel].speed;
+            firerate = gameWeaponData.weaponData[weaponLevel].firerate;
+            aoe = gameWeaponData.weaponData[weaponLevel].aoe;
+
+            int nextDamage = 0;
+            int nextSpeed = 0;
+            int nextFirerate = 0;
+            int nextAoE = 0;
+
+            if (weaponLevel < 10)
+            {
+                nextDamage = gameWeaponData.weaponData[weaponLevel + 1].damage;
+                nextSpeed = gameWeaponData.weaponData[weaponLevel + 1].speed;
+                nextFirerate = gameWeaponData.weaponData[weaponLevel + 1].firerate;
+                nextAoE = gameWeaponData.weaponData[weaponLevel + 1].aoe;
+            }
+
+            // check weapon type, to assign a computation formula 
+            if (weaponLevel != unresearch)
+            {
+                // damage
+                SetSlider(damage_slider, subDamage_slider, damage);
+                // speed
+                SetSlider(speed_slider, subSpeed_slider, speed);
+                // firerate
+                SetFirerateSlider(firerate_slider, subFirerate_slider, firerate, attackType);
+                // aoe
+                SetSlider(aoe_slider, subAoe_slider, aoe);
+            }
+            else
+            {
+                // damage
+                SetSlider(damage_slider, subDamage_slider, 0);
+                // speed
+                SetSlider(speed_slider, subSpeed_slider, 0);
+                // firerate
+                SetSlider(firerate_slider, subFirerate_slider, 0);
+                // aoe
+                SetSlider(aoe_slider, subAoe_slider, 0);
+            }
+
+            // damage
+            SetSlider(nextDamage_slider, nextSubDamage_slider, nextDamage);
+            // speed
+            SetSlider(nextSpeed_slider, nextSubSpeed_slider, nextSpeed);
+            // firerate
+            SetFirerateSlider(nextFirerate_slider, nextSubFirerate_slider, nextFirerate, attackType);
+            // aoe
+            SetSlider(nextAoe_slider, nextSubAoe_slider, nextAoE);
 
             // set selected weapon name to ui armory panel
             weaponName_text.text = gameWeaponData._name.ToUpper();
             // set selected weapon icon to ui armory panel
-            weaponIcon_image.sprite = weaponData.icon;
+            weaponIcon_image.sprite = gameWeaponData.icon;
             // set selected weapon description to ui armory panel
             weaponDescription_text.text = gameWeaponData.description.ToUpper();
             // set selected weapon damage amount to ui armory panel
-            weaponDamage_image.fillAmount = (float) weaponData.damage * averageDamage;
-            // set selected weapon firerate amount to ui armory panel
-            weaponFirerate_image.fillAmount = 1f - ((float) weaponData.firerate * averageFirerate);
-            // set selected weapon speed amount to ui armory panel
-            weaponSpeed_image.fillAmount = (float) weaponData.speed * averageSpeed;
-            // set selected weapon aoe amount to ui armory panel
-            weaponBlastArea_image.fillAmount = (float) weaponData.aoe / 20f;
 
-            int cost = weaponData.cost; // weapon cost might differ from weapon level
+            int cost = gameWeaponData.weaponData[weaponLevel].cost; // weapon cost might differ from weapon level
 
             if (weaponLevel == unresearch) // weapon is unresearch then use diamonds as cost
             {
@@ -197,7 +338,7 @@ namespace game_ideas
             // assign selected weapons data and script for upgrade weapon action
             selectedArmoryItem = armoryItem;
             selectedGameWeaponData = gameWeaponData;
-            selectedWeaponData = weaponData;
+            selectedWeaponData = gameWeaponData.weaponData[weaponLevel];
             selectedCurrentWeaponLevel = weaponLevel;
         }
 
@@ -255,7 +396,7 @@ namespace game_ideas
             profilePlayerDataManager.UpgradeUnitWeaponData(unitArmoryManager.GetUnitData().id, selectedGameWeaponData.id, newWeaponLevel);
 
             // update selected armory ui weapon information panel
-            SetWeaponInfo(selectedArmoryItem, selectedGameWeaponData, selectedGameWeaponData.weaponData[newWeaponLevel], newWeaponLevel);
+            SetWeaponInfo(selectedArmoryItem, selectedGameWeaponData, newWeaponLevel);
 
             // update armory weapon list information
             selectedArmoryItem.SetItem(selectedGameWeaponData, newWeaponLevel);

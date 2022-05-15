@@ -28,7 +28,7 @@ namespace game_ideas
                 instance = this;
             }
         }
-        
+
         public List<GameUnitData> listGameUnitData;
 
         [HideInInspector] public GameSettingsData gameSettingsData;
@@ -48,7 +48,6 @@ namespace game_ideas
 
         private void Start()
         {
-
             // LOAD DATA ----------------------------------------------------
             gameSettingsData = LoadGameSettingsData();
             profilePlayerData = LoadProfilePlayerData();
@@ -57,9 +56,8 @@ namespace game_ideas
             profileUnitData = LoadProfileUnitData();
             profileSelectedData = LoadProfileSelectedData();
             // END LOAD DATA ------------------------------------------------
-
         }
-         
+
         // START GAME SETTINGS DATA --------------------------------------------------------------------------
         public void SaveGameSettingsData(GameSettingsData gsd)
         {
@@ -82,6 +80,17 @@ namespace game_ideas
         }
         // END GAME SETTINGS DATA ------------------------------------------------------------------------
 
+        // CHECK PROFILE ----------------------------------------------------------------------------------
+        public bool HavePlayerProfile()
+        {
+            if (profilePlayerData.playerName == "")
+            {
+                return false;
+            }
+
+            return true;
+        }
+        // END CHECK PROFILE ------------------------------------------------------------------------------
 
         // START PLAYER PROFILE --------------------------------------------------------------------------
         public void SaveProfilePlayerData(ProfilePlayerData ppd)
@@ -94,7 +103,7 @@ namespace game_ideas
             ProfilePlayerData ppd = new ProfilePlayerData();
             if (!LoadData(profilePlayerFilename, ppd))
             {
-                ppd.playerName = "AI_1";
+                ppd.playerName = "";
                 ppd.playerLevel = 1;
                 ppd.playerStage = 1;
                 ppd.playerStageLevel = 1;

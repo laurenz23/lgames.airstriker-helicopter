@@ -35,10 +35,7 @@ namespace game_ideas
             cameraManager = FindObjectOfType<CameraManager>();
 
             gameAssetManager = GameAssetsManager.GetInstance();
-        }
 
-        private void Start()
-        {
             effectPrefabManager = FindObjectOfType<EffectPrefabManager>();
 
             onHitCharacter = GetComponent<OnHitCharacter>();
@@ -70,7 +67,7 @@ namespace game_ideas
 
             string explosionPoolName;
             
-            this.gameObject.SetActive(false); // reference for guided attack to avoid ab normal behavior of the guided attack
+            gameObject.SetActive(false); // reference for guided attack to avoid ab normal behavior of the guided attack
 
             // since we have different kind of explosion effect if the enemy collided
             // we assign explosion effect base on player armament type or player explosion effect itself
@@ -93,12 +90,13 @@ namespace game_ideas
                     new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(1f, 1f, 1f));
             }
 
+            // check if game object have destroy assets object to replace the current object to destroy
             if (GetComponent<EnemyAssetDestroy>())
             {
                 GetComponent<EnemyAssetDestroy>().CreateAssetDestroy(transform);
             }
 
-            Destroy(this.gameObject, 0.1f);
+            Destroy(gameObject, 0.1f);
 
         }
 

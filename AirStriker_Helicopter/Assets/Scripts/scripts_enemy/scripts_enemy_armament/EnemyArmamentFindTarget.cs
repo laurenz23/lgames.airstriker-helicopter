@@ -37,10 +37,9 @@ namespace game_ideas
 
         private float minRotation = 0f;
 
-        private void Start()
+        public void Start()
         {
-
-            playerManager = FindObjectOfType<PlayerManager>();
+            playerManager = PlayerManager.GetInstance();
 
             target = playerManager.playerTransform;
 
@@ -69,7 +68,6 @@ namespace game_ideas
                 maxRotation = -80f;
                 minRotation = 0f;
             }
-            
         }
 
         private void Update()

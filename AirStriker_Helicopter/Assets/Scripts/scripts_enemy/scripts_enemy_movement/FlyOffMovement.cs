@@ -25,7 +25,7 @@ namespace game_ideas
 
         private bool fly;
 
-        private void Start()
+        private void Awake()
         {
             gameManager = FindObjectOfType<GameManager>();
 

@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// usage:      attached this script to object that going to destroy(hide or disabled the object)
+/// functions:  instead of destroying the object we disabled it to be abled to use again by poolManager
+/// </summary>
 namespace game_ideas
 {
     public class DestroyObject : MonoBehaviour

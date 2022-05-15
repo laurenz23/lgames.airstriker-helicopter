@@ -37,14 +37,11 @@ namespace game_ideas
 
         private GameManager gameManager;
 
-        private void Awake()
-        {
-            gameManager = GameManager.GetInstance();
-        }
-
         private void Start()
         {
-            playerTransform = FindObjectOfType<PlayerManager>().playerTransform;
+            gameManager = GameManager.GetInstance();
+
+            playerTransform = PlayerManager.GetInstance().playerTransform;
 
             characterTransform = enemyHandler.transform;
         }

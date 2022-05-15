@@ -96,13 +96,16 @@ namespace game_ideas
         [HideInInspector]
         public ProfilePlayerDataManager profilePlayerDataManager;
 
+        [HideInInspector]
+        public ComplementHandler complementHandler;
+
         public static PlayerManager instance;
 
         public static PlayerManager GetInstance()
         {
             return instance;
         }
-        
+
         private void Awake()
         {
             if (instance == null)
@@ -125,6 +128,9 @@ namespace game_ideas
 
         private void Start()
         {
+            // assign ComplementHandler from InGameUIManager
+            complementHandler = inGameUIManager.GetComponent<ComplementHandler>();
+
             // get components
             onHitCharacter = GetComponent<OnHitCharacter>();
 
@@ -213,6 +219,12 @@ namespace game_ideas
 
                     break;
 
+                case GameState.LEVEL_COMPLETE:
+
+                    playerMovement.LevelCompleteMovement();
+
+                    break;
+
             }
 
         }
@@ -227,7 +239,7 @@ namespace game_ideas
                 playerAttack.Attack(playerTransform);
 
             }
-            
+
             if (activeSkill1)
             {
                 playerAttack.AtomicAttack(playerTransform);
@@ -245,11 +257,13 @@ namespace game_ideas
 
         public void ComputePlayerHealth(int value, bool asDamage = false)
         {
-            if (asDamage) 
+            if (asDamage)
             {
                 health -= value; // deduct the player health base on value
 
                 playerEffect.PlayerDisplayPopupText(playerTransform, "popupTextDamage", "-" + value.ToString());
+
+                complementHandler.ResetComplementProgress(); // reset complementary when player is hit by any means to reduce it's health
 
                 playerAnimator.OnPlayerHit(health);
             }
@@ -270,15 +284,11 @@ namespace game_ideas
 
             dataDiamonds += value; // add diamonds for player data
 
-            playerEffect.PlayerDisplayPopupText(diamondTransform, "popupTextDiamonds", "+" + value.ToString()); // display popup text with the value
-
-            playerEffect.PlayerEffectOnCoinsCollect(diamondTransform); // call particle effect script for coins
+            playerEffect.PlayerEffectOnDiamondsCollect(diamondTransform); // call particle effect script for coins
 
             playerUIManager.SetPlayerDiamonds_ui(diamonds);  // update ui diamonds
 
-            profilePlayerDataManager.SetDiamondsData(diamonds); // update and save profile diamonds data
-
-            Destroy(diamondTransform.gameObject); // destroy diamond object once player make contact
+            profilePlayerDataManager.SetDiamondsData(dataDiamonds); // update and save profile diamonds data
         }
 
         // add player coins
@@ -289,15 +299,11 @@ namespace game_ideas
 
             dataCoins += value; // add coins for player data
 
-            playerEffect.PlayerDisplayPopupText(coinTransform, "popupTextCoins", "+" + value.ToString()); // display popup text with the value
-
             playerEffect.PlayerEffectOnCoinsCollect(coinTransform); // call particle effect script for coins
 
             playerUIManager.SetPlayerCoins_ui(coins); // update coins ui
 
             profilePlayerDataManager.SetCoinsData(dataCoins); // update and save profile coins data
-
-            Destroy(coinTransform.gameObject); // destroy coin object once player make contact
 
         }
 
@@ -310,6 +316,8 @@ namespace game_ideas
             playerUIManager.SetPlayerPoints_ui(points); // update score ui
 
             profilePlayerDataManager.SetScoreData(points); // update player score data
+
+            complementHandler.IncreaseComplement(value); // increase complement to be able player to get diamonds
 
         }
 
@@ -354,5 +362,26 @@ namespace game_ideas
                 return false;
             return true;
         }
+
+        // call this method if player collided to LevelCompleteHandler
+        public void PlayerLevelComplete()
+        {
+            gameManager.gameState = GameState.LEVEL_COMPLETE;
+
+            profilePlayerDataManager.SetPlayerLevel(profilePlayerDataManager.profileScoreData.score); // set player level
+            inGameUIManager.DisplayLevelCompleteUI();
+        }
+
+        // call this method once players health is below or equal to zero
+        public void PlayerGameover()
+        {
+            gameManager.gameState = GameState.GAMEOVER; // set game state to game over
+            playerEffect.PlayerEffectExplosion(transform); // create an explosion effect
+            gameObject.SetActive(false); // hide the player
+
+            profilePlayerDataManager.SetPlayerLevel(profilePlayerDataManager.profileScoreData.score); // set player level
+            inGameUIManager.DisplayGameoverUI();
+        }
+
     }
 }

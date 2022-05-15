@@ -15,82 +15,72 @@ MonoBehaviour:
   id: unit1weapon5
   type: 4
   _name: Atomic
+  icon: {fileID: 21300000, guid: 4759d58ec18481e45be40e74596561ea, type: 3}
   description: Atomic Bomb Description
   weaponData:
   - level: 0
-    icon: {fileID: 21300000, guid: 4759d58ec18481e45be40e74596561ea, type: 3}
     damage: 100
-    firerate: 99
+    firerate: 600
     speed: 30
     aoe: 10
     cost: 300
   - level: 1
-    icon: {fileID: 21300000, guid: 4759d58ec18481e45be40e74596561ea, type: 3}
     damage: 100
-    firerate: 99
+    firerate: 600
     speed: 30
     aoe: 10
     cost: 200
   - level: 2
-    icon: {fileID: 21300000, guid: 4759d58ec18481e45be40e74596561ea, type: 3}
     damage: 200
-    firerate: 98
+    firerate: 550
     speed: 30
     aoe: 11
     cost: 400
   - level: 3
-    icon: {fileID: 21300000, guid: 0939f80c5331c2846bc3087da03429c9, type: 3}
     damage: 300
-    firerate: 97
+    firerate: 500
     speed: 30
     aoe: 12
     cost: 600
   - level: 4
-    icon: {fileID: 21300000, guid: 4759d58ec18481e45be40e74596561ea, type: 3}
     damage: 400
-    firerate: 96
+    firerate: 450
     speed: 30
     aoe: 13
     cost: 800
   - level: 5
-    icon: {fileID: 21300000, guid: 4759d58ec18481e45be40e74596561ea, type: 3}
     damage: 500
-    firerate: 95
+    firerate: 400
     speed: 30
     aoe: 14
     cost: 1000
   - level: 6
-    icon: {fileID: 21300000, guid: 4759d58ec18481e45be40e74596561ea, type: 3}
     damage: 600
-    firerate: 94
+    firerate: 350
     speed: 30
     aoe: 15
     cost: 1200
   - level: 7
-    icon: {fileID: 21300000, guid: 4759d58ec18481e45be40e74596561ea, type: 3}
     damage: 700
-    firerate: 93
+    firerate: 300
     speed: 30
     aoe: 16
     cost: 1400
   - level: 8
-    icon: {fileID: 21300000, guid: 4759d58ec18481e45be40e74596561ea, type: 3}
     damage: 800
-    firerate: 92
+    firerate: 250
     speed: 30
     aoe: 17
     cost: 1600
   - level: 9
-    icon: {fileID: 21300000, guid: 4759d58ec18481e45be40e74596561ea, type: 3}
     damage: 900
-    firerate: 91
-    speed: 30
+    firerate: 200
+    speed: 200
     aoe: 18
-    cost: 1800
+    cost: 2000
   - level: 10
-    icon: {fileID: 21300000, guid: 4759d58ec18481e45be40e74596561ea, type: 3}
     damage: 1000
-    firerate: 90
+    firerate: 100
     speed: 30
     aoe: 20
-    cost: 2200
+    cost: 0

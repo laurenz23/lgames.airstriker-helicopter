@@ -17,9 +17,9 @@ MonoBehaviour:
   _name: Scorpion
   description: Please add scorpion description here...
   health: 100
-  speed: 5
-  dmgS: 100
-  listPassiveData: []
+  speed: 7
+  dmgS: 45
+  passive: 1
   diamondCosts: 0
   coinCosts: 0
   listGameWeaponData:

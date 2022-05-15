@@ -11,26 +11,37 @@ namespace game_ideas
 {
     public class EffectPrefabManager : MonoBehaviour
     {
+        private static EffectPrefabManager instance;
+
+        public static EffectPrefabManager GetInstance()
+        {
+            return instance;
+        }
 
         // popup text prefab
         [Header("Popup Text")]
         public GameObject popupText_health;
         public GameObject popupText_damage;
         public GameObject popupText_points;
-        public GameObject popupText_coins;
-        public GameObject popupText_energy;
 
         // particle effects prefab
         [Header("Particel Effects")]
         public GameObject playerTrailEffect;
         public GameObject coinParticleEffect;
-        public GameObject energyParticleEffect;
         public GameObject basicBulletHitEffect;
         public GameObject explosionEffect;
         public GameObject largeExplosionEffect;
         public GameObject mushroomExplosionEffect;
 
         private PoolingManager poolingManager;
+        
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+            }
+        }
 
         private void Start()
         {

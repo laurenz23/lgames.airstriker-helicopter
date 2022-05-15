@@ -50,7 +50,7 @@ namespace game_ideas
             this.weaponLevel = weaponLevel;
 
             itemName_text.text = gameWeaponData._name.ToUpper(); // set weapon name
-            itemIcon_image.sprite = gameWeaponData.weaponData[weaponLevel].icon; // set weapon icon base on weapon level
+            itemIcon_image.sprite = gameWeaponData.icon; // set weapon icon base on weapon level
 
             if (weaponLevel == unresearch) // weapon level is unresearch yet then,
             {
@@ -95,7 +95,7 @@ namespace game_ideas
                 itemToken_image.sprite = tokenCoin_sprite;
             }
 
-            armoryUIManager.SetWeaponInfo(this, gameWeaponData, gameWeaponData.weaponData[weaponLevel], weaponLevel); // update armory weapon ui
+            armoryUIManager.SetWeaponInfo(this, gameWeaponData, weaponLevel); // update armory weapon ui
 
             unitArmoryManager.SelectCharacterWeapon(gameWeaponData.id); // update selected unit weapons object
         }

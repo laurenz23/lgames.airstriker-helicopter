@@ -15,82 +15,72 @@ MonoBehaviour:
   id: unit2weapon4
   type: 2
   _name: Guided Missile
+  icon: {fileID: 21300000, guid: 0939f80c5331c2846bc3087da03429c9, type: 3}
   description: Guided Missile Description
   weaponData:
   - level: 0
-    icon: {fileID: 21300000, guid: 0939f80c5331c2846bc3087da03429c9, type: 3}
-    damage: 25
-    firerate: 80
+    damage: 30
+    firerate: 60
     speed: 30
     aoe: 1
     cost: 150
   - level: 1
-    icon: {fileID: 21300000, guid: 0939f80c5331c2846bc3087da03429c9, type: 3}
-    damage: 25
-    firerate: 80
+    damage: 30
+    firerate: 60
     speed: 30
     aoe: 1
     cost: 175
   - level: 2
-    icon: {fileID: 21300000, guid: 0939f80c5331c2846bc3087da03429c9, type: 3}
-    damage: 30
-    firerate: 78
+    damage: 40
+    firerate: 55
     speed: 30
     aoe: 1
     cost: 350
   - level: 3
-    icon: {fileID: 21300000, guid: 0939f80c5331c2846bc3087da03429c9, type: 3}
-    damage: 35
-    firerate: 76
+    damage: 50
+    firerate: 50
     speed: 30
     aoe: 1
     cost: 525
   - level: 4
-    icon: {fileID: 21300000, guid: 44f31c41ad9522147b549c55f0d09c9c, type: 3}
-    damage: 40
-    firerate: 74
+    damage: 60
+    firerate: 45
     speed: 30
     aoe: 1
     cost: 700
   - level: 5
-    icon: {fileID: 21300000, guid: 0939f80c5331c2846bc3087da03429c9, type: 3}
-    damage: 45
-    firerate: 72
+    damage: 70
+    firerate: 40
     speed: 30
     aoe: 1
     cost: 875
   - level: 6
-    icon: {fileID: 21300000, guid: 0939f80c5331c2846bc3087da03429c9, type: 3}
-    damage: 50
-    firerate: 70
+    damage: 80
+    firerate: 35
     speed: 30
     aoe: 1
     cost: 1050
   - level: 7
-    icon: {fileID: 21300000, guid: 0939f80c5331c2846bc3087da03429c9, type: 3}
-    damage: 55
-    firerate: 68
+    damage: 90
+    firerate: 30
     speed: 30
     aoe: 1
     cost: 1225
   - level: 8
-    icon: {fileID: 21300000, guid: 0939f80c5331c2846bc3087da03429c9, type: 3}
-    damage: 60
-    firerate: 66
+    damage: 100
+    firerate: 25
     speed: 30
     aoe: 1
     cost: 1400
   - level: 9
-    icon: {fileID: 21300000, guid: 0939f80c5331c2846bc3087da03429c9, type: 3}
-    damage: 70
-    firerate: 64
+    damage: 110
+    firerate: 20
     speed: 30
     aoe: 1
     cost: 1750
   - level: 10
-    icon: {fileID: 21300000, guid: 0939f80c5331c2846bc3087da03429c9, type: 3}
-    damage: 80
-    firerate: 60
+    damage: 130
+    firerate: 10
     speed: 30
     aoe: 1
     cost: 0

@@ -27,7 +27,7 @@ namespace game_ideas
         
         public int dmgS;
 
-        public List<UnitPassiveData> listPassiveData;
+        public int passive;
 
         public int diamondCosts;
 

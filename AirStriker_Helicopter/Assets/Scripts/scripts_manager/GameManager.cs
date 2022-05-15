@@ -18,19 +18,19 @@ namespace game_ideas
         GAME_PAUSE,
         GAME_CONTINUE,
         LEVEL_COMPLETE,
-        GAMEOVER,
-        GAME_FINISH
+        GAMEOVER
     }
 
     public enum GameObjective
     {
         HEALTH,
-        COINS,
-        ENERGY
+        DIAMONDS,
+        COINS
     }
 
     public enum GameTag
     {
+        Finish,
         Player,
         Obstacle,
         Ground,
@@ -42,7 +42,7 @@ namespace game_ideas
         Tree,
         Props,
         EnemyAttack,
-        Coins
+        Tokens
     }
 
     public enum GameLayers
@@ -95,14 +95,12 @@ namespace game_ideas
 
             switch (gameState)
             {
-
                 case GameState.GAME_PAUSE:
                     Time.timeScale = 0f;
                     break;
                 case GameState.GAME_CONTINUE:
                     Time.timeScale = 1f;
                     break;
-
             }
             
         }

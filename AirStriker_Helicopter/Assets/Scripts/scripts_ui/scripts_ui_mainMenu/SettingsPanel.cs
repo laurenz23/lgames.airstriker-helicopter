@@ -16,6 +16,7 @@ namespace game_ideas
         [Header("Panels")]
         public GameObject popup_panel;
         public GameObject settings_panel;
+        public GameObject enterName_panel;
 
         [Header("Script Reference")]
         [SerializeField] private SettingsUIManager settingsUIManager;
@@ -33,9 +34,18 @@ namespace game_ideas
         public void HideSettigs()
         {
             soundManager.soundFXHandler.SFX_UI_CLICK("click3");
-            
-            popup_panel.SetActive(false);
+
             settings_panel.SetActive(false);
+            popup_panel.SetActive(false);
+        }
+
+        // display enter name panel and hide this panel temporarily
+        public void ShowEnterName()
+        {
+            soundManager.soundFXHandler.SFX_UI_CLICK("click3");
+
+            settings_panel.SetActive(false);
+            enterName_panel.SetActive(true);
         }
 
     }

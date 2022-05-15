@@ -13,11 +13,9 @@ namespace game_ideas
 
         public int level;
 
-        public Sprite icon;
-
         public int damage;
-
-        public int firerate;
+        
+        public int firerate; 
 
         public int speed;
 

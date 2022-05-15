@@ -27,8 +27,6 @@ namespace game_ideas
             popupText_health = effectPrefabManager.popupText_health;
             popupText_damage = effectPrefabManager.popupText_damage;
             popupText_points = effectPrefabManager.popupText_points;
-            popupText_coins = effectPrefabManager.popupText_coins;
-            popupText_energy = effectPrefabManager.popupText_energy;
 
         }
 
@@ -38,6 +36,13 @@ namespace game_ideas
             effectPrefabManager.DisplayPopupText(other, poolName, value);
         }
 
+        // create diamond effect when collected
+        public void PlayerEffectOnDiamondsCollect(Transform diamondsPos)
+        {
+            // create the diamonds particle effect and destroy effect after a couple of seconds
+            effectPrefabManager.PoolEffect("effectDiamonds", Quaternion.identity,
+                new Vector3(10f, diamondsPos.position.y + 2.5f, diamondsPos.position.z), new Vector3(1f, 1f, 1f));
+        }
 
         // create coin effect when collected 
         public void PlayerEffectOnCoinsCollect(Transform coinsPos)

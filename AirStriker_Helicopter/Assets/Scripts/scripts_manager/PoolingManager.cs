@@ -4,7 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 
+/// usage:      attached this script to PoolingManager gameobject, if does'nt exist create a new one
+///             and attached the objectPooledData(a scriptableObject that is created)
+/// functions:  for performance improvements instead of destroying and creating 
+///             the object again and again, we create a class that handles that kind of function
+///             but instead of destroying and creating we disabled and enabled only the object
+///             and later will use it again. 
+///             at the start of game we initialize(instantiated) a number of object and disabled it for later use.
+///             to use the object just call a function with a specific type and provide the pool name.
 /// </summary>
 namespace game_ideas
 {
@@ -76,6 +83,7 @@ namespace game_ideas
             InstantiateObjectPools(objectPooledEnvironment, poolingListEnvironment);
         }
         
+        // initialize(instantiate) a gameObject at the start of game and disabled it for later use
         private void InstantiateObjectPools(List<ObjectPooledData> objectPoolData, List<PoolingListData> poolingListData)
         {
             foreach (ObjectPooledData opd in objectPoolData)
@@ -100,6 +108,8 @@ namespace game_ideas
             }
         }
 
+        // find game object by pool name
+        // and if there is no available object to use a crate a new one and add it to list
         private GameObject GetPooledObjects(List<PoolingListData> poolingListData, string poolName)
         {
             foreach (PoolingListData pld in poolingListData)
@@ -132,37 +142,42 @@ namespace game_ideas
         }
 
 
-        // get pooled objects 
+        // player attack objects like projectiles
         public GameObject GetPooledObjectsPlayerArm(string poolName)
         {
             return GetPooledObjects(poolingListPlayerArm, poolName);
         }
 
+        // enemy attack objects like projectiles and bombs
         public GameObject GetPooledObjectEnemyArm(string poolName)
         {
             return GetPooledObjects(poolingListEnemyArm, poolName);
         }
 
+        // muzzle effect flashes
         public GameObject GetPooledObjectMuzzleFlash(string poolName)
         {
             return GetPooledObjects(poolingListMuzzleFlash, poolName);
         }
 
+        // explosion effect objects
         public GameObject GetPooledObjectExplosion(string poolName)
         {
             return GetPooledObjects(poolingListExplosion, poolName);
         }
 
+        // other effect objects
         public GameObject GetPooledObjectEffects(string poolName)
         {
             return GetPooledObjects(poolingListEffects, poolName);
         }
 
+        // popup text objects like damage popup text
         public GameObject GetPooledObjectPopupText(string poolName)
         {
             return GetPooledObjects(poolingListPopupText, poolName);
         }
-
+        
         public GameObject GetPooledObjectEnvironment(string poolName)
         {
             return GetPooledObjects(poolingListEnvironment, poolName);

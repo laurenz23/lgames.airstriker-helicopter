@@ -33,7 +33,7 @@ namespace game_ideas
 
         private GameManager gameManager;
 
-        private void Start()
+        private void Awake()
         {
             gameManager = GameManager.GetInstance();
         }

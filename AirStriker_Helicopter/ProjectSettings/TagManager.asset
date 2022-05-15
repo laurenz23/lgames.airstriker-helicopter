@@ -13,7 +13,7 @@ TagManager:
   - Cloud
   - Props
   - EnemyAttack
-  - Coins
+  - Tokens
   layers:
   - Default
   - TransparentFX

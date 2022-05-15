@@ -37,17 +37,17 @@ namespace game_ideas
 
         private GameManager gameManager;
 
+        private void Awake()
+        {
+            gameManager = GameManager.GetInstance();
+
+            cameraManager = CameraManager.GetInstance();
+        }
+
         private void Start()
         {
 
-            gameManager = GameManager.GetInstance();
-
-            cameraManager = FindObjectOfType<CameraManager>();
-
-            if (FindObjectOfType<PlayerManager>())
-            {
-                playerTransform = FindObjectOfType<PlayerManager>().playerTransform;
-            }
+            playerTransform = PlayerManager.GetInstance().playerTransform;
 
             // check if the character is facing the z axis forward or backward
             if (enemyHandler.transform.eulerAngles.y.Equals(0f))

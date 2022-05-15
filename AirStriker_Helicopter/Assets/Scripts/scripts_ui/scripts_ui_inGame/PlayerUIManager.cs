@@ -13,20 +13,39 @@ namespace game_ideas
 {
     public class PlayerUIManager : MonoBehaviour
     {
+
+        private static PlayerUIManager instance;
+
+        public static PlayerUIManager GetInstance()
+        {
+            return instance;
+        }
+
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+            }
+        }
+
         // player healh ui
         [Header("Player Health UI")]
         [SerializeField] private Gradient healthBar_gradient = null;
         
         [Header("Player Points UI")]
-        [SerializeField] private TextMeshProUGUI points_text = null;
+        [SerializeField] private Text points_text = null;
 
         [Header("Player Tokens UI")]
-        [SerializeField] private TextMeshProUGUI diamonds_text = null;
-        [SerializeField] private TextMeshProUGUI coins_text = null;
+        [SerializeField] private Text diamonds_text = null;
+        [SerializeField] private Text coins_text = null;
+        [SerializeField] private Transform tDiamonds;
+        [SerializeField] private Transform tCoins;
 
         // script reference
         [Header("Script Reference")]
         [SerializeField] private InGameUIDesign inGameUIDesign;
+        private CameraManager cameraManager;
         private PlayerManager playerManager = null;
 
         // player movement controls
@@ -51,8 +70,10 @@ namespace game_ideas
 
         private void Start()
         {
-            playerManager = FindObjectOfType<PlayerManager>();
-        
+            playerManager = PlayerManager.GetInstance();
+
+            cameraManager = CameraManager.GetInstance();
+
             GetUIStyleGameControls();
 
             // check if player will the basic attack button by checking the availablity of armament1, armament2, armament3 and armament4
@@ -96,6 +117,18 @@ namespace game_ideas
                 activeSkill1_btn.gameObject.SetActive(false);
             }
 
+        }
+
+        // get ui diamond position and convert to world space as vector3 
+        public Vector3 GetDiamondUIPosition()
+        {
+            return cameraManager.ConvertToWorldPos(tDiamonds.position);
+        }
+
+        // get ui coin position and convert to world space as vector3 
+        public Vector3 GetCoinUIPosition()
+        {
+            return cameraManager.ConvertToWorldPos(tCoins.position);
         }
         
         // call this function to display the player movement controls
@@ -155,13 +188,13 @@ namespace game_ideas
         // set player diamonds
         public void SetPlayerDiamonds_ui(int playerDiamonds)
         {
-            diamonds_text.text = "X" + playerDiamonds.ToString("00");
+            diamonds_text.text = "X" + playerDiamonds.ToString("##0");
         }
 
         // set player coins
         public void SetPlayerCoins_ui(int playerCoins)
         {
-            coins_text.text = "X" + playerCoins.ToString("000");
+            coins_text.text = "X" + playerCoins.ToString("###0");
         }
 
         // these methods are called at the armaments scripts

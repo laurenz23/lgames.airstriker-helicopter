@@ -12,6 +12,25 @@ namespace game_ideas
     public class CameraManager : MonoBehaviour
     {
 
+        private static CameraManager instance;
+
+        public static CameraManager GetInstance()
+        {
+            return instance;
+        }
+
+        private void Awake()
+        {
+
+            if (instance == null)
+            {
+                instance = this;
+            }
+
+            mainCamera = GetComponent<Camera>();
+
+        }
+
         public float maxY_axis;
 
         public float minY_axis;
@@ -29,16 +48,12 @@ namespace game_ideas
         [HideInInspector]
         public Camera mainCamera;
 
-        private void Awake()
-        {
-
-            mainCamera = GetComponent<Camera>();
-
-        }
+        private GameManager gameManager;
 
         private void Start()
         {
-            targetPlayer = FindObjectOfType<PlayerManager>().playerTransform;
+            targetPlayer = PlayerManager.GetInstance().playerTransform;
+            gameManager = GameManager.GetInstance();
         }
 
         private void Update()
@@ -51,9 +66,16 @@ namespace game_ideas
 
         private void LateUpdate()
         {
-
-            CameraBound();
+            if (gameManager.gameState != GameState.LEVEL_COMPLETE)
+            {
+                CameraBound();
+            }
             
+        }
+
+        public Vector3 ConvertToWorldPos(Vector3 tObject)
+        {
+            return mainCamera.ScreenToWorldPoint(tObject);
         }
         
 
@@ -61,7 +83,7 @@ namespace game_ideas
         private float boundTransition = 0f;
         private Vector3 desiredPosition;
 
-        // this method handles the camera bound of plane when plane is moving vertically
+        // this method handles the camera bound of player when player is moving vertically
         private void CameraBound()
         {
 

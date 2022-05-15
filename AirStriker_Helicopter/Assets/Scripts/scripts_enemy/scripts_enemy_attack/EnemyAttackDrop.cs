@@ -11,7 +11,6 @@ namespace game_ideas
 {
     public class EnemyAttackDrop : MonoBehaviour
     {
-
         private Rigidbody RIGIDBODY;
         private ArmamentAttackData armamentAttackData;
         private EffectPrefabManager effectPrefabManager;

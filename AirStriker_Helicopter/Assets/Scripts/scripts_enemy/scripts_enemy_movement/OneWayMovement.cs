@@ -14,7 +14,7 @@ namespace game_ideas
         [HideInInspector]
         public GameManager gameManager;
 
-        private void Start()
+        private void Awake()
         {
             gameManager = GameManager.GetInstance();
 

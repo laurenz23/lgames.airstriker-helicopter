@@ -23,7 +23,7 @@ namespace game_ideas
 
         public void PlayerMove(bool moveForward, bool moveBackward, bool moveAscending, bool moveDescending)
         {
-            
+
             // move player forward
             if (moveForward && !moveBackward)
             {
@@ -89,128 +89,39 @@ namespace game_ideas
 
 
         /*
-        * ROLL and ROTATION of player 
+        * ROLL and YAW of player 
         * Handles the smooth of player Rotation
         */
 
-        private int playerLastFrameActionOfPitch = 0; // reference for next frame update last player action of ascending = -1, descending = 1 and neutral = 0
+        private int playerLastFrameActionOfYaw = 0; // reference for next frame update last player action of ascending = -1, descending = 1 and neutral = 0
 
-        private float playerMaxPitch = 20f; // maximum rotation of player in x axis
+        private float playerMaxYaw = 20f; // maximum rotation of player in x axis
 
-        private float playerPitch = 0f; // rotation of player in x axis
+        private float playerYaw = 0f; // rotation of player in x axis
 
         private float playerRoll = 0f; // rotation of player in z axis
 
         public void PlayerManuever(bool moveForward, bool moveBackward, bool moveAscending, bool moveDescending)
         {
 
-            // move player Ascending
-            if (!moveForward && moveBackward)
+            // helicopter yaw
+            // player reverse acceleration
+            if (moveForward && !moveBackward)
             {
-
-                if (!playerManager.PlayerOnGround())
-                {
-                    // rotate player clock wise with a set maximum value rotation
-                    if (playerPitch <= -playerMaxPitch) // if increase rotation overlap the maximum value 
-                    {
-
-                        playerPitch = -playerMaxPitch; // assign the player rotation value to default
-
-                    }
-                    else
-                    {
-
-                        playerPitch -= 100f * Time.deltaTime; // increase the rotation of player clock wise by Time.deltaTime
-
-                    }
-
-                    // set the player last action for reference to convert the playerRotation to negative or positive when releasing the action for smooth rotation back to default
-                    playerLastFrameActionOfPitch = -1;
-                }
-
+                PlayerAccelerationMovement();
             }
-            // move player Descending
-            else if (moveForward && !moveBackward)
+            // player reverse
+            else if (!moveForward && moveBackward)
             {
-
-                if (playerManager.PlayerOnGround()) // don't rotate and descend the player if on land and reset the rotations
-                {
-
-                    playerPitch = 0f;
-                    playerManager.playerTransform.rotation = Quaternion.identity;
-
-                    return;  // do nothing
-
-                }
-                else
-                {
-
-                    if (playerPitch >= playerMaxPitch) // if increase rotation or overlap the maximum value 
-                    {
-
-                        playerPitch = playerMaxPitch; // set the player rotation value to default
-
-                    }
-                    else
-                    {
-                        playerPitch += 100f * Time.deltaTime; // increase the rotation of player clock wise by Time.deltaTime
-
-                    }
-
-                }
-
-                // set the player last action for reference to convert the playerRotation to negative or positive when releasing the action for smooth rotation back to default
-                playerLastFrameActionOfPitch = 1; // set the player action
-
+                PlayerReverseMovement();
             }
+            // reset player rotation smoothly
             else
             {
-
-                // smooth player rotation back to normal after player release the action
-                if (playerLastFrameActionOfPitch == -1) // check last player action ascending
-                {
-
-                    if (playerPitch >= 0f) // if decreasing rotation overlap, assign to original values and assign default rotation 
-                    {
-
-                        playerPitch = 0f;
-                        playerLastFrameActionOfPitch = 0;
-                        playerManager.playerTransform.rotation = Quaternion.identity;
-                        return; // do nothing
-
-                    }
-                    else
-                    {
-
-                        playerPitch += 100f * Time.deltaTime; // decrease the player rotation
-
-                    }
-
-                }
-                else if (playerLastFrameActionOfPitch == 1) // check last player action descending
-                {
-
-                    if (playerPitch <= 0f) // if decreasing rotation overlap, assign to original values and assign default rotation 
-                    {
-
-                        playerPitch = 0f;
-                        playerLastFrameActionOfPitch = 0;
-                        playerManager.playerTransform.rotation = Quaternion.identity;
-                        return; // do nothing
-
-                    }
-                    else
-                    {
-
-                        playerPitch -= 100f * Time.deltaTime; // decrease the player rotation
-
-                    }
-
-                }
-
+                PlayerResetRotationMovement();
             }
 
-
+            // helicopter roll
             if (moveAscending && !moveDescending && !moveForward && !moveBackward && !playerManager.PlayerOnGround())
             {
                 playerRoll = 60f;
@@ -227,10 +138,139 @@ namespace game_ideas
 
 
             // set the player rotation 
-            playerManager.playerTransform.rotation = Quaternion.Euler(new Vector3(playerPitch, 0f, playerRoll));
+            playerManager.playerTransform.rotation = Quaternion.Euler(new Vector3(playerYaw, 0f, playerRoll));
 
         }
+        
+        // Player Level Complete Movement
+        public void LevelCompleteMovement()
+        {
+            transform.Translate(Vector3.forward * (playerManager.moveSpeed + 4f) * Time.deltaTime);
 
+            if (playerYaw >= playerMaxYaw) // if increase yaw or overlap the maximum value 
+            {
+
+                playerYaw = playerMaxYaw; // set the yaw value to default
+
+            }
+            else
+            {
+                playerYaw += 100f * Time.deltaTime; // increase the yaw of helicopter clock wise
+
+            }
+            
+            if (transform.position.z >= playerManager.cameraManager.screenBounds.z)
+            {
+                playerManager.gameObject.SetActive(false);
+            }
+
+
+            // set the player rotation 
+            playerManager.playerTransform.rotation = Quaternion.Euler(new Vector3(playerYaw, 0f, 0f));
+        }
+
+        // smooth player acceleration helicopter yaw movement 
+        private void PlayerAccelerationMovement()
+        {
+            if (playerManager.PlayerOnGround()) // don't yaw the player if on land and reset yaw(x axis rotaion) values
+            {
+
+                playerYaw = 0f;
+                playerManager.playerTransform.rotation = Quaternion.identity;
+
+                return;  // do nothing
+
+            }
+            else
+            {
+                if (playerYaw >= playerMaxYaw) // if increase yaw or overlap the maximum value 
+                {
+
+                    playerYaw = playerMaxYaw; // set the yaw value to default
+
+                }
+                else
+                {
+                    playerYaw += 100f * Time.deltaTime; // increase the yaw of helicopter clock wise
+
+                }
+
+            }
+
+            // set the player last action for reference to convert the the helicopter yaw to negative or positive when releasing the action for smooth yaw back to default
+            playerLastFrameActionOfYaw = 1; // set the player action
+        }
+
+        // smooth player reverse helicopter yaw movement
+        private void PlayerReverseMovement()
+        {
+            if (!playerManager.PlayerOnGround())
+            {
+                // yaw player clock wise with a set maximum value rotation
+                if (playerYaw <= -playerMaxYaw) // if increase yaw overlap the maximum value 
+                {
+
+                    playerYaw = -playerMaxYaw; // assign yaw value to default
+
+                }
+                else
+                {
+
+                    playerYaw -= 100f * Time.deltaTime; // decrease yaw value clock wise
+
+                }
+
+                // set the player last action for reference to convert yaw to negative or positive when releasing the action for smooth yaw back to default
+                playerLastFrameActionOfYaw = -1;
+            }
+        }
+
+        // reset smooth helicopter yaw movement
+        private void PlayerResetRotationMovement()
+        {
+            // smooth yaw back to normal after player release the action
+            if (playerLastFrameActionOfYaw == -1) // check last player action acceleration
+            {
+
+                if (playerYaw >= 0f) // if decreasing yaw overlap, assign to original values and assign default yaw value 
+                {
+
+                    playerYaw = 0f;
+                    playerLastFrameActionOfYaw = 0;
+                    playerManager.playerTransform.rotation = Quaternion.identity;
+                    return; // do nothing
+
+                }
+                else
+                {
+
+                    playerYaw += 100f * Time.deltaTime; // increase the yaw
+
+                }
+
+            }
+            else if (playerLastFrameActionOfYaw == 1) // check last player action descending
+            {
+
+                if (playerYaw <= 0f) // if decreasing yaw overlap, assign to original values and assign yaw values
+                {
+
+                    playerYaw = 0f;
+                    playerLastFrameActionOfYaw = 0;
+                    playerManager.playerTransform.rotation = Quaternion.identity;
+                    return; // do nothing
+
+                }
+                else
+                {
+
+                    playerYaw -= 100f * Time.deltaTime; // decrease the yaw value
+
+                }
+
+            }
+        }
+        
 
     }
 }

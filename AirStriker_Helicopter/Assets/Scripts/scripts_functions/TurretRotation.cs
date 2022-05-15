@@ -16,14 +16,11 @@ namespace game_ideas
 
         private bool turretRotated;
 
-        private void Awake()
-        {
-            target = FindObjectOfType<PlayerManager>().playerTransform;
-            turret = transform;
-        }
-
         private void Start()
         {
+            target = PlayerManager.GetInstance().playerTransform;
+            turret = transform;
+
             // check if turret is rotated preparation for angle rotation computation
             // the rotation of turret is base on it's parent, it might affect computation
             // the compuation is base on turret rotation

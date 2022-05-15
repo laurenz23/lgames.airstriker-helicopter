@@ -15,10 +15,14 @@ namespace game_ideas
         private CameraManager cameraManager;
         private PlayerManager playerManager;
 
-        private void Start()
+        private void Awake()
         {
             cameraManager = enemyHandler.cameraManager;
-            playerManager = FindObjectOfType<PlayerManager>();
+        }
+
+        private void Start()
+        {
+            playerManager = PlayerManager.GetInstance();
         }
 
         private void OnTriggerEnter(Collider collider)
@@ -87,14 +91,6 @@ namespace game_ideas
         // call this function when enemy character is hit by armament
         public void HitByArmament(ArmamentAttackData armamentAttackData)
         {
-            // check if the current game object is still active to avoid errors
-            // where the coroutine is trying to start even the object is already destroyed
-            if (gameObject.activeSelf)
-            {
-                // change the material to hit material
-                enemyHandler.onHitCharacter.OnHit();
-            }
-
             // deduct enemy health by armament damage
             enemyHandler.enemyData.health -= armamentAttackData.GetDamage();
 
@@ -106,6 +102,17 @@ namespace game_ideas
 
                 // set points for player after destroying the character
                 playerManager.AddPlayerPoints(enemyHandler.enemyData.points);
+
+                // don't update material
+                return;
+            }
+
+            // check if the current game object is still active to avoid errors
+            // where the coroutine is trying to start even the object is already destroyed
+            if (gameObject.activeSelf)
+            {
+                // change the material to hit material
+                enemyHandler.onHitCharacter.OnHit();
             }
         }
     }

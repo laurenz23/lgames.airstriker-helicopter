@@ -15,75 +15,72 @@ MonoBehaviour:
   id: unit2weapon2
   type: 2
   _name: Straight Missile
+  icon: {fileID: 21300000, guid: 50294aeb0efb09144b29f1d53e7dba53, type: 3}
   description: Straight Missile Description
   weaponData:
   - level: 0
-    icon: {fileID: 21300000, guid: 50294aeb0efb09144b29f1d53e7dba53, type: 3}
     damage: 50
     firerate: 80
     speed: 30
     aoe: 1
     cost: 30
   - level: 1
-    icon: {fileID: 21300000, guid: 50294aeb0efb09144b29f1d53e7dba53, type: 3}
     damage: 50
     firerate: 80
     speed: 30
     aoe: 1
     cost: 125
   - level: 2
-    icon: {fileID: 21300000, guid: 50294aeb0efb09144b29f1d53e7dba53, type: 3}
-    damage: 55
-    firerate: 78
+    damage: 60
+    firerate: 75
     speed: 30
     aoe: 1
     cost: 250
   - level: 3
-    icon: {fileID: 21300000, guid: 50294aeb0efb09144b29f1d53e7dba53, type: 3}
-    damage: 60
-    firerate: 78
+    damage: 70
+    firerate: 70
     speed: 30
     aoe: 1
     cost: 375
   - level: 4
-    icon: {fileID: 21300000, guid: 50294aeb0efb09144b29f1d53e7dba53, type: 3}
-    damage: 65
-    firerate: 74
+    damage: 80
+    firerate: 65
     speed: 30
     aoe: 1
     cost: 500
   - level: 5
-    icon: {fileID: 21300000, guid: 50294aeb0efb09144b29f1d53e7dba53, type: 3}
-    damage: 70
-    firerate: 72
+    damage: 90
+    firerate: 60
     speed: 30
     aoe: 1
     cost: 625
   - level: 6
-    icon: {fileID: 21300000, guid: 50294aeb0efb09144b29f1d53e7dba53, type: 3}
-    damage: 75
-    firerate: 70
+    damage: 100
+    firerate: 55
     speed: 30
     aoe: 1
     cost: 750
   - level: 7
-    icon: {fileID: 21300000, guid: 50294aeb0efb09144b29f1d53e7dba53, type: 3}
-    damage: 80
-    firerate: 68
+    damage: 110
+    firerate: 50
     speed: 30
     aoe: 1
     cost: 875
   - level: 8
-    icon: {fileID: 21300000, guid: 50294aeb0efb09144b29f1d53e7dba53, type: 3}
-    damage: 85
-    firerate: 66
+    damage: 120
+    firerate: 45
     speed: 30
     aoe: 1
     cost: 1125
   - level: 10
-    icon: {fileID: 21300000, guid: 50294aeb0efb09144b29f1d53e7dba53, type: 3}
-    damage: 100
-    firerate: 60
+    damage: 130
+    firerate: 40
+    speed: 30
+    aoe: 2
+    cost: 0
+  - level: 10
+    damage: 150
+    firerate: 30
     speed: 30
     aoe: 2
     cost: 0

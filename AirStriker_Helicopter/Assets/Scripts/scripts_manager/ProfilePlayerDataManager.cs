@@ -34,8 +34,6 @@ namespace game_ideas
         [HideInInspector] public ProfileUnitWrapper profileUnitData = new ProfileUnitWrapper();
         [HideInInspector] public ProfileSelectedData profileSelectedData = new ProfileSelectedData();
 
-        string playername = "AI 1.0";
-
         private void Start()
         {
 
@@ -49,13 +47,49 @@ namespace game_ideas
 
         }
 
-        public void SetPlayerData(int playerLevel, int playerStage, int playerStageLevel)
+        public int GetPlayerLevelValue(int level)
         {
-            profilePlayerData.playerName = playername;
-            profilePlayerData.playerLevel = playerLevel;
-            profilePlayerData.playerStage = playerStage;
-            profilePlayerData.playerStageLevel = playerStageLevel;
+            switch (level)
+            {
+                case 1: return 50000;
+                case 2: return 150000;
+                case 3: return 300000;
+                case 4: return 500000;
+                case 5: return 750000;
+                case 6: return 1050000;
+                case 7: return 1400000;
+                case 8: return 1800000;
+                case 9: return 2250000;
+                case 10: return 2750000;
+                default: return 0;
+            }
+        }
+
+        // global access
+        public bool HavePlayerProfile()
+        {
+            return dataManager.HavePlayerProfile();
+        }
+
+        // call this function to set player name
+        public void SetPlayerName(string playerName)
+        {
+            profilePlayerData.playerName = playerName;
             dataManager.SaveProfilePlayerData(profilePlayerData);
+        }
+
+        // call this function to increase player level
+        public void SetPlayerLevel(int score)
+        {
+            int level = profilePlayerData.playerLevel;
+            if (score > GetPlayerLevelValue(level))
+            {
+                if (level < 10)
+                {
+                    profilePlayerData.playerLevel += 1;
+                    dataManager.SaveProfilePlayerData(profilePlayerData);
+                }
+            }
         }
 
         public void SetScoreData(int score)

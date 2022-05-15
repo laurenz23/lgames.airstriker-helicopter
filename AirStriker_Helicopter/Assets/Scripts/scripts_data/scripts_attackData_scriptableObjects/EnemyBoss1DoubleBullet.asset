@@ -17,7 +17,6 @@ MonoBehaviour:
   damage: 10
   speed: 50
   aoe: 0
-  explosionPrefab: {fileID: 7778986138541501390, guid: 83dd7b9e3ac6a18458f6bcce1496e742,
-    type: 3}
+  explosionPoolName: explosionBulletLvL1Violet
   muzzleFlashPoolName: muzzleFlashLvL2Violet
   muzzleFlashScale: {x: 2, y: 2, z: 2}

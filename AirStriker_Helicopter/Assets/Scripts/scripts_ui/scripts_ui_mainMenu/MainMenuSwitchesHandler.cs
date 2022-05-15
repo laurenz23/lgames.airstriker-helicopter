@@ -21,19 +21,40 @@ namespace game_ideas
         
         [Header("Script Reference")]
         [SerializeField] private ProfilePlayerDataManager profilePlayerDataManager;
-        [SerializeField] private MainMenuUIHandler mainMenuHandler;
+        [SerializeField] private MainMenuUIHandler mainMenuUIHandler;
         [SerializeField] private ArmoryUIManager armoryUIManager;
         [SerializeField] private UnitArmoryManager unitArmoryManager;
+        [SerializeField] private LoadSceneManager loadSceneManager;
+        [SerializeField] private EnterNamePanel enterNamePanel;
 
         [HideInInspector]
         public InputControls inputControls; // ui input reference
 
         private Animator animator; // reference of animator when switching panels
         private string panel_id = "PANEL_ID"; // animation parameters [panel id list: 0 -> MainMenu, 1 -> Armory, 2 -> Map]
+        private string have_profile = "HAVE_PROFILE";
 
         private void Start()
         {
             animator = GetComponent<Animator>();
+
+            // check if have already player profile data
+            // if not, player requires to create profile by inputing the name
+            // and the game will generate player profile
+            if (!profilePlayerDataManager.HavePlayerProfile()) // display the enter name panel
+            {
+                enterNamePanel.ShowPanel(true);
+            }
+            else // display the main menu, if player profile data is already exist
+            {
+                DisplayMainMenu();
+            }
+        }
+
+        // use to check if have already player data existed or the game first open 
+        public void DisplayMainMenu()
+        {
+            animator.SetBool(have_profile, true);
         }
 
         // trigger main menu to armory animations and functions
@@ -59,6 +80,12 @@ namespace game_ideas
             platformRotator.MainMenuPlatform(5f); // change platform touch input area
             playButton_particles.SetActive(true); // display play button particles in main menu
 
+            // check if unit have atlease one non-special weapon and update mission ui group buttons
+            if (unitArmoryManager.HaveWeapon())
+                mainMenuUIHandler.SetMissionButton(true);
+            else
+                mainMenuUIHandler.SetMissionButton(false);
+
             unitArmoryManager.UnselectUnresearchWeapon(); // hide unresearch weapons
             armoryUIManager.DestroyWeaponUIList(); // destroy all item weapon ui list
         }
@@ -68,8 +95,16 @@ namespace game_ideas
         {
             soundManager.soundFXHandler.SFX_UI_TRANSITION("transition2");
 
-            animator.SetInteger(panel_id, 2);
-            StartCoroutine(HideObjects()); // hide main menu objects 
+            // check if unit have atleast one non-special weapon before can enter to world map or start a mission
+            if (unitArmoryManager.HaveWeapon())
+            {
+                animator.SetInteger(panel_id, 2);
+                StartCoroutine(HideObjects()); // hide main menu objects 
+            }
+            else
+            {
+                mainMenuUIHandler.ShowPopupMessage("PLEASE RESEARCH A WEAPON");
+            }
         }
 
         IEnumerator HideObjects()
@@ -114,13 +149,13 @@ namespace game_ideas
 
                 gameInitiated = true; 
                 profilePlayerDataManager.SetDeploymentCapsuleData(deploymentCapsule - 1); // deduct player deployment capsule and save data
-                mainMenuHandler.SetPlayButton(); // update play button ui
-                mainMenuHandler.SetPlayerDeploymentCapsule(); // update deployment capsule ui
+                mainMenuUIHandler.SetPlayButton(); // update play button ui
+                mainMenuUIHandler.SetPlayerDeploymentCapsule(); // update deployment capsule ui
                 StartCoroutine(DelayOfStart()); // start the coroutine for switching to game play scene
             }
             else // player don't have deployment capsule
             {
-                mainMenuHandler.ShowPopupMessage("Insuficient Deployment Capsule!"); // display an error informing the player that he don't have enough deployment capsule
+                mainMenuUIHandler.ShowPopupMessage("Insuficient Deployment Capsule!"); // display an error informing the player that he don't have enough deployment capsule
             }
         }
 
@@ -128,7 +163,7 @@ namespace game_ideas
         IEnumerator DelayOfStart()
         {
             yield return new WaitForSeconds(1f);
-            SceneManager.LoadScene("Level1"); 
+            loadSceneManager.LoadScene("Level1");
             StopCoroutine(DelayOfStart());
         }
 
